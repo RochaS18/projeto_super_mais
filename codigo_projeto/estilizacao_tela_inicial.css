@@ -1175,54 +1175,69 @@ input {
     margin-top: 18px;
 }
 
-.app-card {
-    min-height: 118px;
+/* =========================================
+   BANNER APP
+========================================= */
 
+.app-card {
     position: relative;
     overflow: hidden;
+
+    min-height: 120px;
 
     padding: 14px 18px;
 
     border-radius: 15px;
 
-    color: white;
+    color: #FFFFFF;
 
-    background:
-        linear-gradient(
-            120deg,
-            #17457A,
-            #2869A9,
-            #347BBF
-        );
+    background: linear-gradient(
+        120deg,
+        #1C5DA8 0%,
+        #2B71BC 55%,
+        #3D8AD9 100%
+    );
 }
+
+/* círculo decorativo */
 
 .app-card::after {
     content: "";
 
     position: absolute;
 
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
 
-    right: -100px;
-    bottom: -120px;
+    top: -15px;
+    right: -25px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+
+    z-index: 1;
 }
+
+/* conteúdo */
 
 .app-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+
+    max-width: 210px;
 }
 
+/* título */
+
 .app-card h2 {
-    max-width: 210px;
+    max-width: 200px;
 
     margin-bottom: 8px;
 
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: 700;
+
     line-height: 1.15;
 }
 
@@ -1230,13 +1245,19 @@ input {
     display: block;
 }
 
+/* descrição */
+
 .app-card p {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
-    color: rgba(255, 255, 255, 0.80);
+    color: rgba(255, 255, 255, 0.88);
 
-    font-size: 12px;
+    font-size: 11px;
+
+    line-height: 1.4;
 }
+
+/* botões */
 
 .app-buttons {
     display: flex;
@@ -1244,61 +1265,85 @@ input {
 }
 
 .store-button {
-    min-width: 105px;
+    min-width: 95px;
 
-    padding: 6px 9px;
+    padding: 6px 8px;
 
     display: flex;
     align-items: center;
-    gap: 7px;
 
-    border-radius: 5px;
+    gap: 6px;
 
-    background: #1D2228;
+    border-radius: 4px;
 
-    color: white;
+    background: #1A1D22;
 
-    font-size: 12px;
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: background 0.2s ease;
+}
+
+.store-button:hover {
+    background: #111417;
 }
 
 .store-button small {
     display: block;
 
-    color: #C9CDD1;
+    margin-bottom: 1px;
 
-    font-size: 7px;
+    color: #D2D6DA;
+
+    font-size: 6px;
+    font-weight: 400;
 }
 
+/* ícones */
+
 .store-icon {
-    width: 18px;
-    height: 18px;
-    display: grid;
-    place-items: center;
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     flex-shrink: 0;
 }
 
 .store-icon img {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+
     object-fit: contain;
 }
+
+/* celular */
 
 .app-phone {
     position: absolute;
 
-    right: 25px;
-    bottom: -30px;
+    right: 8px;
+    bottom: -12px;
+
+    width: 175px;
 
     z-index: 3;
-
-    width: 150px;
 }
 
 .app-phone img {
-    max-height: 145px;
+    width: 100%;
+    height: auto;
+
+    display: block;
+
     object-fit: contain;
 }
-
 
 /* BENEFÍCIOS */
 
