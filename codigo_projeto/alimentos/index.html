@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperMais - Alimentos</title>
+
+  <!-- Aqui é onde o HTML "puxa" o CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barra de aviso no topo -->
+  <div class="top-bar">
+    Frete grátis nas compras acima de R$ 200,00
+  </div>
+
+  <!-- Cabeçalho principal -->
+  <header class="header">
+    <div class="logo">Super<span>Mais</span></div>
+
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="O que você procura hoje?">
+      <button id="search-btn">Buscar</button>
+    </div>
+
+    <div class="header-actions">
+      <span>Olá, Cliente</span>
+      <span>Meu carrinho (<span id="cart-count">0</span>) — <strong id="cart-total">R$ 0,00</strong></span>
+    </div>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="nav-menu">
+    <a href="#" class="active" id="nav-inicio">Início</a>
+    <a href="#" id="nav-ofertas">Ofertas</a>
+    <a href="#">Categorias</a>
+    <a href="#">Cartões</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <!-- Banner de destaque -->
+  <section class="banner">
+    <h1>Alimentos</h1>
+    <p>Tudo o que você precisa, com qualidade, variedade e os melhores preços para o seu dia a dia.</p>
+    <button class="btn-primary" id="ver-ofertas-btn">Ver ofertas</button>
+  </section>
+
+  <!-- Lista de produtos -->
+  <main class="products-section" id="products-section">
+    <div class="products-header">
+      <h2>Alimentos</h2>
+      <span id="products-count">12 produtos encontrados</span>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card" data-name="arroz branco tio joão">
+        <div class="product-tag">20% OFF</div>
+        <div class="product-image"></div>
+        <h3>Arroz Branco</h3>
+        <p class="product-info">Tio João - 5kg</p>
+        <p class="price">R$ 22,90 <span class="old-price">R$ 29,90</span></p>
+        <button class="btn-add" data-price="22.90" data-product="Arroz Branco">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="feijão carioca camil">
+        <div class="product-tag">21% OFF</div>
+        <div class="product-image"></div>
+        <h3>Feijão Carioca</h3>
+        <p class="product-info">Camil - 1kg</p>
+        <p class="price">R$ 7,49 <span class="old-price">R$ 9,90</span></p>
+        <button class="btn-add" data-price="7.49" data-product="Feijão Carioca">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="macarrão espaguete adria" data-oferta="true">
+        <div class="product-tag">24% OFF</div>
+        <div class="product-image"></div>
+        <h3>Macarrão Espaguete</h3>
+        <p class="product-info">Adria - 500g</p>
+        <p class="price">R$ 4,29 <span class="old-price">R$ 5,99</span></p>
+        <button class="btn-add" data-price="4.29" data-product="Macarrão Espaguete">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="óleo de soja liza">
+        <div class="product-tag">21% OFF</div>
+        <div class="product-image"></div>
+        <h3>Óleo de Soja</h3>
+        <p class="product-info">Liza - 900ml</p>
+        <p class="price">R$ 6,99 <span class="old-price">R$ 8,90</span></p>
+        <button class="btn-add" data-price="6.99" data-product="Óleo de Soja">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="açúcar cristal união" data-oferta="true">
+        <div class="product-tag">27% OFF</div>
+        <div class="product-image"></div>
+        <h3>Açúcar Cristal</h3>
+        <p class="product-info">União - 1kg</p>
+        <p class="price">R$ 3,99 <span class="old-price">R$ 5,49</span></p>
+        <button class="btn-add" data-price="3.99" data-product="Açúcar Cristal">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="café tradicional pilão">
+        <div class="product-tag">21% OFF</div>
+        <div class="product-image"></div>
+        <h3>Café Tradicional</h3>
+        <p class="product-info">Pilão - 500g</p>
+        <p class="price">R$ 16,90 <span class="old-price">R$ 21,90</span></p>
+        <button class="btn-add" data-price="16.90" data-product="Café Tradicional">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="leite integral itambé" data-oferta="true">
+        <div class="product-tag">24% OFF</div>
+        <div class="product-image"></div>
+        <h3>Leite Integral</h3>
+        <p class="product-info">Itambé - 1L</p>
+        <p class="price">R$ 4,79 <span class="old-price">R$ 6,49</span></p>
+        <button class="btn-add" data-price="4.79" data-product="Leite Integral">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="farinha de trigo renata">
+        <div class="product-tag">21% OFF</div>
+        <div class="product-image"></div>
+        <h3>Farinha de Trigo</h3>
+        <p class="product-info">Renata - 1kg</p>
+        <p class="price">R$ 4,49 <span class="old-price">R$ 5,79</span></p>
+        <button class="btn-add" data-price="4.49" data-product="Farinha de Trigo">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="molho de tomate heinz" data-oferta="true">
+        <div class="product-tag">24% OFF</div>
+        <div class="product-image"></div>
+        <h3>Molho de Tomate</h3>
+        <p class="product-info">Heinz - 340g</p>
+        <p class="price">R$ 5,29 <span class="old-price">R$ 6,99</span></p>
+        <button class="btn-add" data-price="5.29" data-product="Molho de Tomate">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="maionese hellmann's">
+        <div class="product-tag">21% OFF</div>
+        <div class="product-image"></div>
+        <h3>Maionese</h3>
+        <p class="product-info">Hellmann's - 500g</p>
+        <p class="price">R$ 12,90 <span class="old-price">R$ 16,90</span></p>
+        <button class="btn-add" data-price="12.90" data-product="Maionese">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="biscoito recheado nestlé" data-oferta="true">
+        <div class="product-tag">27% OFF</div>
+        <div class="product-image"></div>
+        <h3>Biscoito Recheado</h3>
+        <p class="product-info">Nestlé - 140g</p>
+        <p class="price">R$ 3,99 <span class="old-price">R$ 5,49</span></p>
+        <button class="btn-add" data-price="3.99" data-product="Biscoito Recheado">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="product-card" data-name="refrigerante coca-cola" data-oferta="true">
+        <div class="product-tag">29% OFF</div>
+        <div class="product-image"></div>
+        <h3>Refrigerante Coca-Cola</h3>
+        <p class="product-info">Coca-Cola - 2L</p>
+        <p class="price">R$ 8,49 <span class="old-price">R$ 11,90</span></p>
+        <button class="btn-add" data-price="8.49" data-product="Refrigerante Coca-Cola">Adicionar ao carrinho</button>
+      </article>
+
+    </div>
+
+    <p id="no-results" class="no-results" hidden>Nenhum produto encontrado.</p>
+  </main>
+
+  <!-- Rodapé com benefícios -->
+  <footer class="footer">
+    <div class="footer-item">
+      <h4>Entrega rápida</h4>
+      <p>Receba em casa com agilidade</p>
+    </div>
+    <div class="footer-item">
+      <h4>Pagamento seguro</h4>
+      <p>Seus dados protegidos em todas as compras</p>
+    </div>
+    <div class="footer-item">
+      <h4>Variedade garantida</h4>
+      <p>Milhares de produtos para você</p>
+    </div>
+    <div class="footer-item">
+      <h4>Atendimento humano</h4>
+      <p>Estamos prontos para te ajudar</p>
+    </div>
+  </footer>
+
+  <!-- Aqui o HTML "puxa" o JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+
+</html>

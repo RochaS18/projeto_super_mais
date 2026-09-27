@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mais - Ferramentas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <div class="barra-topo">
+
+        <p>🚚 Frete grátis nas compras acima de R$ 200,00</p>
+
+        <div class="barra-info">
+            <span>🎧 Central de Atendimento</span>
+            <span>📍 Encontre uma loja</span>
+        </div>
+
+    </div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header>
+
+        <!-- Logo -->
+        <div class="logo">
+            <h1>Super Mais</h1>
+        </div>
+
+        <!-- Barra de pesquisa -->
+        <div class="busca">
+            <input type="text" placeholder="O que você procura hoje?">
+            <button>🔍</button>
+        </div>
+
+        <!-- Área do cliente -->
+        <div class="cliente">
+
+            <i class="fa-regular fa-user"></i>
+
+            <div>
+                <p>Olá, cliente</p>
+                <span>Minha conta</span>
+            </div>
+
+        </div>
+
+        <!-- Carrinho -->
+        <button class="carrinho botao-carrinho" type="button" aria-label="Abrir carrinho">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <div>
+                <p>Meu carrinho</p>
+                <span class="valor-carrinho">R$ 0,00</span>
+            </div>
+
+        </button>
+
+
+    </header>
+
+
+    <!-- ===== NAVEGAÇÃO ===== -->
+    <nav>
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Início
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-tag"></i>
+            Ofertas
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-grip"></i>
+            Categorias
+        </a>
+        <a class="ativo" href="index.html">
+            <i class="fa-solid fa-wrench"></i>
+            Ferramentas</a>
+        <a href="contato.html">
+            <i class="fa-solid fa-phone"></i>
+            Contato</a>
+
+    </nav>
+
+
+    <!-- ===== CARROSSEL DE OFERTAS ===== -->
+    <section class="carrossel" aria-label="Ofertas em destaque">
+        <div class="oferta ativa">
+            <img src="imagens/oferta-1.png" alt="Oferta de ferramentas">
+            <div class="texto-oferta">
+                <span>Oferta da semana</span>
+                <h2>Ferramentas para todos os projetos</h2>
+                <p>Produtos selecionados com preços especiais.</p>
+                <a href="#produtos">Ver ofertas</a>
+            </div>
+        </div>
+
+        <div class="oferta">
+            <img src="imagens/oferta-2.png" alt="Kit de ferramentas em promoção">
+            <div class="texto-oferta">
+                <span>Kit especial</span>
+                <h2>Monte sua caixa de ferramentas</h2>
+                <p>Encontre tudo para seus reparos em um só lugar.</p>
+                <a href="#produtos">Comprar agora</a>
+            </div>
+        </div>
+
+        <div class="oferta">
+            <img src="imagens/oferta-3.png" alt="Ferramentas com desconto">
+            <div class="texto-oferta">
+                <span>Desconto especial</span>
+                <h2>Economize nas suas compras</h2>
+                <p>Aproveite nossas ofertas por tempo limitado.</p>
+                <a href="#produtos">Ver descontos</a>
+            </div>
+        </div>
+
+        <button class="seta-carrossel anterior" type="button" aria-label="Oferta anterior">&#10094;</button>
+        <button class="seta-carrossel proxima" type="button" aria-label="Próxima oferta">&#10095;</button>
+
+        <div class="pontos-carrossel" aria-label="Selecionar oferta">
+            <button class="ponto ativo" type="button" aria-label="Ver oferta 1"></button>
+            <button class="ponto" type="button" aria-label="Ver oferta 2"></button>
+            <button class="ponto" type="button" aria-label="Ver oferta 3"></button>
+        </div>
+    </section>
+
+
+    <!-- ===== ÁREA DE PRODUTOS ===== -->
+    <main>
+
+        <div class="titulo-produtos">
+
+            <div>
+                <h2>Ferramentas</h2>
+                <p>Confira nossas ferramentas em destaque</p>
+            </div>
+
+            <div class="ordenacao">
+                <label for="ordenar">Ordenar por:</label>
+
+                <select id="ordenar">
+                    <option>Mais relevantes</option>
+                    <option>Menor preço</option>
+                    <option>Maior preço</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <!-- Produtos -->
+        <section class="produtos" id="produtos">
+
+
+            <!-- Produto 1 -->
+            <article class="produto">
+
+                <span class="desconto">10% OFF</span>
+
+                <span class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+
+                <img src="imagens/furadeira.jpg" alt="Furadeira elétrica">
+
+                <h3>Furadeira Elétrica</h3>
+
+                <p class="descricao">
+                    Furadeira elétrica 500W
+                </p>
+
+                <p class="preco-antigo">
+                    R$ 219,90
+                </p>
+
+                <p class="preco">
+                    R$ 199,90
+                </p>
+
+                <button class="adicionar-carrinho" data-produto="Furadeira Elétrica" data-preco="199,90" type="button">🛒 Adicionar ao carrinho</button>
+
+            </article>
+
+
+            <!-- Produto 2 -->
+            <article class="produto">
+
+                <span class="desconto">15% OFF</span>
+
+
+                <span class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+
+                <img src="imagens/parafusadeira.jpg" alt="Parafusadeira sem fio">
+
+                <h3>Parafusadeira</h3>
+
+                <p class="descricao">
+                    Parafusadeira sem fio
+                </p>
+
+                <p class="preco-antigo">
+                    R$ 289,90
+                </p>
+
+                <p class="preco">
+                    R$ 249,90
+                </p>
+
+                <button class="adicionar-carrinho" data-produto="Parafusadeira" data-preco="249,90" type="button">🛒 Adicionar ao carrinho</button>
+
+            </article>
+
+
+            <!-- Produto 3 -->
+            <article class="produto">
+
+                <span class="desconto">20% OFF</span>
+
+
+                <span class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+
+                <img src="imagens/kit-chaves.jpg" alt="Kit de chaves">
+
+                <h3>Kit de Chaves</h3>
+
+                <p class="descricao">
+                    Kit com 20 peças
+                </p>
+
+                <p class="preco-antigo">
+                    R$ 109,90
+                </p>
+
+                <p class="preco">
+                    R$ 89,90
+                </p>
+
+                <button class="adicionar-carrinho" data-produto="Kit de Chaves" data-preco="89,90" type="button">🛒 Adicionar ao carrinho</button>
+
+            </article>
+
+
+            <!-- Produto 4 -->
+            <article class="produto">
+
+                <span class="desconto">12% OFF</span>
+
+
+                <span class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+
+                <img src="imagens/alicate.jpg" alt="Alicate universal">
+
+                <h3>Alicate Universal</h3>
+
+                <p class="descricao">
+                    Alicate profissional
+                </p>
+
+                <p class="preco-antigo">
+                    R$ 59,90
+                </p>
+
+                <p class="preco">
+                    R$ 52,90
+                </p>
+
+                <button class="adicionar-carrinho" data-produto="Alicate Universal" data-preco="52,90" type="button">🛒 Adicionar ao carrinho</button>
+
+            </article>
+
+
+            <!-- Produto 5 -->
+            <article class="produto">
+
+                <span class="desconto">18% OFF</span>
+
+
+                <span class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+
+                <img src="imagens/martelo.jpg" alt="Martelo profissional">
+
+                <h3>Martelo</h3>
+
+                <p class="descricao">
+                    Martelo profissional
+                </p>
+
+                <p class="preco-antigo">
+                    R$ 49,90
+                </p>
+
+                <p class="preco">
+                    R$ 40,90
+                </p>
+
+                <button class="adicionar-carrinho" data-produto="Martelo" data-preco="40,90" type="button">🛒 Adicionar ao carrinho</button>
+
+            </article>
+
+
+            <!-- Produto 6 -->
+            <article class="produto">
+
+                <span class="desconto">10% OFF</span>
+
+                <span class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+
+                <img src="imagens/trena.jpg" alt="Trena profissional">
+
+                <h3>Trena 5 metros</h3>
+
+                <p class="descricao">
+                    Trena profissional
+                </p>
+
+                <p class="preco-antigo">
+                    R$ 39,90
+                </p>
+
+                <p class="preco">
+                    R$ 35,90
+                </p>
+
+                <button class="adicionar-carrinho" data-produto="Trena 5 metros" data-preco="35,90" type="button">🛒 Adicionar ao carrinho</button>
+
+            </article>
+
+            <!-- Produto 7 -->
+            <article class="produto">
+                <span class="desconto">8% OFF</span>
+                <span class="favorito"><i class="fa-regular fa-heart"></i></span>
+                <img src="imagens/serra.jpg" alt="Serra circular">
+                <h3>Serra Circular</h3>
+                <p class="descricao">Serra circular 1200W</p>
+                <p class="preco-antigo">R$ 449,90</p>
+                <p class="preco">R$ 413,90</p>
+                <button class="adicionar-carrinho" data-produto="Serra Circular" data-preco="413,90" type="button">🛒 Adicionar ao carrinho</button>
+            </article>
+
+            <!-- Produto 8 -->
+            <article class="produto">
+                <span class="desconto">10% OFF</span>
+                <span class="favorito"><i class="fa-regular fa-heart"></i></span>
+                <img src="imagens/nivel.jpg" alt="Nível profissional">
+                <h3>Nível Profissional</h3>
+                <p class="descricao">Nível de alumínio 60cm</p>
+                <p class="preco-antigo">R$ 79,90</p>
+                <p class="preco">R$ 71,90</p>
+                <button class="adicionar-carrinho" data-produto="Nível Profissional" data-preco="71,90" type="button">🛒 Adicionar ao carrinho</button>
+            </article>
+
+            <!-- Produto 9 -->
+            <article class="produto">
+                <span class="desconto">12% OFF</span>
+                <span class="favorito"><i class="fa-regular fa-heart"></i></span>
+                <img src="imagens/chave-inglesa.jpg" alt="Chave inglesa ajustável">
+                <h3>Chave Inglesa</h3>
+                <p class="descricao">Chave ajustável de 10 polegadas</p>
+                <p class="preco-antigo">R$ 69,90</p>
+                <p class="preco">R$ 61,50</p>
+                <button class="adicionar-carrinho" data-produto="Chave Inglesa" data-preco="61,50" type="button">🛒 Adicionar ao carrinho</button>
+            </article>
+
+            <!-- Produto 10 -->
+            <article class="produto">
+                <span class="desconto">15% OFF</span>
+                <span class="favorito"><i class="fa-regular fa-heart"></i></span>
+                <img src="imagens/kit-ferramentas.jpg" alt="Kit de ferramentas">
+                <h3>Kit de Ferramentas</h3>
+                <p class="descricao">Kit completo com 46 peças</p>
+                <p class="preco-antigo">R$ 299,90</p>
+                <p class="preco">R$ 254,90</p>
+                <button class="adicionar-carrinho" data-produto="Kit de Ferramentas" data-preco="254,90" type="button">🛒 Adicionar ao carrinho</button>
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ===== BENEFÍCIOS ===== -->
+    <section class="beneficios">
+
+        <div class="beneficio">
+            <h3>✓ Qualidade</h3>
+            <p>Produtos selecionados</p>
+        </div>
+
+        <div class="beneficio">
+            <h3>🚚 Entrega rápida</h3>
+            <p>Receba seus produtos com segurança</p>
+        </div>
+
+        <div class="beneficio">
+            <h3>🔒 Compra segura</h3>
+            <p>Seus dados protegidos</p>
+        </div>
+
+        <div class="beneficio">
+            <h3>🎁 Ofertas especiais</h3>
+            <p>Economize nas suas compras</p>
+        </div>
+
+    </section>
+
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+
+        <p>© 2026 Super Mais</p>
+        <p>Todos os direitos reservados.</p>
+
+    </footer>
+
+    <!-- ===== CARRINHO POPUP ===== -->
+    <div class="carrinho-fundo" id="carrinho-fundo" hidden>
+        <aside class="carrinho-popup" role="dialog" aria-modal="true" aria-labelledby="titulo-carrinho">
+            <button class="fechar-carrinho" type="button" aria-label="Fechar carrinho">&times;</button>
+            <h2 id="titulo-carrinho">Meu carrinho</h2>
+            <div id="itens-carrinho">
+                <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+            </div>
+            <div class="cupom-carrinho">
+                <label for="cupom">Cupom de desconto</label>
+                <div>
+                    <input id="cupom" type="text" placeholder="Ex.: SUPER10">
+                    <button id="aplicar-cupom" type="button">Aplicar</button>
+                </div>
+                <small id="mensagem-cupom" aria-live="polite"></small>
+            </div>
+            <div class="resumo-carrinho">
+                <p><span>Subtotal</span><strong id="subtotal-carrinho">R$ 0,00</strong></p>
+                <p><span>Desconto</span><strong id="desconto-carrinho">R$ 0,00</strong></p>
+                <div class="total-carrinho">
+                    <span>Total</span>
+                    <strong id="total-carrinho">R$ 0,00</strong>
+                </div>
+            </div>
+            <button class="finalizar-carrinho" type="button">Finalizar compra</button>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
