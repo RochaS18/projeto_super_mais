@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Imagem de produto</title>
+  <desc id="desc">Espaço reservado para a foto de um produto do supermercado.</desc>
+  <rect width="240" height="240" rx="24" fill="#eaf3f1"/>
+  <circle cx="120" cy="104" r="52" fill="#fff"/>
+  <path d="M91 84h58l-5 66H96z" fill="#087d74"/>
+  <path d="M105 84c0-12 6-19 15-19s15 7 15 19" fill="none" stroke="#075c56" stroke-width="7" stroke-linecap="round"/>
+  <path d="M102 111h36M105 124h30" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <text x="120" y="190" text-anchor="middle" fill="#63717b" font-family="Arial,sans-serif" font-size="13">Sua imagem aqui</text>
+</svg>

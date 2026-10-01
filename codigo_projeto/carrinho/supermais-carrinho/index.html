@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#087d74" />
+    <meta name="description" content="Revise os produtos do seu carrinho SuperMais." />
+    <title>Meu carrinho | SuperMais</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="topo-aviso">
+      <span>🚚 Frete <strong>grátis</strong> nas compras acima de <strong>R$ 200,00</strong></span>
+      <span>🎧 Central de Atendimento &nbsp; · &nbsp; 📍 Encontre uma loja</span>
+    </div>
+
+    <header class="cabecalho">
+      <a class="logo" href="#inicio" aria-label="SuperMais — início">
+        <img src="assets/images/logo-supermais.png" alt="SuperMais" />
+      </a>
+
+      <form class="busca" role="search" id="formBusca">
+        <label class="visualmente-oculto" for="campoBusca">O que você procura?</label>
+        <input id="campoBusca" type="search" placeholder="O que você procura hoje?" />
+        <button type="submit" aria-label="Buscar">⌕</button>
+      </form>
+
+      <div class="area-cliente">
+        <div><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></div>
+        <div class="mini-carrinho">
+          <span class="icone" aria-hidden="true">🛒<span class="bolinha" id="contadorTopo">0</span></span>
+          <span><b>Meu carrinho</b><small id="totalTopo">R$ 0,00</small></span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navegacao" aria-label="Navegação principal">
+      <a class="ativo" href="#inicio">⌂ Início</a>
+      <a href="#ofertas">◇ Ofertas</a>
+      <a href="#categorias">▦ Categorias</a>
+      <a href="#cartoes">▣ Cartões</a>
+      <a href="#contato">✉ Contato</a>
+    </nav>
+
+    <main id="inicio">
+      <nav class="caminho" aria-label="Você está em">Início <span aria-hidden="true">›</span> <strong>Meu carrinho</strong></nav>
+      <section class="titulo" aria-labelledby="tituloPagina">
+        <div><h1 id="tituloPagina">Meu carrinho</h1><p id="textoItens" aria-live="polite">0 itens selecionados</p></div>
+        <p>Revise os produtos antes de finalizar sua compra.</p>
+      </section>
+
+      <div class="layout-carrinho">
+        <section class="card" aria-labelledby="tituloProdutos">
+          <div class="cabecalho-carrinho">
+            <h2 id="tituloProdutos">Produtos no carrinho</h2>
+            <button class="limpar" id="botaoLimpar" type="button">Limpar carrinho</button>
+          </div>
+          <div class="lista-produtos" id="listaProdutos" aria-live="polite"></div>
+          <a class="continuar-comprando" href="#inicio">← Continuar comprando</a>
+        </section>
+
+        <aside class="card resumo" aria-labelledby="tituloResumo">
+          <h2 id="tituloResumo">Resumo do pedido</h2>
+          <div class="frete-gratis" id="avisoFrete" aria-live="polite">
+            <span aria-hidden="true">🚚</span><div><strong id="tituloFrete">Calcule seu frete</strong><span id="textoFrete">Adicione produtos ao carrinho.</span></div>
+          </div>
+          <form class="cupom" id="formCupom">
+            <label class="visualmente-oculto" for="campoCupom">Código do cupom</label>
+            <input id="campoCupom" type="text" placeholder="Insira seu cupom" autocomplete="off" />
+            <button type="submit">Aplicar</button>
+          </form>
+          <p class="mensagem-cupom" id="mensagemCupom" aria-live="polite"></p>
+          <div class="linha-resumo"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+          <div class="linha-resumo desconto"><span>Descontos</span><strong id="valorDesconto">R$ 0,00</strong></div>
+          <div class="linha-resumo"><span>Entrega</span><strong id="valorEntrega">R$ 0,00</strong></div>
+          <div class="total"><strong>Total</strong><strong id="valorTotal">R$ 0,00</strong></div>
+          <button class="finalizar" id="botaoFinalizar" type="button">Ir para o pagamento →</button>
+          <p class="mensagem-checkout" id="mensagemCheckout" aria-live="polite"></p>
+          <p class="compra-segura">🔒 Compra segura e protegida</p>
+        </aside>
+      </div>
+
+      <section class="sugestoes" aria-labelledby="tituloSugestoes">
+        <div class="cabecalho-sugestoes">
+          <div>
+            <p class="sobretitulo">SELEÇÃO PARA VOCÊ</p>
+            <h2 id="tituloSugestoes">Você também pode gostar</h2>
+            <p>Complete suas compras com estes produtos.</p>
+          </div>
+          <span class="sugestoes-destaque" aria-hidden="true">✨</span>
+        </div>
+        <div class="grade-sugestoes" id="listaSugestoes" aria-live="polite"></div>
+        <p class="mensagem-sugestao" id="mensagemSugestao" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer class="rodape"><p>SuperMais · Página demonstrativa de carrinho de compras.</p></footer>
+  </body>
+</html>
