@@ -84,7 +84,7 @@
 
 
             <!-- CARRINHO -->
-            <a href="#" class="cart-card">
+            <a href="#" class="cart-card" id="cart-trigger" aria-haspopup="dialog" aria-controls="cart-modal">
 
                 <div class="cart-icon">
                     <img src="icone/carrinho_icone.png" alt="" aria-hidden="true">
@@ -176,14 +176,17 @@
 
 
     <!-- =========================================
-         BANNER PRINCIPAL + OFERTA DO DIA
+         BANNER 
     ========================================== -->
     <main class="container">
 
         <section class="hero-section">
 
 
-            <!-- BANNER -->
+         
+
+
+           <!-- BANNER -->
             <article class="banner" tabindex="0" aria-label="Carrossel de categorias">
 
                 <div class="banner-content">
@@ -236,115 +239,15 @@
             </article>
 
 
-            <!-- OFERTA DO DIA -->
-            <aside class="daily-offer">
-
-                <h2>Oferta do dia</h2>
-
-                <div class="offer-content">
-
-                    <button class="offer-arrow left" type="button" aria-label="Oferta anterior">
-                        <img src="icone/seta_esquerda_icone.png" alt="" aria-hidden="true">
-                    </button>
-
-
-                    <div class="offer-image">
-                        <img src="imagem/kit_higiene_bucal.png" alt="Kit de Higiene Bucal">
-                    </div>
-
-
-                    <div class="offer-info">
-
-                        <h3>Kit Higiene Bucal</h3>
-
-                        <p class="product-type">
-                            Escova + creme dental
-                        </p>
-
-                        <div class="price">
-                            <small>R$</small>
-                            12,90
-                        </div>
-
-                        <p class="old-price">
-                            R$ 17,90
-                        </p>
-
-                        <span class="discount">
-                            28% OFF
-                        </span>
-
-                    </div>
-
-
-                    <button class="offer-arrow right" type="button" aria-label="Próxima oferta">
-                        <img src="icone/seta_direita_icone.png" alt="" aria-hidden="true">
-                    </button>
-
-                </div>
-
-
-                <div class="offer-progress">
-
-                    <div class="progress-bar">
-                        <span></span>
-                    </div>
-
-                    <small>
-                        Oferta válida hoje até 23:59:59
-                    </small>
-
-                </div>
-
-            </aside>
-
+                
         </section>
 
 
         <!-- =========================================
              CATEGORIAS DE HIGIENE E LIMPEZA
         ========================================== -->
-        <section class="categories">
 
-            <a href="#" class="category-card food-card" aria-label="Higiene Pessoal">
-                <div class="category-text">
-                    <h2>Higiene Pessoal</h2>
-                    <p>Sabonetes, desodorantes e cuidados diários</p>
-                    <span class="category-link">Ver produtos <span>→</span></span>
-                </div>
-                <img src="imagem/higiene_pessoal.png" alt="Produtos de higiene pessoal">
-            </a>
-
-            <div class="middle-categories">
-                <article class="category-card sweets-card">
-                    <div class="category-text">
-                        <h2>Cabelos</h2>
-                        <p>Shampoos, condicionadores e tratamentos</p>
-                        <a href="#">Ver produtos <span class="button-arrow">→</span></a>
-                    </div>
-                    <img src="imagem/cuidados_cabelos.png" alt="Produtos para cuidados com os cabelos">
-                </article>
-
-                <article class="category-card hygiene-card">
-                    <div class="category-text">
-                        <h2>Higiene Bucal</h2>
-                        <p>Escovas, cremes dentais e enxaguantes</p>
-                        <a href="#">Ver produtos <span class="button-arrow">→</span></a>
-                    </div>
-                    <img src="imagem/higiene_bucal.png" alt="Produtos de higiene bucal">
-                </article>
-            </div>
-
-            <article class="category-card tools-card">
-                <div class="category-text">
-                    <h2>Limpeza da <span>Casa</span></h2>
-                    <p>Desinfetantes, detergentes e limpadores</p>
-                    <a href="#">Ver produtos <span class="button-arrow">→</span></a>
-                </div>
-                <img src="imagem/limpeza_casa.png" alt="Produtos para limpeza da casa">
-            </article>
-
-        </section>
+        
 
         <section class="category-list">
             <a href="#">Banho e Corpo</a>
@@ -357,138 +260,7 @@
             <a href="#">Acessórios de Limpeza</a>
         </section>
 
-        <!-- =========================================
-             APP + BENEFÍCIOS
-        ========================================== -->
-        <section class="bottom-section">
-
-
-            <!-- APP -->
-            <article class="app-card">
-
-                <div class="app-content">
-
-                    <h2>
-                        Cuide da sua rotina
-                        <span>com o App SuperMais</span>
-                    </h2>
-
-                    <p>
-                        Encontre produtos de higiene com praticidade.
-                    </p>
-
-
-                    <div class="app-buttons">
-
-                        <a href="#" class="store-button">
-                            <span class="store-icon"><img src="icone/Apple-Logo.png" alt="" aria-hidden="true"></span>
-
-                            <span>
-                                <small>Disponível na</small>
-                                App Store
-                            </span>
-                        </a>
-
-
-                        <a href="#" class="store-button">
-                            <span class="store-icon"><img src="icone/Google-Play.png" alt="" aria-hidden="true"></span>
-
-                            <span>
-                                <small>Disponível no</small>
-                                Google Play
-                            </span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="app-phone">
-                    <img src="imagem/logo_celular.png" alt="Aplicativo SuperMais">
-                </div>
-
-            </article>
-
-
-            <!-- BENEFÍCIOS -->
-            <section class="benefits">
-
-
-                <article class="benefit">
-
-                    <div class="benefit-icon truck-icon">
-                        <img src="icone/entrega_icone.png" alt="" aria-hidden="true">
-                    </div>
-
-                    <div>
-                        <h3>Entrega rápida</h3>
-
-                        <p>
-                            Receba seus produtos
-                            com agilidade
-                        </p>
-                    </div>
-
-                </article>
-
-
-                <article class="benefit">
-
-                    <div class="benefit-icon security-icon">
-                        <img src="icone/pagamento_seguro_icone.png" alt="" aria-hidden="true">
-                    </div>
-
-                    <div>
-                        <h3>Pagamento seguro</h3>
-
-                        <p>
-                            Seus dados protegidos
-                            em todas as compras
-                        </p>
-                    </div>
-
-                </article>
-
-
-                <article class="benefit">
-
-                    <div class="benefit-icon gift-icon">
-                        <img src="icone/variedade_icone.png" alt="" aria-hidden="true">
-                    </div>
-
-                    <div>
-                        <h3>Variedade garantida</h3>
-
-                        <p>
-                            Produtos de higiene
-                            para toda a família
-                        </p>
-                    </div>
-
-                </article>
-
-
-                <article class="benefit">
-
-                    <div class="benefit-icon support-icon">
-                        <img src="icone/atendimento_humano_icone.png" alt="" aria-hidden="true">
-                    </div>
-
-                    <div>
-                        <h3>Atendimento humano</h3>
-
-                        <p>
-                            Conte com a nossa equipe
-                            quando precisar
-                        </p>
-                    </div>
-
-                </article>
-
-            </section>
-
-        </section>
+        
 
 
         <!-- =========================================
@@ -794,6 +566,139 @@
             </div>
         </section>
 
+        <!-- =========================================
+             APP + BENEFÍCIOS
+        ========================================== -->
+        <section class="bottom-section">
+
+
+            <!-- APP -->
+            <article class="app-card">
+
+                <div class="app-content">
+
+                    <h2>
+                        Cuide da sua rotina
+                        <span>com o App SuperMais</span>
+                    </h2>
+
+                    <p>
+                        Encontre produtos de higiene com praticidade.
+                    </p>
+
+
+                    <div class="app-buttons">
+
+                        <a href="#" class="store-button">
+                            <span class="store-icon"><img src="icone/Apple-Logo.png" alt="" aria-hidden="true"></span>
+
+                            <span>
+                                <small>Disponível na</small>
+                                App Store
+                            </span>
+                        </a>
+
+
+                        <a href="#" class="store-button">
+                            <span class="store-icon"><img src="icone/Google-Play.png" alt="" aria-hidden="true"></span>
+
+                            <span>
+                                <small>Disponível no</small>
+                                Google Play
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="app-phone">
+                    <img src="imagem/logo_celular.png" alt="Aplicativo SuperMais">
+                </div>
+
+            </article>
+
+
+            <!-- BENEFÍCIOS -->
+            <section class="benefits">
+
+
+                <article class="benefit">
+
+                    <div class="benefit-icon truck-icon">
+                        <img src="icone/entrega_icone.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div>
+                        <h3>Entrega rápida</h3>
+
+                        <p>
+                            Receba seus produtos
+                            com agilidade
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit">
+
+                    <div class="benefit-icon security-icon">
+                        <img src="icone/pagamento_seguro_icone.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div>
+                        <h3>Pagamento seguro</h3>
+
+                        <p>
+                            Seus dados protegidos
+                            em todas as compras
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit">
+
+                    <div class="benefit-icon gift-icon">
+                        <img src="icone/variedade_icone.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div>
+                        <h3>Variedade garantida</h3>
+
+                        <p>
+                            Produtos de higiene
+                            para toda a família
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit">
+
+                    <div class="benefit-icon support-icon">
+                        <img src="icone/atendimento_humano_icone.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div>
+                        <h3>Atendimento humano</h3>
+
+                        <p>
+                            Conte com a nossa equipe
+                            quando precisar
+                        </p>
+                    </div>
+
+                </article>
+
+            </section>
+
+        </section>
+
     </main>
 
     <!-- JavaScript do carrossel principal -->
@@ -1075,6 +980,23 @@
         </div>
     </div>
 
+
+    <!-- POPUP DO CARRINHO -->
+    <div id="cart-modal" class="cart-modal" aria-hidden="true">
+        <div class="cart-modal-overlay" data-close-cart></div>
+        <div class="cart-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+            <button id="cart-close" class="cart-modal-close" type="button" aria-label="Fechar carrinho">&times;</button>
+            <section class="cart-popup-card">
+                <div class="cart-popup-icon-circle"><span class="cart-popup-big-icon">🛒</span></div>
+                <h1 id="cart-modal-title">Seu carrinho está pronto!</h1>
+                <p>Estamos preparando tudo para você.</p>
+                <div class="cart-popup-progress"><span></span></div>
+                <button id="cart-continue" class="cart-popup-btn" type="button">Continuar <span aria-hidden="true">→</span></button>
+            </section>
+        </div>
+    </div>
+
+    <script src="cart-popup.js"></script>
 </body>
 
 </html>

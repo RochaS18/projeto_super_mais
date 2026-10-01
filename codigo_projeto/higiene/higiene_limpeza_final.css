@@ -2061,3 +2061,53 @@ body.login-modal-open { overflow:hidden; }
     .login-modal .login-card { padding:34px 22px 26px; }
     .product-price { font-size:18px; }
 }
+
+
+/* ============================================================
+   POPUP - TELA DE CRIAÇÃO DE CONTA
+   ============================================================ */
+
+.register-view {
+    width: 100%;
+}
+
+.register-view[hidden] {
+    display: none !important;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-header h1 {
+    margin: 0 0 8px;
+}
+
+.register-view .input-wrap {
+    margin-bottom: 14px;
+}
+
+.register-view .btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.register-back {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.register-back a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-back a:hover {
+    text-decoration: underline;
+}
+
+
+/* POPUP DO CARRINHO */
+.cart-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}.cart-modal.is-open{display:flex}.cart-modal-overlay{position:absolute;inset:0;background:rgba(18,43,53,.10);backdrop-filter:blur(5px)}.cart-modal-dialog{position:relative;z-index:1;width:min(500px,calc(100% - 40px));max-height:95vh}.cart-popup-card{width:100%;padding:46px 42px 42px;text-align:center;background:rgba(255,255,255,.98);border:1px solid rgba(255,255,255,.8);border-radius:26px;box-shadow:0 18px 45px rgba(25,57,67,.12);animation:cartPopupIn .35s ease both}.cart-modal-close{position:absolute;z-index:3;top:12px;right:16px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);color:#152d38;font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(25,57,67,.10)}.cart-popup-icon-circle{width:88px;height:88px;margin:0 auto 24px;display:grid;place-items:center;border-radius:50%;background:#e8f7f4}.cart-popup-big-icon{font-size:42px}.cart-popup-card h1{margin:0 0 10px;color:#152d38;font-size:24px}.cart-popup-card p{margin:0;color:#71818a;font-size:14px}.cart-popup-progress{width:100%;height:6px;margin:28px 0 24px;overflow:hidden;border-radius:10px;background:#e8eef0}.cart-popup-progress span{display:block;width:65%;height:100%;border-radius:inherit;background:#079b87;animation:cartPopupProgress 1.5s infinite ease-in-out}.cart-popup-btn{width:100%;height:50px;border:0;border-radius:12px;color:#152d38;background:#ffd43b;font-weight:700;cursor:pointer;box-shadow:0 7px 18px rgba(255,212,59,.22);transition:transform .2s,filter .2s}.cart-popup-btn:hover{transform:translateY(-1px);filter:brightness(.98)}.cart-popup-btn span{margin-left:6px}body.cart-modal-open{overflow:hidden}@keyframes cartPopupIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes cartPopupProgress{0%{transform:translateX(-100%)}100%{transform:translateX(160%)}}@media(max-width:560px){.cart-modal{padding:10px}.cart-modal-dialog{width:min(500px,calc(100% - 10px))}.cart-popup-card{padding:38px 24px 30px;border-radius:20px}.cart-popup-card h1{font-size:21px}}
