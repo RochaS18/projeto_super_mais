@@ -151,3 +151,135 @@ h1 { margin: 0 0 7px; font-size: 34px; }
 }
 @media (max-width: 360px) { .grade-sugestoes { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+
+/* Identidade visual alinhada à página inicial SuperMais. */
+:root {
+  --verde: #27857a;
+  --verde-escuro: #17655d;
+  --laranja: #f07f57;
+  --amarelo: #f3c257;
+  --texto: #253036;
+  --texto-suave: #687078;
+  --borda: #dce1e4;
+  --fundo: #f4f5f5;
+  --sombra: 0 10px 30px rgb(26 43 55 / 8%);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #eaf3f2 0%, #f4f6f6 22%, #f7f7f6 55%, #f2f3f2 100%);
+}
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(circle at 8% 18%, rgb(39 133 122 / 12%), transparent 27%),
+    radial-gradient(circle at 92% 12%, rgb(79 136 209 / 10%), transparent 28%),
+    radial-gradient(circle at 52% 85%, rgb(240 127 87 / 4.5%), transparent 34%);
+}
+
+.topo-aviso {
+  min-height: 40px;
+  padding: 0 50px;
+  background: linear-gradient(90deg, #101d28, #142433, #1a2028);
+  font-size: 14px;
+}
+.topo-aviso strong { color: #f3c257; }
+.cabecalho {
+  max-width: none;
+  min-height: 130px;
+  grid-template-columns: 185px minmax(300px, 1fr) auto;
+  gap: 50px;
+  padding: 22px 50px;
+  background: linear-gradient(105deg, rgb(218 238 235 / 96%), rgb(225 233 241 / 96%), rgb(239 238 238 / 96%));
+}
+.logo { width: 185px; max-width: 185px; }
+.logo img { max-height: 80px; }
+.busca {
+  height: 58px;
+  padding: 4px;
+  border: 1px solid rgb(255 255 255 / 75%);
+  background: rgb(255 255 255 / 50%);
+  box-shadow: inset 0 0 0 1px rgb(180 190 200 / 30%), 0 5px 20px rgb(50 65 80 / 5%);
+  backdrop-filter: blur(8px);
+}
+.busca input { background: transparent; }
+.busca button {
+  width: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f88d1, #266aae);
+  box-shadow: 0 6px 15px rgb(38 106 174 / 25%);
+}
+.area-cliente {
+  justify-content: flex-start;
+  gap: 14px;
+  min-height: 64px;
+  padding: 10px 18px;
+  background: rgb(255 255 255 / 45%);
+  border: 1px solid rgb(255 255 255 / 70%);
+  box-shadow: 0 5px 18px rgb(35 50 60 / 5%);
+}
+.mini-carrinho { border-color: rgb(200 205 208 / 80%); }
+.bolinha { background: #f3c257; }
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: none;
+  min-height: 72px;
+  margin: 0 40px 30px;
+  padding: 8px 14px;
+  background: rgb(255 255 255 / 58%);
+  border: 1px solid rgb(255 255 255 / 75%);
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(10px);
+}
+.navegacao a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 28px;
+  font-size: 15px;
+  transition: .25s;
+}
+.navegacao a:not(.ativo):hover { color: var(--verde); background: rgb(39 133 122 / 10%); }
+.navegacao a.ativo {
+  color: var(--verde);
+  background: #e2f1ef;
+  box-shadow: 0 0 15px rgb(39 133 122 / 12%), 0 4px 10px rgb(39 133 122 / 8%);
+}
+
+main { width: min(1440px, calc(100% - 80px)); padding: 0 0 60px; }
+.caminho { padding-top: 8px; }
+h1 { font-size: clamp(29px, 2.2vw, 38px); }
+.card, .sugestao-produto {
+  border-color: rgb(220 225 228 / 80%);
+  box-shadow: var(--sombra);
+}
+.card { border-radius: 20px; }
+.finalizar { background: linear-gradient(135deg, #f8cf56, #f1b92d); }
+.continuar-comprando, .limpar { color: var(--verde); }
+.frete-gratis { color: #256d66; background: #e2f1ef; }
+.sugestoes {
+  background: linear-gradient(135deg, #eaf3f2, #fff 68%);
+  border-color: rgb(220 225 228 / 80%);
+  box-shadow: var(--sombra);
+}
+.sobretitulo { color: var(--verde); }
+.adicionar-sugestao { background: linear-gradient(135deg, #27857a, #17655d); }
+.rodape { color: var(--texto-suave); }
+
+@media (max-width: 1050px) {
+  .cabecalho { grid-template-columns: 180px minmax(160px, 1fr); gap: 24px; }
+}
+@media (max-width: 680px) {
+  .topo-aviso { min-height: 40px; padding: 10px 16px; background: linear-gradient(90deg, #101d28, #142433, #1a2028); }
+  .cabecalho { min-height: 96px; grid-template-columns: auto minmax(0, 1fr); padding: 18px 16px; gap: 12px; }
+  .logo { width: 145px; max-width: 145px; }
+  main { width: auto; padding: 28px 16px; }
+}
