@@ -1,0 +1,1593 @@
+/* =========================================
+   RESET E CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: #27857A;
+    --verde-escuro: #17655D;
+    --verde-claro: #DDEFEA;
+
+    --laranja: #F07F57;
+    --laranja-escuro: #D96339;
+
+    --amarelo: #F3C257;
+    --amarelo-claro: #FFD96E;
+
+    --azul: #4F88D1;
+    --azul-escuro: #215B9D;
+
+    --cinza-claro: #F4F5F5;
+    --cinza-medio: #D9D9D9;
+    --cinza-texto: #687078;
+
+    --texto: #253036;
+    --branco: #FFFFFF;
+
+    --sombra: 0 10px 30px rgba(26, 43, 55, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #EAF3F2 0%,
+            #F4F6F6 22%,
+            #F7F7F6 55%,
+            #F2F3F2 100%
+        );
+
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(39, 133, 122, 0.12),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 92% 12%,
+            rgba(79, 136, 209, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 52% 85%,
+            rgba(240, 127, 87, 0.045),
+            transparent 34%
+        );
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.top-bar {
+    min-height: 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #101D28,
+            #142433,
+            #1A2028
+        );
+
+    color: rgba(255, 255, 255, 0.88);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    font-size: 14px;
+}
+
+.shipping-info,
+.top-links,
+.top-links a {
+    display: flex;
+    align-items: center;
+}
+
+.shipping-info {
+    gap: 10px;
+}
+
+.shipping-info strong {
+    color: var(--amarelo);
+    font-weight: 700;
+}
+
+.top-icon {
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+}
+
+.top-icon img,
+.inline-icon {
+    width: 18px;
+    height: 18px;
+
+    object-fit: contain;
+}
+
+.top-links {
+    gap: 40px;
+}
+
+.top-links a {
+    gap: 8px;
+    transition: 0.25s;
+}
+
+.top-links a:hover {
+    color: var(--amarelo);
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.header {
+    min-height: 130px;
+
+    padding: 22px 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        230px
+        minmax(300px, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 50px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(218, 238, 235, 0.96),
+            rgba(225, 233, 241, 0.96),
+            rgba(239, 238, 238, 0.96)
+        );
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    width: 185px;
+}
+
+.logo img {
+    width: 100%;
+    max-height: 80px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   PESQUISA
+========================================= */
+
+.search-box {
+    width: 100%;
+}
+
+.search-box form {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+
+    padding: 4px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.50);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(180, 190, 200, 0.30),
+        0 5px 20px rgba(50, 65, 80, 0.05);
+
+    backdrop-filter: blur(8px);
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0 25px;
+
+    color: var(--texto);
+}
+
+.search-box input::placeholder {
+    color: #69737B;
+}
+
+.search-box button {
+    width: 52px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4F88D1,
+            #266AAE
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    display: grid;
+    place-items: center;
+
+    box-shadow:
+        0 6px 15px rgba(38, 106, 174, 0.25);
+
+    transition: 0.25s;
+}
+
+.search-box button img {
+    width: 20px;
+    height: 20px;
+}
+
+.search-box button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   CLIENTE E CARRINHO
+========================================= */
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-card,
+.cart-card {
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 18px;
+
+    border-radius: 32px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.70);
+
+    box-shadow:
+        0 5px 18px rgba(35, 50, 60, 0.05);
+
+    transition: 0.25s;
+}
+
+.user-card:hover,
+.cart-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.user-icon {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+}
+
+.user-icon img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+}
+
+.user-text,
+.cart-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    white-space: nowrap;
+}
+
+.user-text strong,
+.cart-text strong {
+    font-size: 14px;
+}
+
+.user-text span,
+.cart-text span {
+    font-size: 12px;
+    color: #687078;
+}
+
+.cart-card {
+    padding-left: 15px;
+}
+
+.cart-icon {
+    position: relative;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+}
+
+.cart-icon > img {
+    width: 29px;
+    height: 29px;
+
+    object-fit: contain;
+}
+
+.cart-count {
+    position: absolute;
+
+    top: -7px;
+    right: -8px;
+
+    width: 20px;
+    height: 20px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--amarelo);
+
+    color: #29323A;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   MENU PRINCIPAL
+========================================= */
+
+.main-menu {
+    min-height: 72px;
+
+    margin: 0 40px 25px;
+
+    padding: 8px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-radius: 38px;
+
+    background:
+        rgba(255, 255, 255, 0.58);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        var(--sombra);
+
+    backdrop-filter: blur(10px);
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.menu-links li a {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 22px;
+
+    border-radius: 28px;
+
+    color: #303A42;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+}
+
+.menu-links li:not(.active) a:hover {
+    background: rgba(39, 133, 122, 0.10);
+    color: var(--verde);
+}
+
+.menu-links .active a {
+    color: #27857A;
+
+    background: #E2F1EF;
+
+    box-shadow:
+        0 0 15px rgba(39, 133, 122, 0.12),
+        0 4px 10px rgba(39, 133, 122, 0.08);
+
+    font-weight: 500;
+}
+
+.menu-icon {
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+}
+
+.menu-icon img {
+    width: 21px;
+    height: 21px;
+
+    object-fit: contain;
+}
+
+.menu-divider {
+    width: 1px;
+    height: 35px;
+
+    margin-left: auto;
+
+    background: #C8CDD0;
+}
+
+.card-supermais {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-left: 10px;
+}
+
+.supermais-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: #E2F1EF;
+
+    box-shadow:
+        0 4px 12px rgba(39, 133, 122, 0.15);
+}
+
+.supermais-icon img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.supermais-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    white-space: nowrap;
+}
+
+.supermais-text strong {
+    color: #256D66;
+    font-size: 14px;
+}
+
+.supermais-text span {
+    color: #5C646A;
+    font-size: 12px;
+}
+
+.request-card {
+    min-width: 145px;
+    height: 44px;
+
+    margin-left: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F8CF56,
+            #F1B92D
+        );
+
+    color: #2E332E;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow:
+        0 7px 18px rgba(243, 194, 87, 0.25);
+
+    transition: 0.25s;
+}
+
+.request-card:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+
+.container {
+    width: min(1440px, calc(100% - 80px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   CATEGORIAS
+   Agora aparecem diretamente no topo,
+   lado a lado.
+========================================= */
+
+.categories {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-top: 0;
+}
+
+
+/* Todos os cards ficam com a mesma altura */
+
+.category-card {
+    position: relative;
+
+    min-height: 215px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(228, 233, 237, 0.8);
+
+    box-shadow:
+        0 4px 12px rgba(31, 45, 55, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(31, 45, 55, 0.10);
+}
+
+.category-text {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* TITULOS */
+
+.category-card h2 {
+    margin-bottom: 12px;
+
+    color: #20343B;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.3px;
+}
+
+.category-card h2 span {
+    display: block;
+}
+
+
+/* DESCRIÇÃO */
+
+.category-card p {
+    max-width: 175px;
+
+    color: #5C646B;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* LINKS DAS CATEGORIAS */
+
+.category-card > a:not(.category-card) {
+    display: inline-flex;
+}
+
+.category-text > a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: #1E766D;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.category-text > a:hover {
+    transform: translateX(3px);
+}
+
+.category-text > a .button-arrow {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* IMAGENS */
+
+.category-card > img {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    z-index: 1;
+
+    object-fit: contain;
+    object-position: bottom right;
+
+    filter:
+        drop-shadow(
+            0 12px 16px rgba(31, 45, 55, 0.10)
+        );
+
+    transition:
+        transform 0.25s ease;
+}
+
+.category-card:hover > img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   ALIMENTOS
+========================================= */
+
+.food-card {
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #F3FAF2 45%,
+            #DFF3E1 100%
+        );
+}
+
+.food-card h2 {
+    color: #256B41;
+}
+
+.food-card img {
+    width: 58%;
+    max-height: 200px;
+}
+
+
+/* =========================================
+   COLUNA CENTRAL
+   Como as categorias agora ficam lado a lado,
+   Doces e Higiene deixam de ficar empilhados.
+========================================= */
+
+.middle-categories {
+    display: contents;
+}
+
+
+/* =========================================
+   DOCES
+========================================= */
+
+.sweets-card {
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #FFF4F7 50%,
+            #FFDDE7 100%
+        );
+}
+
+.sweets-card h2 {
+    color: #C03A6B;
+}
+
+.sweets-card p {
+    max-width: 185px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.sweets-card img {
+    width: 43%;
+    max-height: 150px;
+}
+
+
+/* =========================================
+   HIGIENE
+========================================= */
+
+.hygiene-card {
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #EEF7FF 50%,
+            #D7EAFF 100%
+        );
+}
+
+.hygiene-card h2 {
+    color: #1E69D2;
+}
+
+.hygiene-card p {
+    max-width: 185px;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.hygiene-card img {
+    width: 42%;
+    max-height: 150px;
+}
+
+
+/* =========================================
+   FERRAMENTAS
+========================================= */
+
+.tools-card {
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #FFF8E8 45%,
+            #FFE7A6 100%
+        );
+}
+
+.tools-card h2 {
+    color: #8A6010;
+}
+
+.tools-card img {
+    width: 50%;
+    max-height: 210px;
+}
+
+
+/* =========================================
+   APP E BENEFÍCIOS
+========================================= */
+
+.bottom-section {
+    display: grid;
+
+    grid-template-columns:
+        0.92fr
+        1.48fr;
+
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================
+   BANNER APP
+========================================= */
+
+.app-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 120px;
+
+    padding: 14px 18px;
+
+    border-radius: 15px;
+
+    color: #FFFFFF;
+
+    background:
+        linear-gradient(
+            120deg,
+            #1C5DA8 0%,
+            #2B71BC 55%,
+            #3D8AD9 100%
+        );
+}
+
+.app-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -15px;
+    right: -25px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    z-index: 1;
+}
+
+.app-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 210px;
+}
+
+.app-card h2 {
+    max-width: 200px;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.app-card h2 span {
+    display: block;
+}
+
+.app-card p {
+    margin-bottom: 10px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+.app-buttons {
+    display: flex;
+
+    gap: 8px;
+}
+
+.store-button {
+    min-width: 95px;
+
+    padding: 6px 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border-radius: 4px;
+
+    background: #1A1D22;
+
+    color: #FFFFFF;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: background 0.2s ease;
+}
+
+.store-button:hover {
+    background: #111417;
+}
+
+.store-button small {
+    display: block;
+
+    margin-bottom: 1px;
+
+    color: #D2D6DA;
+
+    font-size: 6px;
+    font-weight: 400;
+}
+
+.store-icon {
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.store-icon img {
+    width: 16px;
+    height: 16px;
+
+    object-fit: contain;
+}
+
+.app-phone {
+    position: absolute;
+
+    right: 8px;
+    bottom: -12px;
+
+    width: 175px;
+
+    z-index: 3;
+}
+
+.app-phone img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   BENEFÍCIOS
+========================================= */
+
+.benefits {
+    min-height: 118px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F8F9FA
+        );
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.benefit-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #F0F2F1;
+}
+
+.benefit-icon img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+}
+
+.security-icon {
+    color: var(--azul);
+    background: #EAF1F8;
+}
+
+.gift-icon {
+    color: var(--laranja);
+    background: #FBF0E9;
+}
+
+.support-icon {
+    background: #FBF4E4;
+}
+
+.benefit h3 {
+    margin-bottom: 5px;
+
+    font-size: 11px;
+}
+
+.benefit p {
+    color: #5C656B;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   MAIS VENDIDOS
+========================================= */
+
+.products {
+    margin-top: 22px;
+
+    padding-bottom: 30px;
+}
+
+.products-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.products-header h2 {
+    font-size: 18px;
+}
+
+.products-header a {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #226B65;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.products-header a span {
+    font-size: 20px;
+}
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.product-card {
+    min-height: 260px;
+
+    position: relative;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    transition: 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(26, 43, 55, 0.13);
+}
+
+.favorite {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+}
+
+.favorite img {
+    width: 23px;
+    height: 23px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.favorite:hover img {
+    transform: scale(1.12);
+}
+
+.product-image {
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-height: 145px;
+
+    object-fit: contain;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+
+    font-size: 14px;
+}
+
+.product-card p {
+    margin-top: 7px;
+
+    color: #6C747A;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   PADRONIZAÇÃO DE ÍCONES
+========================================= */
+
+.inline-icon,
+.top-icon img,
+.menu-icon img,
+.arrow img,
+.user-icon img,
+.cart-icon > img,
+.supermais-icon img,
+.store-icon img,
+.benefit-icon img,
+.favorite img,
+.button-arrow img {
+    object-fit: contain;
+
+    object-position: center;
+
+    flex-shrink: 0;
+}
+
+.favorite:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   IMAGENS
+========================================= */
+
+.category-card img,
+.product-image img,
+.app-phone img {
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1250px) {
+
+    .header {
+        grid-template-columns:
+            180px
+            1fr;
+    }
+
+    .user-area {
+        grid-column: 1 / -1;
+
+        justify-content: flex-end;
+    }
+
+    .main-menu {
+        flex-wrap: wrap;
+    }
+
+    .menu-divider {
+        display: none;
+    }
+
+    .card-supermais {
+        margin-left: auto;
+    }
+
+    /*
+       Em telas menores, as categorias continuam
+       lado a lado, mas passam para 2 colunas.
+    */
+
+    .categories {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .top-bar {
+        padding: 10px 25px;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .top-links {
+        gap: 20px;
+    }
+
+    .header {
+        padding: 25px;
+
+        gap: 20px;
+    }
+
+    .container {
+        width: calc(100% - 40px);
+    }
+
+    .main-menu {
+        margin: 0 20px 20px;
+    }
+
+    .menu-links {
+        flex-wrap: wrap;
+    }
+
+    .menu-links li a {
+        padding: 0 14px;
+    }
+
+    /*
+       Categorias em 2 colunas.
+    */
+
+    .categories {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    /*
+       Middle categories deixa de criar
+       uma coluna própria.
+    */
+
+    .middle-categories {
+        display: contents;
+    }
+
+    .benefits {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 650px) {
+
+    .top-bar {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .shipping-info {
+        justify-content: center;
+    }
+
+    .top-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .user-area {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .main-menu {
+        border-radius: 20px;
+
+        justify-content: center;
+    }
+
+    .menu-links {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .card-supermais {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .request-card {
+        margin-left: 0;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    /*
+       Categorias passam para uma coluna
+       no celular para manter boa leitura.
+    */
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: 215px;
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 420px) {
+
+    .top-links {
+        flex-direction: column;
+    }
+
+    .menu-links li a {
+        min-height: 42px;
+
+        font-size: 13px;
+    }
+
+    .menu-icon {
+        font-size: 16px;
+    }
+
+    .supermais-text {
+        display: none;
+    }
+
+    .app-phone {
+        opacity: 0.35;
+
+        right: -15px;
+    }
+
+    .store-button {
+        min-width: auto;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
