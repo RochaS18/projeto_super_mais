@@ -731,14 +731,6 @@ img {
 
     transition: 0.2s;
 }
-.botao_adicionar_carrinho > img{
-    width: 29px;
-    height: 29px;
-    object-fit: contain;
-    flex-shrink: 0;
-    display: block;
-}
-
 .cart-count{
      position: absolute;
 
