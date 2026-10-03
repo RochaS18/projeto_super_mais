@@ -169,6 +169,7 @@ input {
 
 .top-links a {
     gap: 8px;
+
     transition: 0.25s;
 }
 
@@ -207,7 +208,9 @@ input {
 }
 
 
-/* LOGO */
+/* =========================================
+   LOGO
+========================================= */
 
 .logo {
     display: flex;
@@ -317,6 +320,7 @@ input {
 .user-area {
     display: flex;
     align-items: center;
+
     gap: 14px;
 }
 
@@ -346,6 +350,7 @@ input {
 .user-card:hover,
 .cart-card:hover {
     transform: translateY(-2px);
+
     background: rgba(255, 255, 255, 0.65);
 }
 
@@ -384,6 +389,7 @@ input {
 .user-text span,
 .cart-text span {
     font-size: 12px;
+
     color: #687078;
 }
 
@@ -442,13 +448,11 @@ input {
 
     margin: 0 40px 25px;
 
-    padding: 8px 14px;
+    padding: 8px 18px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
+    justify-content: center;
 
     border-radius: 38px;
 
@@ -464,35 +468,74 @@ input {
     backdrop-filter: blur(10px);
 }
 
+
+/* =========================================
+   LINKS DO MENU
+========================================= */
+
 .menu-links {
+    width: 100%;
+    max-width: 900px;
+
     display: flex;
     align-items: center;
+    justify-content: center;
 
     gap: 8px;
+
+    margin: 0 auto;
 }
 
+
+/* =========================================
+   ITENS DO MENU
+========================================= */
+
+.menu-links li {
+    flex: 1 1 0;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
 .menu-links li a {
+    width: 100%;
     min-height: 50px;
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    gap: 12px;
+    gap: 11px;
 
-    padding: 0 22px;
+    padding: 0 18px;
 
     border-radius: 28px;
 
     color: #303A42;
 
     font-size: 15px;
+    font-weight: 500;
 
-    transition: 0.25s;
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 .menu-links li:not(.active) a:hover {
     background: rgba(39, 133, 122, 0.10);
+
     color: var(--verde);
+
+    transform: translateY(-1px);
 }
 
 .menu-links .active a {
@@ -504,8 +547,13 @@ input {
         0 0 15px rgba(39, 133, 122, 0.12),
         0 4px 10px rgba(39, 133, 122, 0.08);
 
-    font-weight: 500;
+    font-weight: 600;
 }
+
+
+/* =========================================
+   ÍCONES DO MENU
+========================================= */
 
 .menu-icon {
     width: 22px;
@@ -524,101 +572,6 @@ input {
     object-fit: contain;
 }
 
-.menu-divider {
-    width: 1px;
-    height: 35px;
-
-    margin-left: auto;
-
-    background: #C8CDD0;
-}
-
-.card-supermais {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding-left: 10px;
-}
-
-.supermais-icon {
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 10px;
-
-    background: #E2F1EF;
-
-    box-shadow:
-        0 4px 12px rgba(39, 133, 122, 0.15);
-}
-
-.supermais-icon img {
-    width: 24px;
-    height: 24px;
-
-    object-fit: contain;
-}
-
-.supermais-text {
-    display: flex;
-    flex-direction: column;
-
-    gap: 3px;
-
-    white-space: nowrap;
-}
-
-.supermais-text strong {
-    color: #256D66;
-    font-size: 14px;
-}
-
-.supermais-text span {
-    color: #5C646A;
-    font-size: 12px;
-}
-
-.request-card {
-    min-width: 145px;
-    height: 44px;
-
-    margin-left: 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 25px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #F8CF56,
-            #F1B92D
-        );
-
-    color: #2E332E;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    box-shadow:
-        0 7px 18px rgba(243, 194, 87, 0.25);
-
-    transition: 0.25s;
-}
-
-.request-card:hover {
-    transform: translateY(-2px);
-}
-
 
 /* =========================================
    CONTAINER PRINCIPAL
@@ -633,8 +586,6 @@ input {
 
 /* =========================================
    CATEGORIAS
-   Agora aparecem diretamente no topo,
-   lado a lado.
 ========================================= */
 
 .categories {
@@ -649,9 +600,6 @@ input {
 
     margin-top: 0;
 }
-
-
-/* Todos os cards ficam com a mesma altura */
 
 .category-card {
     position: relative;
@@ -687,7 +635,9 @@ input {
 }
 
 
-/* TITULOS */
+/* =========================================
+   TÍTULOS DAS CATEGORIAS
+========================================= */
 
 .category-card h2 {
     margin-bottom: 12px;
@@ -707,7 +657,9 @@ input {
 }
 
 
-/* DESCRIÇÃO */
+/* =========================================
+   DESCRIÇÃO
+========================================= */
 
 .category-card p {
     max-width: 175px;
@@ -720,7 +672,9 @@ input {
 }
 
 
-/* LINKS DAS CATEGORIAS */
+/* =========================================
+   LINKS DAS CATEGORIAS
+========================================= */
 
 .category-card > a:not(.category-card) {
     display: inline-flex;
@@ -753,7 +707,9 @@ input {
 }
 
 
-/* IMAGENS */
+/* =========================================
+   IMAGENS DAS CATEGORIAS
+========================================= */
 
 .category-card > img {
     position: absolute;
@@ -807,9 +763,7 @@ input {
 
 
 /* =========================================
-   COLUNA CENTRAL
-   Como as categorias agora ficam lado a lado,
-   Doces e Higiene deixam de ficar empilhados.
+   MIDDLE CATEGORIES
 ========================================= */
 
 .middle-categories {
@@ -839,7 +793,9 @@ input {
 
 .sweets-card p {
     max-width: 185px;
+
     font-size: 11px;
+
     line-height: 1.6;
 }
 
@@ -873,6 +829,7 @@ input {
     max-width: 185px;
 
     font-size: 11px;
+
     line-height: 1.6;
 }
 
@@ -1140,11 +1097,13 @@ input {
 
 .security-icon {
     color: var(--azul);
+
     background: #EAF1F8;
 }
 
 .gift-icon {
     color: var(--laranja);
+
     background: #FBF0E9;
 }
 
@@ -1309,7 +1268,6 @@ input {
 .arrow img,
 .user-icon img,
 .cart-icon > img,
-.supermais-icon img,
 .store-icon img,
 .benefit-icon img,
 .favorite img,
@@ -1358,31 +1316,32 @@ input {
         justify-content: flex-end;
     }
 
+
+    /* MENU */
+
     .main-menu {
-        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .menu-divider {
-        display: none;
+    .menu-links {
+        max-width: 850px;
     }
 
-    .card-supermais {
-        margin-left: auto;
-    }
 
-    /*
-       Em telas menores, as categorias continuam
-       lado a lado, mas passam para 2 colunas.
-    */
+    /* CATEGORIAS */
 
     .categories {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
 
+
+    /* APP */
+
     .bottom-section {
         grid-template-columns: 1fr;
     }
+
 }
 
 
@@ -1416,43 +1375,55 @@ input {
 
     .main-menu {
         margin: 0 20px 20px;
+
+        padding: 8px 12px;
+
+        border-radius: 28px;
     }
 
+
+    /* MENU */
+
     .menu-links {
-        flex-wrap: wrap;
+        max-width: 100%;
+
+        gap: 5px;
     }
 
     .menu-links li a {
-        padding: 0 14px;
+        padding: 0 12px;
+
+        gap: 8px;
     }
 
-    /*
-       Categorias em 2 colunas.
-    */
+
+    /* CATEGORIAS */
 
     .categories {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
 
-    /*
-       Middle categories deixa de criar
-       uma coluna própria.
-    */
-
     .middle-categories {
         display: contents;
     }
+
+
+    /* BENEFÍCIOS */
 
     .benefits {
         grid-template-columns:
             repeat(2, 1fr);
     }
 
+
+    /* PRODUTOS */
+
     .product-grid {
         grid-template-columns:
             repeat(3, 1fr);
     }
+
 }
 
 
@@ -1480,6 +1451,9 @@ input {
         flex-wrap: wrap;
     }
 
+
+    /* CABEÇALHO */
+
     .header {
         display: flex;
         flex-direction: column;
@@ -1497,38 +1471,59 @@ input {
         flex-wrap: wrap;
     }
 
+
+    /* MENU */
+
     .main-menu {
         border-radius: 20px;
 
-        justify-content: center;
+        padding: 8px;
     }
 
     .menu-links {
         width: 100%;
 
-        justify-content: center;
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 5px;
     }
 
-    .card-supermais {
+    .menu-links li {
         width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
     }
 
-    .request-card {
-        margin-left: 0;
+    .menu-links li a {
+        min-height: 44px;
+
+        padding: 0 8px;
+
+        gap: 7px;
+
+        font-size: 13px;
     }
+
+    .menu-icon {
+        width: 19px;
+        height: 19px;
+    }
+
+    .menu-icon img {
+        width: 19px;
+        height: 19px;
+    }
+
+
+    /* CONTAINER */
 
     .container {
         width: calc(100% - 24px);
     }
 
-    /*
-       Categorias passam para uma coluna
-       no celular para manter boa leitura.
-    */
+
+    /* CATEGORIAS */
 
     .categories {
         grid-template-columns: 1fr;
@@ -1538,18 +1533,28 @@ input {
         min-height: 215px;
     }
 
+
+    /* APP */
+
     .bottom-section {
         grid-template-columns: 1fr;
     }
+
+
+    /* BENEFÍCIOS */
 
     .benefits {
         grid-template-columns: 1fr;
     }
 
+
+    /* PRODUTOS */
+
     .product-grid {
         grid-template-columns:
             repeat(2, 1fr);
     }
+
 }
 
 
@@ -1563,19 +1568,38 @@ input {
         flex-direction: column;
     }
 
+
+    /* MENU */
+
+    .menu-links {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 4px;
+    }
+
     .menu-links li a {
         min-height: 42px;
 
-        font-size: 13px;
+        padding: 0 7px;
+
+        gap: 6px;
+
+        font-size: 12px;
     }
 
     .menu-icon {
-        font-size: 16px;
+        width: 18px;
+        height: 18px;
     }
 
-    .supermais-text {
-        display: none;
+    .menu-icon img {
+        width: 18px;
+        height: 18px;
     }
+
+
+    /* APP */
 
     .app-phone {
         opacity: 0.35;
@@ -1587,7 +1611,11 @@ input {
         min-width: auto;
     }
 
+
+    /* PRODUTOS */
+
     .product-grid {
         grid-template-columns: 1fr;
     }
+
 }
