@@ -1,258 +1,1012 @@
-/* ===== Reset simples ===== */
+/* Cores reutilizadas no CSS: --texto (cor do texto) e --amarelo (badge do carrinho) */
+:root {
+    --texto: #253036;
+    --amarelo: #F3C257;
+}
+
+/* Reset: tira margens/espaçamentos padrão e faz o width incluir padding e borda */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Fundo da página: degradê vertical em tons claros de verde-acinzentado */
 body {
-  background-color: #f5f7f9;
-  color: #222;
+ position: relative;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+            180deg,
+            #EAF3F2 0%,
+            #F4F6F6 22%,
+            #F7F7F6 55%,
+            #F2F3F2 100%
+        );
+    color: var(--texto);
+    overflow-x: hidden;
+}
+/* Manchas de cor suaves sobre o fundo (verde, azul e laranja), sem interferir nos cliques */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(39, 133, 122, 0.12),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 92% 12%,
+            rgba(79, 136, 209, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 52% 85%,
+            rgba(240, 127, 87, 0.045),
+            transparent 34%
+        );
 }
 
-/* ===== Barra de aviso ===== */
+/* Links sem sublinhado e com a cor do texto ao redor */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Botões usam a mesma fonte da página */
+button {
+    font-family: inherit;
+}
+
+/* Imagens não passam do tamanho do espaço onde estão */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Utilitário para ícones alinhados em linha */
+.icone {
+    display: inline-flex;
+}
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+/* Faixa escura no topo com a mensagem de frete grátis e links de atendimento */
 .top-bar {
-  background-color: #1b2a3c;
-  color: #fff;
-  text-align: center;
-  padding: 8px;
-  font-size: 14px;
+    min-height: 40px;
+
+    background: linear-gradient(90deg, #101D28, #142433, #1A2028);
+    color: rgba(255, 255, 255, 0.88);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+    font-size: 14px;
 }
 
-/* ===== Cabeçalho ===== */
+/* Alinha ícone + texto na mesma linha (frete e links do topo) */
+.shipping-info,
+.top-links,
+/* Animação de cor suave nos links do topo */
+.top-links a {
+    display: flex;
+    align-items: center;
+}
+
+/* Espaço entre o ícone e a mensagem de frete */
+.shipping-info {
+    gap: 10px;
+}
+
+/* Destaque dourado para "grátis" e para o valor mínimo */
+.shipping-info strong {
+    color: #F3C257;
+    font-weight: 700;
+}
+
+/* Caixa que centraliza o ícone do frete */
+.top-icon {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+/* Tamanho padrão dos ícones pequenos do topo */
+.top-icon img,
+.inline-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Espaço entre "Central de Atendimento" e "Encontre uma loja" */
+.top-links {
+    gap: 40px;
+}
+
+.top-links a {
+    gap: 8px;
+    transition: 0.25s;
+}
+
+/* Link do topo fica dourado ao passar o mouse */
+.top-links a:hover {
+    color: #F3C257;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+/* Cabeçalho principal: grade com 3 colunas (logo | busca | perfil e carrinho) */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  padding: 16px 40px;
-  flex-wrap: wrap;
-  gap: 16px;
+    min-height: 130px;
+
+    padding: 22px 50px;
+
+    display: grid;
+    grid-template-columns: 230px minmax(300px, 1fr) auto;
+    align-items: center;
+    gap: 50px;
+
+    background: 
+    linear-gradient(
+        105deg,
+        rgba(218, 238, 235, 0.96), 
+        rgba(225, 233, 241, 0.96),
+        rgba(239, 238, 238, 0.96));
 }
 
+/* Área da logo */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #1b8f5e;
+    display: flex;
+    align-items: center;
+    width: 185px;
 }
 
-.logo span {
-  color: #1b2a3c;
+/* A imagem da logo ocupa toda a largura da área, com altura máxima */
+.logo img {
+    width: 100%;
+    max-height: 80px;
+    object-fit: contain;
 }
 
+/* Caixa de busca ocupa toda a coluna central */
 .search-box {
-  display: flex;
-  flex: 1;
-  max-width: 500px;
+    width: 100%;
 }
 
+/* Barra de busca arredondada, com efeito de vidro (blur) */
+.search-box form {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+
+    padding: 4px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.50);
+
+    box-shadow: inset 0 0 0 1px rgba(180, 190, 200, 0.30), 0 5px 20px rgba(50, 65, 80, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+/* Campo de texto sem borda, para parecer parte da barra */
 .search-box input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px 0 0 6px;
-  outline: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 25px;
+    color: #253036;
 }
 
+/* Cor do texto de dica ("O que você procura hoje?") */
+.search-box input::placeholder {
+    color: #69737B;
+}
+
+/* Botão redondo azul da lupa */
 .search-box button {
-  padding: 10px 16px;
-  border: none;
-  background-color: #2b8fd6;
-  color: #fff;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
+    width: 52px;
+    height: 50px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: 
+    linear-gradient(
+        135deg, 
+        #4F88D1, 
+        #266AAE
+        );
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 15px rgba(38, 106, 174, 0.25);
+    transition: 0.25s;
 }
 
-.header-actions {
-  display: flex;
-  gap: 20px;
-  font-size: 14px;
+/* Tamanho do ícone da lupa */
+.search-box button img {
+    width: 20px;
+    height: 20px;
 }
 
-/* ===== Menu de navegação ===== */
-.nav-menu {
-  background-color: #ffffff;
-  border-top: 1px solid #eee;
-  padding: 12px 40px;
-  display: flex;
-  gap: 24px;
+/* Botão da lupa cresce um pouco ao passar o mouse */
+.search-box button:hover {
+    transform: scale(1.05);
 }
 
-.nav-menu a {
-  text-decoration: none;
-  color: #444;
-  font-size: 15px;
+/* Agrupa o cartão de perfil e o cartão do carrinho */
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-.nav-menu a.active {
-  color: #1b8f5e;
-  font-weight: bold;
+/* Estilo de "pílula" translúcida compartilhado por perfil e carrinho */
+.user-card,
+/* Ajuste do espaço à esquerda do carrinho */
+.cart-card {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    box-shadow: 0 5px 18px rgba(35, 50, 60, 0.05);
+    transition: 0.25s;
 }
 
-/* ===== Banner ===== */
-.banner {
-  background-color: #e4f5ec;
-  padding: 60px 40px;
+/* Os dois cartões sobem um pouco ao passar o mouse */
+.user-card:hover,
+.cart-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.65);
 }
 
-.banner h1 {
-  font-size: 40px;
-  color: #1b2a3c;
-  margin-bottom: 12px;
+/* Caixa do ícone de perfil */
+.user-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
 }
 
-.banner p {
-  max-width: 500px;
-  color: #555;
-  margin-bottom: 20px;
+/* Tamanho do ícone de perfil */
+.user-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
-.btn-primary {
-  background-color: #1b8f5e;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
+/* Texto empilhado: título em cima, subtítulo embaixo */
+.user-text,
+.cart-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    white-space: nowrap;
 }
 
-/* ===== Seção de produtos ===== */
-.products-section {
-  padding: 40px;
+/* Tamanho do título nos cartões de perfil e carrinho */
+.user-text strong,
+.cart-text strong {
+    font-size: 14px;
 }
 
-.products-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 24px;
+/* Subtítulo em cinza nos cartões de perfil e carrinho */
+.user-text span,
+.cart-text span {
+    font-size: 12px;
+    color: #687078;
 }
 
-.products-header h2 {
-  font-size: 26px;
-  color: #1b2a3c;
+.cart-card {
+    padding-left: 15px;
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+/* Caixa do ícone do carrinho (position: relative para o contador ficar sobre ele) */
+.cart-icon {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
 }
 
-.product-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 16px;
-  position: relative;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+/* Tamanho do ícone do carrinho */
+.cart-icon > img {
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
 }
 
-.product-tag {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: #1b8f5e;
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 4px;
+/* Bolinha amarela com a quantidade de itens (o JS atualiza o número) */
+.cart-count {
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #F3C257;
+    color: #29323A;
+    font-size: 11px;
+    font-weight: bold;
 }
 
-.product-image {
-  height: 140px;
-  background-color: #eef1f4;
-  border-radius: 8px;
-  margin-bottom: 12px;
+/* =========================================
+   MENU PRINCIPAL
+========================================= */
+/* Menu principal: barra arredondada e translúcida com links e cartão SuperMais */
+.main-menu {
+    min-height: 72px;
+    margin: 0 40px 30px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 38px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 10px 30px rgba(26, 43, 55, 0.08);
+    backdrop-filter: blur(10px);
 }
 
-.product-card h3 {
-  font-size: 16px;
-  margin-bottom: 4px;
+/* Lista de links do menu, lado a lado e sem marcadores */
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
 }
 
-.product-info {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 8px;
+/* Cada link do menu: ícone + texto em formato de pílula */
+.menu-links li a {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 22px;
+    border-radius: 28px;
+    color: #303A42;
+    font-size: 15px;
+    transition: 0.25s;
 }
 
-.price {
-  color: #e07b1a;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 12px;
+/* Link inativo ganha fundo verde claro ao passar o mouse */
+.menu-links li:not(.active) a:hover {
+    background: rgba(39, 133, 122, 0.10);
+    color: #27857A;
 }
 
-.old-price {
-  color: #999;
-  font-weight: normal;
-  font-size: 13px;
-  text-decoration: line-through;
-  margin-left: 6px;
+/* Link da página atual: fundo verde escuro e texto branco (o JS troca a classe .active) */
+.menu-links .active a {
+    color: white;
+    background: linear-gradient(135deg, #27857A, #17655D);
+    box-shadow: 0 7px 18px rgba(39, 133, 122, 0.25);
 }
 
-.btn-add {
-  width: 100%;
-  background-color: #f5c542;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+/* Caixa dos ícones do menu */
+.menu-icon {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
 }
 
-/* ===== Rodapé ===== */
-.footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-top: 1px solid #eee;
+/* Tamanho dos ícones do menu */
+.menu-icon img {
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
 }
 
-.footer-item h4 {
-  color: #1b2a3c;
-  margin-bottom: 4px;
+/* Linha vertical que separa os links do cartão SuperMais */
+.menu-divider {
+    width: 1px;
+    height: 35px;
+    margin-left: auto;
+    background: #C8CDD0;
 }
 
-.footer-item p {
-  font-size: 13px;
-  color: #777;
+/* Bloco do Cartão SuperMais (ícone, texto e botão) */
+.card-supermais {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 10px;
 }
 
-/* ===== Interatividade (JS) ===== */
-.btn-add.added {
-  background-color: #1b8f5e;
-  color: #fff;
+/* Quadradinho verde claro atrás do ícone do cartão */
+.supermais-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #E2F1EF;
+    box-shadow: 0 4px 12px rgba(39, 133, 122, 0.15);
 }
 
-.btn-add {
-  transition: background-color 0.2s ease, transform 0.1s ease;
+/* Tamanho do ícone do cartão */
+.supermais-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
-.btn-add:active {
-  transform: scale(0.97);
+/* Texto do cartão SuperMais, empilhado */
+.supermais-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    white-space: nowrap;
 }
 
-.product-card[hidden] {
-  display: none;
+/* Título verde do cartão */
+.supermais-text strong {
+    color: #256D66;
+    font-size: 14px;
 }
 
-.no-results {
-  text-align: center;
-  color: #777;
-  padding: 40px 0;
+/* Subtítulo cinza do cartão */
+.supermais-text span {
+    color: #5C646A;
+    font-size: 12px;
 }
 
-.header-actions #cart-count,
-.header-actions #cart-total {
-  font-weight: bold;
-  color: #1b8f5e;
+/* Botão amarelo "Peça o seu" */
+.request-card {
+    min-width: 145px;
+    height: 44px;
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #F8CF56, #F1B92D);
+    color: #2E332E;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 7px 18px rgba(243, 194, 87, 0.25);
+    transition: 0.25s;
 }
 
-.nav-menu a {
-  cursor: pointer;
+/* Botão amarelo sobe um pouco ao passar o mouse */
+.request-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Caixa da setinha do botão */
+.button-arrow {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+}
+
+/* Tamanho da setinha */
+.button-arrow img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* =========================================
+   BANNER
+========================================= */
+/* Banner: limita a largura e centraliza */
+.banner_principal {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+/* Cartão do banner: fundo em degradê, texto à esquerda e imagem à direita */
+.conteudo_banner_principal {
+    background: linear-gradient(120deg, #E7F3EE 0%, #F7F1E3 100%);
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 40px 50px;
+    overflow: hidden;
+}
+
+/* Largura máxima do bloco de texto do banner */
+.texto_banner_principal {
+    max-width: 420px;
+}
+
+/* Quadradinho branco para um ícone acima do título (opcional) */
+.icone_banner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fff;
+
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Título grande do banner */
+.texto_banner_principal h1 {
+    font-size: 40px;
+    color: #16222B;
+    margin-bottom: 14px;
+}
+
+/* Texto de apoio do banner */
+.texto_banner_principal p {
+    color: #4A555C;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* Botão verde "Ver ofertas" */
+.botao_banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #226B65;
+    color: #fff;
+
+    padding: 13px 24px;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+/* Botão fica verde mais escuro ao passar o mouse */
+.botao_banner:hover {
+    background: #1B544F;
+}
+
+/* Espaço reservado para a imagem do banner (fica vazio até colocar a imagem) */
+.imagem_banner_principal {
+    flex-shrink: 0;
+    width: 380px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* A imagem do banner se ajusta à altura do espaço */
+.imagem_banner_principal img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* =========================================
+   SEÇÃO DE PRODUTOS
+========================================= */
+/* Área de produtos: largura máxima e centralizada */
+.secao_produtos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+/* Bloco interno da seção de produtos */
+.conteudo_secao_produtos {
+    display: block;
+}
+
+/* Linha com o título "Alimentos" à esquerda e o "Ordenar por" à direita */
+.barra_ferramentas_produtos {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+/* Título da seção */
+.barra_ferramentas_produtos h2 {
+    font-size: 24px;
+    color: #16222B;
+}
+
+/* Texto "X produtos encontrados" (o JS atualiza) */
+.quantidade_produtos {
+    margin-top: 4px;
+    color: #8B959B;
+    font-size: 13px;
+}
+
+/* Rótulo + seletor de ordenação lado a lado */
+.caixa_ordenacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 13px;
+    color: #6C747A;
+}
+
+/* Aparência do seletor "Ordenar por" */
+.caixa_ordenacao select {
+    padding: 9px 14px;
+    border: 1px solid #E3EAEC;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1A2B37;
+    background: #fff;
+}
+
+/* =========================================
+   GRADE DE PRODUTOS
+========================================= */
+/* Grade de produtos: 5 colunas (muda nas media queries do final) */
+.grade_produtos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+/* Card do produto: fundo branco, cantos arredondados; position: relative para o selo e o favorito */
+.cartao_produto {
+    min-height: 260px;
+
+    position: relative;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    transition: 0.25s;
+    
+}
+
+/* Card sobe e ganha sombra ao passar o mouse */
+.cartao_produto:hover {
+   transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(26, 43, 55, 0.13);
+}
+
+/* Selo verde de desconto no canto superior esquerdo */
+.selo_promocao {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #226B65;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    padding: 4px 9px;
+    border-radius: 6px;
+}
+
+/* Botão de coração no canto superior direito */
+.botao_favorito {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+/* Tamanho do ícone do coração */
+.botao_favorito img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+/* Coração cresce ao passar o mouse */
+.botao_favorito:hover {
+    color: #E0576F;
+    transform: scale(1.12);
+}
+
+/* Espaço da imagem do produto (altura fixa mantém os cards alinhados mesmo sem imagem) */
+.imagem_produto {
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Ajuste da imagem dentro do espaço */
+.imagem_produto img {
+    max-height: 145px;
+    object-fit: contain;
+
+    transform: scale(2.8);
+}
+
+/* Nome do produto */
+.cartao_produto h3 {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Marca e peso do produto, em cinza */
+.detalhes_produto {
+    margin-top: 7px;
+    color: #6C747A;
+    font-size: 12px;
+}
+
+/* Preço atual em laranja */
+.preco {
+    margin-top: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+    color: #E07B1A;
+}
+
+/* Preço antigo riscado, em cinza claro */
+.preco_antigo {
+    margin-left: 8px;
+
+    font-size: 12px;
+    font-weight: 400;
+    color: #B5BEC3;
+    text-decoration: line-through;
+}
+
+/* Botão amarelo "Adicionar ao carrinho" */
+.botao_adicionar_carrinho {
+    width: 100%;
+    margin-top: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #FFC107;
+    color: #16222B;
+
+    border: none;
+    border-radius: 30px;
+    padding: 11px 0;
+
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+/* Amarelo mais escuro ao passar o mouse */
+.botao_adicionar_carrinho:hover {
+    background: #F2A900;
+}
+
+/* =========================================
+   ESPECÍFICO DA PÁGINA DE ALIMENTOS
+========================================= */
+/* Esconde o card quando o JS filtra a lista (busca ou aba Ofertas). Sem isso o display: grid ignora o hidden */
+.cartao_produto[hidden] {
+    display: none;
+}
+
+.botao_banner {
+    cursor: pointer;
+}
+
+/* Estado do botão logo após clicar: fica verde ("Adicionado ✓") */
+.botao_adicionar_carrinho.added {
+    background: #226B65;
+    color: #fff;
+}
+
+/* Efeito de "apertar" o botão ao clicar */
+.botao_adicionar_carrinho:active {
+    transform: scale(0.97);
+}
+
+/* Mensagem exibida quando a busca não encontra nada */
+.sem_resultados {
+    text-align: center;
+    color: #6C747A;
+    padding: 40px 0;
+}
+
+/* =========================================
+   BENEFÍCIOS (RODAPÉ)
+========================================= */
+/* Faixa de benefícios no rodapé: largura máxima e centralizada */
+.beneficios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+/* Grade com 4 benefícios lado a lado */
+.conteudo_beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Card translúcido de cada benefício */
+.item_beneficio {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Título do benefício */
+.item_beneficio h4 {
+    font-size: 14px;
+    color: #256D66;
+    margin-bottom: 3px;
+}
+
+/* Descrição do benefício */
+.item_beneficio p {
+    font-size: 12px;
+    color: #5C646A;
+    line-height: 1.4;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+/* Telas médias: 3 colunas de produtos, cabeçalho em 2 colunas, menu quebra linha */
+@media (max-width: 1080px) {
+    .grade_produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .conteudo_beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        grid-template-columns: 160px 1fr;
+        gap: 20px 30px;
+    }
+
+    .user-area {
+        grid-column: 1 / -1;
+    }
+
+    .main-menu {
+        flex-wrap: wrap;
+        border-radius: 28px;
+    }
+
+    .menu-divider {
+        display: none;
+    }
+}
+
+/* Tablets: esconde o Cartão SuperMais e empilha o banner */
+@media (max-width: 900px) {
+    .top-bar {
+        padding: 8px 20px;
+    }
+
+    .main-menu {
+        margin: 0 20px 30px;
+    }
+
+    .menu-links {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .card-supermais {
+        display: none;
+    }
+
+    .conteudo_banner_principal {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+    }
+
+    .texto_banner_principal {
+        max-width: 100%;
+    }
+
+    .imagem_banner_principal {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Celulares: 2 colunas de produtos, esconde links do topo, benefícios em 1 coluna */
+@media (max-width: 640px) {
+    .top-links {
+        display: none;
+    }
+
+    .header {
+        padding: 18px 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .user-area {
+        flex-wrap: wrap;
+    }
+
+    .grade_produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .barra_ferramentas_produtos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .conteudo_beneficios {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celulares pequenos: 1 coluna de produtos */
+@media (max-width: 420px) {
+    .grade_produtos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Favorito ativo */
+/* Coração marcado como favorito: muda a cor do ícone (o JS liga/desliga a classe .ativo) */
+.botao_favorito.ativo img {
+    filter: invert(36%) sepia(80%) saturate(1800%) hue-rotate(320deg);
 }

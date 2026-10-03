@@ -1,0 +1,258 @@
+/* ===== Reset simples ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f7f9;
+  color: #222;
+}
+
+/* ===== Barra de aviso ===== */
+.top-bar {
+  background-color: #1b2a3c;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 16px 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1b8f5e;
+}
+
+.logo span {
+  color: #1b2a3c;
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+  max-width: 500px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #2b8fd6;
+  color: #fff;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* ===== Menu de navegação ===== */
+.nav-menu {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 12px 40px;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #444;
+  font-size: 15px;
+}
+
+.nav-menu a.active {
+  color: #1b8f5e;
+  font-weight: bold;
+}
+
+/* ===== Banner ===== */
+.banner {
+  background-color: #e4f5ec;
+  padding: 60px 40px;
+}
+
+.banner h1 {
+  font-size: 40px;
+  color: #1b2a3c;
+  margin-bottom: 12px;
+}
+
+.banner p {
+  max-width: 500px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #1b8f5e;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ===== Seção de produtos ===== */
+.products-section {
+  padding: 40px;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+}
+
+.products-header h2 {
+  font-size: 26px;
+  color: #1b2a3c;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.product-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #1b8f5e;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.product-image {
+  height: 140px;
+  background-color: #eef1f4;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.product-info {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.price {
+  color: #e07b1a;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.old-price {
+  color: #999;
+  font-weight: normal;
+  font-size: 13px;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+.btn-add {
+  width: 100%;
+  background-color: #f5c542;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== Rodapé ===== */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-top: 1px solid #eee;
+}
+
+.footer-item h4 {
+  color: #1b2a3c;
+  margin-bottom: 4px;
+}
+
+.footer-item p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ===== Interatividade (JS) ===== */
+.btn-add.added {
+  background-color: #1b8f5e;
+  color: #fff;
+}
+
+.btn-add {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-add:active {
+  transform: scale(0.97);
+}
+
+.product-card[hidden] {
+  display: none;
+}
+
+.no-results {
+  text-align: center;
+  color: #777;
+  padding: 40px 0;
+}
+
+.header-actions #cart-count,
+.header-actions #cart-total {
+  font-weight: bold;
+  color: #1b8f5e;
+}
+
+.nav-menu a {
+  cursor: pointer;
+}

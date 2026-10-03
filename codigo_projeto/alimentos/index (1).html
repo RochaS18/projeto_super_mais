@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuperMais | Alimentos</title>
+<!-- Estilos da página (cores, layout e responsivo) -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="top-bar">
+    <div class="shipping-info">
+      <span class="top-icon"><img src="../icone/frete_gratis_icone.png" alt="" aria-hidden="true"></span>
+      <span>Frete <strong>grátis</strong> nas compras acima de <strong>R$ 200,00</strong></span>
+    </div>
+
+    <nav class="top-links">
+      <a href="#">
+        <img class="inline-icon" src="../icone/atendimento-ao-cliente_icone.png" alt="" aria-hidden="true">
+        Central de Atendimento
+      </a>
+      <a href="#">
+        <img class="inline-icon" src="../icone/local_icone.png" alt="" aria-hidden="true">
+        Encontre uma loja
+      </a>
+    </nav>
+  </header>
+
+  <!-- CABEÇALHO PRINCIPAL -->
+  <section class="header">
+    <a href="#" class="logo">
+      <img src="../imagem/logo.png" alt="Super Mais">
+    </a>
+
+    <div class="search-box">
+      <form action="#">
+        <input type="search" id="search-input" placeholder="O que você procura hoje?" aria-label="Pesquisar produtos">
+        <button type="submit" id="search-btn" aria-label="Pesquisar">
+          <img src="../img/icones/busca.png" alt="Pesquisar">
+        </button>
+      </form>
+    </div>
+
+    <div class="user-area">
+      <a href="#" class="user-card">
+        <div class="user-icon">
+          <img src="../icone/perfil_icone.png" alt="" aria-hidden="true">
+        </div>
+        <div class="user-text">
+          <strong>Olá, Cliente</strong>
+          <span>Entre ou cadastre-se</span>
+        </div>
+      </a>
+
+      <a href="#" class="cart-card">
+        <div class="cart-icon">
+          <img src="../icone/carrinho_icone.png" alt="" aria-hidden="true">
+          <!-- id="cart-count" e id="cart-total" são atualizados pelo script.js -->
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+        <div class="cart-text">
+          <strong>Meu carrinho</strong>
+          <span id="cart-total">R$ 0,00</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- MENU PRINCIPAL -->
+  <nav class="main-menu">
+    <ul class="menu-links">
+      <li class="active">
+        <a href="#" id="nav-inicio">
+          <span class="menu-icon"><img src="../icone/inicio_icone.png" alt="" aria-hidden="true"></span>
+          Início
+        </a>
+      </li>
+      <li>
+        <a href="#" id="nav-ofertas">
+          <span class="menu-icon"><img src="../icone/oferta_icone.png" alt="" aria-hidden="true"></span>
+          Ofertas
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="menu-icon"><img src="../icone/categoria_icone.png" alt="" aria-hidden="true"></span>
+          Categorias
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="menu-icon"><img src="../icone/cartao_icone.png" alt="" aria-hidden="true"></span>
+          Cartões
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="menu-icon"><img src="../img/icones/contato.png" alt="" aria-hidden="true"></span>
+          Contato
+        </a>
+      </li>
+    </ul>
+
+    <div class="menu-divider"></div>
+
+    <section class="card-supermais">
+      <div class="supermais-icon">
+        <img src="../icone/cartao_mais_icone.png" alt="" aria-hidden="true">
+      </div>
+      <div class="supermais-text">
+        <strong>Cartão SuperMais</strong>
+        <span>Mais vantagens para você!</span>
+      </div>
+      <a href="#" class="request-card">
+        Peça o seu
+        <span class="button-arrow"><img src="../icone/seta_direita_icone.png" alt="" aria-hidden="true"></span>
+      </a>
+    </section>
+  </nav>
+
+  <!-- BANNER -->
+  <section class="banner_principal">
+    <div class="conteudo_banner_principal">
+      <div class="texto_banner_principal">
+        <h1>Alimentos</h1>
+        <p>Tudo o que você precisa, com qualidade, variedade e os melhores preços para o seu dia a dia.</p>
+        <a href="#" class="botao_banner" id="ver-ofertas-btn">Ver ofertas <span>→</span></a>
+      </div>
+      <div class="imagem_banner_principal">
+        <!-- <img src="" alt=""> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS
+       Atributos usados pelo script.js em cada card:
+       - data-name: texto (nome + marca, minúsculo) usado na busca
+       - data-oferta="true": aparece na aba/botão "Ofertas"
+       - data-price (no botão): preço somado ao carrinho e usado na ordenação
+  -->
+  <main class="secao_produtos" id="products-section">
+    <div class="conteudo_secao_produtos">
+
+      <div class="barra_ferramentas_produtos">
+        <div>
+          <h2>Alimentos</h2>
+          <p class="quantidade_produtos" id="products-count">15 produtos encontrados</p>
+        </div>
+
+        <div class="caixa_ordenacao">
+          <label for="ordenar">Ordenar por</label>
+          <select id="ordenar">
+            <option value="relevantes">Mais relevantes</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="vendidos">Mais vendidos</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grade_produtos">
+
+        <!-- Produto 1 -->
+        <article class="cartao_produto" data-name="arroz branco tio joão">
+          <span class="selo_promocao">23% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Arroz Branco</h3>
+          <p class="detalhes_produto">Tio João · 5kg</p>
+          <p class="preco">R$ 22,90<span class="preco_antigo">R$ 29,90</span></p>
+          <button class="botao_adicionar_carrinho" data-price="22.90" data-product="Arroz Branco">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 2 -->
+        <article class="cartao_produto" data-name="feijão carioca camil">
+          <span class="selo_promocao">24% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Feijão Carioca</h3>
+          <p class="detalhes_produto">Camil · 1kg</p>
+          <p class="preco">R$ 7,49<span class="preco_antigo">R$ 9,90</span></p>
+          <button class="botao_adicionar_carrinho" data-price="7.49" data-product="Feijão Carioca">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 3 -->
+        <article class="cartao_produto" data-name="macarrão espaguete adria" data-oferta="true">
+          <span class="selo_promocao">28% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Macarrão Espaguete</h3>
+          <p class="detalhes_produto">Adria · 500g</p>
+          <p class="preco">R$ 4,29<span class="preco_antigo">R$ 5,99</span></p>
+          <button class="botao_adicionar_carrinho" data-price="4.29" data-product="Macarrão Espaguete">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 4 -->
+        <article class="cartao_produto" data-name="óleo de soja liza">
+          <span class="selo_promocao">21% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Óleo de Soja</h3>
+          <p class="detalhes_produto">Liza · 900ml</p>
+          <p class="preco">R$ 6,99<span class="preco_antigo">R$ 8,90</span></p>
+          <button class="botao_adicionar_carrinho" data-price="6.99" data-product="Óleo de Soja">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 5 -->
+        <article class="cartao_produto" data-name="açúcar cristal união" data-oferta="true">
+          <span class="selo_promocao">27% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Açúcar Cristal</h3>
+          <p class="detalhes_produto">União · 1kg</p>
+          <p class="preco">R$ 3,99<span class="preco_antigo">R$ 5,49</span></p>
+          <button class="botao_adicionar_carrinho" data-price="3.99" data-product="Açúcar Cristal">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 6 -->
+        <article class="cartao_produto" data-name="café tradicional pilão">
+          <span class="selo_promocao">23% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Café Tradicional</h3>
+          <p class="detalhes_produto">Pilão · 500g</p>
+          <p class="preco">R$ 16,90<span class="preco_antigo">R$ 21,90</span></p>
+          <button class="botao_adicionar_carrinho" data-price="16.90" data-product="Café Tradicional">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 7 -->
+        <article class="cartao_produto" data-name="leite integral itambé" data-oferta="true">
+          <span class="selo_promocao">26% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Leite Integral</h3>
+          <p class="detalhes_produto">Itambé · 1L</p>
+          <p class="preco">R$ 4,79<span class="preco_antigo">R$ 6,49</span></p>
+          <button class="botao_adicionar_carrinho" data-price="4.79" data-product="Leite Integral">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 8 -->
+        <article class="cartao_produto" data-name="farinha de trigo renata">
+          <span class="selo_promocao">22% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Farinha de Trigo</h3>
+          <p class="detalhes_produto">Renata · 1kg</p>
+          <p class="preco">R$ 4,49<span class="preco_antigo">R$ 5,79</span></p>
+          <button class="botao_adicionar_carrinho" data-price="4.49" data-product="Farinha de Trigo">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 9 -->
+        <article class="cartao_produto" data-name="molho de tomate heinz" data-oferta="true">
+          <span class="selo_promocao">24% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Molho de Tomate</h3>
+          <p class="detalhes_produto">Heinz · 340g</p>
+          <p class="preco">R$ 5,29<span class="preco_antigo">R$ 6,99</span></p>
+          <button class="botao_adicionar_carrinho" data-price="5.29" data-product="Molho de Tomate">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 10 -->
+        <article class="cartao_produto" data-name="maionese hellmann's">
+          <span class="selo_promocao">24% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Maionese</h3>
+          <p class="detalhes_produto">Hellmann's · 500g</p>
+          <p class="preco">R$ 12,90<span class="preco_antigo">R$ 16,90</span></p>
+          <button class="botao_adicionar_carrinho" data-price="12.90" data-product="Maionese">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 11 -->
+        <article class="cartao_produto" data-name="biscoito recheado nestlé" data-oferta="true">
+          <span class="selo_promocao">27% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Biscoito Recheado</h3>
+          <p class="detalhes_produto">Nestlé · 140g</p>
+          <p class="preco">R$ 3,99<span class="preco_antigo">R$ 5,49</span></p>
+          <button class="botao_adicionar_carrinho" data-price="3.99" data-product="Biscoito Recheado">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 12 -->
+        <article class="cartao_produto" data-name="refrigerante coca-cola coca-cola" data-oferta="true">
+          <span class="selo_promocao">29% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Refrigerante Coca-Cola</h3>
+          <p class="detalhes_produto">Coca-Cola · 2L</p>
+          <p class="preco">R$ 8,49<span class="preco_antigo">R$ 11,90</span></p>
+          <button class="botao_adicionar_carrinho" data-price="8.49" data-product="Refrigerante Coca-Cola">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 13 -->
+        <article class="cartao_produto" data-name="sal refinado cisne">
+          <span class="selo_promocao">21% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Sal Refinado</h3>
+          <p class="detalhes_produto">Cisne · 1kg</p>
+          <p class="preco">R$ 2,99<span class="preco_antigo">R$ 3,79</span></p>
+          <button class="botao_adicionar_carrinho" data-price="2.99" data-product="Sal Refinado">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 14 -->
+        <article class="cartao_produto" data-name="margarina qually">
+          <span class="selo_promocao">24% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Margarina</h3>
+          <p class="detalhes_produto">Qually · 500g</p>
+          <p class="preco">R$ 6,49<span class="preco_antigo">R$ 8,49</span></p>
+          <button class="botao_adicionar_carrinho" data-price="6.49" data-product="Margarina">Adicionar ao carrinho</button>
+        </article>
+        <!-- Produto 15 -->
+        <article class="cartao_produto" data-name="achocolatado em pó nescau">
+          <span class="selo_promocao">22% OFF</span>
+          <button class="botao_favorito" aria-label="Adicionar aos favoritos">
+            <img src="../img/icones/favorito.png" alt="" aria-hidden="true">
+          </button>
+          <div class="imagem_produto"><!-- <img src="" alt=""> --></div>
+          <h3>Achocolatado em Pó</h3>
+          <p class="detalhes_produto">Nescau · 400g</p>
+          <p class="preco">R$ 8,99<span class="preco_antigo">R$ 11,49</span></p>
+          <button class="botao_adicionar_carrinho" data-price="8.99" data-product="Achocolatado em Pó">Adicionar ao carrinho</button>
+        </article>
+
+      </div>
+
+      <p id="no-results" class="sem_resultados" hidden>Nenhum produto encontrado.</p>
+    </div>
+  </main>
+
+  <!-- BENEFÍCIOS -->
+  <footer class="beneficios">
+    <div class="conteudo_beneficios">
+      <div class="item_beneficio">
+        <div><h4>Entrega rápida</h4><p>Receba em casa com agilidade</p></div>
+      </div>
+      <div class="item_beneficio">
+        <div><h4>Pagamento seguro</h4><p>Seus dados protegidos em todas as compras</p></div>
+      </div>
+      <div class="item_beneficio">
+        <div><h4>Variedade garantida</h4><p>Milhares de produtos para você</p></div>
+      </div>
+      <div class="item_beneficio">
+        <div><h4>Atendimento humano</h4><p>Estamos prontos para te ajudar</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica da página: carrinho, busca, ordenação, favoritos e ofertas -->
+  <script src="script.js"></script>
+</body>
+</html>

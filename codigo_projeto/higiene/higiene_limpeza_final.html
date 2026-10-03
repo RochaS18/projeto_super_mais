@@ -59,7 +59,7 @@
                 <input type="search" placeholder="O que você procura em higiene e limpeza?" aria-label="Pesquisar produtos">
 
                 <button type="submit" aria-label="Pesquisar">
-                    <img src="img/icones/busca.png" alt="Pesquisar">
+                    <img src="icone/pesquisa_icone.png" alt="Pesquisar">
                 </button>
             </form>
 
@@ -142,33 +142,12 @@
 
             <li>
                 <a href="#">
-                    <span class="menu-icon"><img src="img/icones/contato.png" alt="" aria-hidden="true"></span>
+                    <span class="menu-icon"><img src="icone/contato_icone.png" alt="" aria-hidden="true"></span>
                     Contato
                 </a>
             </li>
 
         </ul>
-
-
-        <div class="menu-divider"></div>
-
-
-        <!-- CARTÃO SUPERMAIS -->
-        <section class="card-supermais">
-
-            <div class="supermais-icon">
-                <img src="icone/cartao_mais_icone.png" alt="" aria-hidden="true">
-            </div>
-
-            <div class="supermais-text">
-                <strong>Cartão SuperMais</strong>
-                <span>Mais vantagens para você!</span>
-            </div>
-
-            <a href="#" class="request-card">
-                Peça o seu
-                <span class="button-arrow"><img src="icone/seta_direita_icone.png" alt="" aria-hidden="true"></span>
-            </a>
 
         </section>
 
@@ -566,6 +545,16 @@
             </div>
         </section>
 
+             <!-- JavaScript do carrossel principal -->
+    <script src="carrossel_higiene_limpeza.js"></script>
+
+    <!-- Lógica dos produtos/carrinho -->
+    <script src="higiene_limpeza_final.js"></script>
+
+    <!-- Popups independentes -->
+    <script src="TelaLoginPop/login-popup-loader.js"></script>
+    <script src="CarrinhoPop/cart-popup-loader.js"></script>
+
         <!-- =========================================
              APP + BENEFÍCIOS
         ========================================== -->
@@ -701,302 +690,10 @@
 
     </main>
 
-    <!-- JavaScript do carrossel principal -->
-    <script src="carrossel_higiene_limpeza.js"></script>
-
-    <!-- JavaScript do login / popup -->
-    <script src="higiene_limpeza_final.js"></script>
-
-    <div id="login-modal" class="login-modal" aria-hidden="true">
-        <div class="login-modal-overlay" data-close-login></div>
-        <div class="login-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
-            <button id="login-close" class="login-modal-close" type="button" aria-label="Fechar login">&times;</button>
-            <section class="login-card">
-
-
-            <!-- Logo -->
-            <div class="brand-logo medium">
-
-
-                <!-- Ícone do carrinho -->
-                <div class="cart-logo" aria-hidden="true">
-
-                    <span class="cart-handle"></span>
-
-                    <span class="cart-basket"></span>
-
-                    <span class="cart-wheel wheel-one"></span>
-
-                    <span class="cart-wheel wheel-two"></span>
-
-                    <span class="leaf"></span>
-
-                </div>
-
-
-                <!-- Nome da marca -->
-                <div class="brand-name">
-
-                    <strong>Super</strong>
-
-                    <strong>Mais</strong>
-
-                </div>
-
-            </div>
-
-
-            <!-- Título -->
-            <h1 id="login-modal-title">
-                Olá, Cliente!
-            </h1>
-
-
-            <!-- Subtítulo -->
-            <p class="login-subtitle">
-                Entre na sua conta para continuar
-            </p>
-
-
-            <!-- =================================================
-                 FORMULÁRIO
-                 ================================================= -->
-
-            <form id="login-form">
-
-
-                <!-- E-mail -->
-                <label for="login-email">
-                    E-mail
-                </label>
-
-
-                <div class="input-wrap">
-
-                    <span class="input-icon">
-                        ✉
-                    </span>
-
-
-                    <input
-                        id="login-email"
-                        type="email"
-                        placeholder="Digite seu e-mail"
-                        required>
-
-                </div>
-
-
-                <!-- Senha -->
-                <label for="login-password">
-                    Senha
-                </label>
-
-
-                <div class="input-wrap">
-
-                    <span class="input-icon">
-                        🔒
-                    </span>
-
-
-                    <input
-                        id="login-password"
-                        type="password"
-                        placeholder="Digite sua senha"
-                        required>
-
-
-                    <!--
-                        Sem JavaScript este botão é apenas visual.
-                        Ele não irá mostrar/ocultar a senha.
-                    -->
-                    <button
-                        type="button"
-                        id="password-toggle"
-                        class="password-toggle"
-                        aria-label="Mostrar senha">
-
-                        ◉
-
-                    </button>
-
-                </div>
-
-
-                <!-- =================================================
-                     OPÇÕES
-                     ================================================= -->
-
-                <div class="form-options">
-
-
-                    <!-- Lembrar de mim -->
-                    <label class="remember">
-
-                        <input type="checkbox">
-
-                        <span>
-                            Lembrar de mim
-                        </span>
-
-                    </label>
-
-
-                    <!-- Recuperação de senha -->
-                    <a href="#">
-                        Esqueci minha senha
-                    </a>
-
-
-                </div>
-
-
-                <!-- Botão de login -->
-                <button
-                    type="submit"
-                    class="btn btn-green">
-
-                    Entrar
-
-                </button>
-
-
-            </form>
-
-
-            <!-- =================================================
-                 CADASTRO
-                 ================================================= -->
-
-            <div class="register">
-
-                Não possui uma conta?
-
-                <a href="#" id="open-register">
-                    Criar uma conta
-                </a>
-
-            </div>
-
-
-            <!-- =================================================
-                 TELA DE CRIAÇÃO DE CONTA
-                 ================================================= -->
-
-            <section id="register-view" class="register-view" hidden aria-labelledby="register-title">
-
-                <div class="register-header">
-                    <h1 id="register-title">Criar sua conta</h1>
-                    <p class="login-subtitle">Preencha seus dados para começar.</p>
-                </div>
-
-                <form id="register-form">
-
-                    <label for="register-name">Nome completo</label>
-                    <div class="input-wrap">
-                        <span class="input-icon" aria-hidden="true">👤</span>
-                        <input id="register-name" type="text" placeholder="Digite seu nome completo" autocomplete="name" required>
-                    </div>
-
-                    <label for="register-email">E-mail</label>
-                    <div class="input-wrap">
-                        <span class="input-icon" aria-hidden="true">✉</span>
-                        <input id="register-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" required>
-                    </div>
-
-                    <label for="register-password">Senha</label>
-                    <div class="input-wrap">
-                        <span class="input-icon" aria-hidden="true">🔒</span>
-                        <input id="register-password" type="password" placeholder="Crie uma senha" autocomplete="new-password" minlength="6" required>
-                    </div>
-
-                    <label for="register-password-confirm">Confirmar senha</label>
-                    <div class="input-wrap">
-                        <span class="input-icon" aria-hidden="true">🔒</span>
-                        <input id="register-password-confirm" type="password" placeholder="Digite a senha novamente" autocomplete="new-password" minlength="6" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-green">Criar conta</button>
-
-                </form>
-
-                <div class="register-back">
-                    Já possui uma conta?
-                    <a href="#" id="back-to-login">Voltar para o login</a>
-                </div>
-
-            </section>
-
-
-            <!-- =================================================
-                 DIVISOR
-                 ================================================= -->
-
-            <div class="divider">
-
-                <span>
-                    ou continue com
-                </span>
-
-            </div>
-
-
-            <!-- =================================================
-                 LOGIN SOCIAL
-                 ================================================= -->
-
-            <div class="social-buttons">
-
-
-                <!-- Google -->
-                <button
-                    type="button"
-                    class="social-btn">
-
-                    <strong>G</strong>
-
-                    Google
-
-                </button>
-
-
-                <!-- Apple -->
-                <button
-                    type="button"
-                    class="social-btn">
-
-                    <strong></strong>
-
-                    Apple
-
-                </button>
-
-
-            </div>
-
-
-        </section>
         </div>
     </div>
 
-
-    <!-- POPUP DO CARRINHO -->
-    <div id="cart-modal" class="cart-modal" aria-hidden="true">
-        <div class="cart-modal-overlay" data-close-cart></div>
-        <div class="cart-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
-            <button id="cart-close" class="cart-modal-close" type="button" aria-label="Fechar carrinho">&times;</button>
-            <section class="cart-popup-card">
-                <div class="cart-popup-icon-circle"><span class="cart-popup-big-icon">🛒</span></div>
-                <h1 id="cart-modal-title">Seu carrinho está pronto!</h1>
-                <p>Estamos preparando tudo para você.</p>
-                <div class="cart-popup-progress"><span></span></div>
-                <button id="cart-continue" class="cart-popup-btn" type="button">Continuar <span aria-hidden="true">→</span></button>
-            </section>
-        </div>
-    </div>
-
-    <script src="cart-popup.js"></script>
+    
 </body>
 
 </html>
