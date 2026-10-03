@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Carrinho - Super Mais</title><link rel="stylesheet" href="cart-popup.css"></head>
+<body>
+<div class="cart-popup-root">
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <section class="cart-card" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <button id="cart-close" class="cart-close" type="button" aria-label="Fechar carrinho">&times;</button>
+    <div class="cart-icon-circle"><span>🛒</span></div>
+    <h1 id="cart-title">Seu carrinho está pronto!</h1>
+    <p>Estamos preparando tudo para você.</p>
+    <div class="progress"><span></span></div>
+    <button id="cart-continue" class="btn">Continuar <span>→</span></button>
+  </section>
+</div>
+<script src="cart-popup.js"></script>
+</body></html>
