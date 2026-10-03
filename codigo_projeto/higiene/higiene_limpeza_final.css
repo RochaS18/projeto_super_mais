@@ -167,6 +167,7 @@ input {
     color: var(--amarelo);
 }
 
+
 /* =========================================
    CABEÇALHO
 ========================================= */
@@ -1857,7 +1858,7 @@ input {
 .product-card p { min-height:30px; }
 .product-price {
     margin-top:10px;
-    color:var(--verde-escuro);
+    color:#E07B1A;
     font-size:20px;
     font-weight:800;
     line-height:1;
@@ -1868,14 +1869,14 @@ input {
     padding:10px 12px;
     border:0;
     border-radius:9px;
-    background:var(--verde);
-    color:#fff;
+    background:#F3C257;
+    color:#29323A;
     font-size:12px;
     font-weight:700;
     cursor:pointer;
     transition:.2s ease;
 }
-.add-to-cart:hover { background:var(--verde-escuro); transform:translateY(-1px); }
+.add-to-cart:hover { background:#E5B548;}
 .add-to-cart.added { background:#0B6F67; }
 
 
@@ -1885,6 +1886,7 @@ input {
     .login-modal .login-card { padding:34px 22px 26px; }
     .product-price { font-size:18px; }
 }
+
 
 /* ============================================================
    POPUP - TELA DE CRIAÇÃO DE CONTA
