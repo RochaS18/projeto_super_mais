@@ -34,53 +34,43 @@
 
 html {
     scroll-behavior: smooth;
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.15);
     overflow-x: hidden;
+}
+
+/* IMPORTANTE (sticky): o body NÃO pode ter overflow (hidden/auto/scroll),
+   senão ele vira o "container de rolagem" e o position: sticky da splash
+   deixa de funcionar. O overflow-x já é tratado no html. */
+/* Espaço de 1 tela onde a splash aparece; o site começa logo depois */
+body::before {
+    content: "";
+    display: block;
+    height: 100vh;
+    height: 100dvh;
 }
 
 body {
     width: 100%;
-    scroll-snap-align: start;
-    position: relative;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background:
-        linear-gradient(
-            180deg,
-            #EAF3F2 0%,
-            #F4F6F6 22%,
-            #F7F7F6 55%,
-            #F2F3F2 100%
-        );
     color: var(--texto);
-    overflow-x: hidden;
-    z-index: 2;
-    box-shadow: 0px -15px 30px rgba(0, 0, 0, 0.2);
 }
 
-body::before {
-    overflow-x: hidden;
-    content: "";
-    position: fixed;
-    inset: 0;
+/* Todo o site (exceto a splash) fica dentro desta div, ACIMA da splash.
+   Ela precisa de fundo opaco para "cobrir" a splash ao rolar. */
+.site-content {
+    position: relative;
     z-index: 2;
-    pointer-events: none;
+    min-height: 100vh;
+
     background:
-        radial-gradient(
-            circle at 8% 18%,
-            rgba(39, 133, 122, 0.12),
-            transparent 27%
-        ),
-        radial-gradient(
-            circle at 92% 12%,
-            rgba(79, 136, 209, 0.10),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 52% 85%,
-            rgba(240, 127, 87, 0.045),
-            transparent 34%
-        );
+        radial-gradient(circle at 8% 18%, rgba(39, 133, 122, 0.12), transparent 27%),
+        radial-gradient(circle at 92% 12%, rgba(79, 136, 209, 0.10), transparent 28%),
+        radial-gradient(circle at 52% 85%, rgba(240, 127, 87, 0.045), transparent 34%),
+        linear-gradient(180deg, #EAF3F2 0%, #F4F6F6 22%, #F7F7F6 55%, #F2F3F2 100%);
+    background-attachment: fixed, fixed, fixed, scroll;
+
+    /* sombra da "cortina" subindo sobre a splash */
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -1947,18 +1937,21 @@ input {
     }
 }
 
-.splash-screen{
+.splash-screen {
+    /* FIXED: fica presa na tela e não depende de nenhum elemento pai
+       (diferente do sticky, que quebra com overflow em ancestrais). */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
+    z-index: 1;
+
     background-color: #57D3C8;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
 }
 
 .logo_splash{
