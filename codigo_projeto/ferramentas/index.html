@@ -12,83 +12,184 @@
 
 <body>
 
+    
     <!-- ===== BARRA SUPERIOR ===== -->
-    <div class="barra-topo">
+    <div class="top-bar">
 
-        <p>🚚 Frete grátis nas compras acima de R$ 200,00</p>
+    <div class="shipping-info">
+        <span class="top-icon">
+            <img src="icone/frete_gratis_icone.png" alt="" aria-hidden="true">
+        </span>
 
-        <div class="barra-info">
-            <span>🎧 Central de Atendimento</span>
-            <span>📍 Encontre uma loja</span>
-        </div>
+        <span>
+            Frete <strong>grátis</strong> nas compras acima de
+            <strong>R$ 150,00</strong>
+        </span>
+    </div>
+
+    <div class="top-links">
+        <a href="#">
+            <img class="inline-icon"
+                 src="icone/atendimento-ao-cliente_icone.png"
+                 alt=""
+                 aria-hidden="true">
+            Central de Atendimento
+        </a>
+
+        <a href="#">
+            <img class="inline-icon"
+                 src="icone/local_icone.png"
+                 alt=""
+                 aria-hidden="true">
+            Encontre uma loja
+        </a>
+    </div>
 
     </div>
 
     <!-- ===== CABEÇALHO ===== -->
-    <header>
+    <section class="header">
 
-        <!-- Logo -->
-        <div class="logo">
-            <h1>Super Mais</h1>
-        </div>
+    <!-- LOGO -->
+    <a href="#" class="logo">
+        <img src="icone/logo.png" alt="Super Mais">
+    </a>
 
-        <!-- Barra de pesquisa -->
-        <div class="busca">
-            <input type="text" placeholder="O que você procura hoje?">
-            <button>🔍</button>
-        </div>
+    <!-- PESQUISA -->
+    <div class="search-box">
+        <form action="#">
+            <input
+                type="search"
+                placeholder="O que você procura hoje?"
+                aria-label="Pesquisar produtos"
+            >
 
-        <!-- Área do cliente -->
-        <div class="cliente">
+            <button type="submit" aria-label="Pesquisar">
+                <img src="icone/lupinha.png" alt="Pesquisar">
+            </button>
+        </form>
+    </div>
 
-            <i class="fa-regular fa-user"></i>
+    <!-- ÁREA DO CLIENTE -->
+    <div class="user-area">
 
-            <div>
-                <p>Olá, cliente</p>
-                <span>Minha conta</span>
+        <a href="#" class="user-card"
+           id="login-trigger"
+           aria-haspopup="dialog"
+           aria-controls="login-modal">
+
+            <div class="user-icon">
+                <img src="icone/perfil_icone.png" alt="" aria-hidden="true">
             </div>
 
-        </div>
-
-        <!-- Carrinho -->
-        <button class="carrinho botao-carrinho" type="button" aria-label="Abrir carrinho">
-
-            <i class="fa-solid fa-cart-shopping"></i>
-
-            <div>
-                <p>Meu carrinho</p>
-                <span class="valor-carrinho">R$ 0,00</span>
+            <div class="user-text">
+                <strong>Olá, Cliente</strong>
+                <span>Entre ou cadastre-se</span>
             </div>
 
-        </button>
-
-
-    </header>
-
-
-    <!-- ===== NAVEGAÇÃO ===== -->
-    <nav>
-
-        <a href="index.html">
-            <i class="fa-solid fa-house"></i>
-            Início
         </a>
-        <a href="#">
-            <i class="fa-solid fa-tag"></i>
-            Ofertas
+
+        <!-- CARRINHO -->
+        <a href="#" class="cart-card"
+           id="cart-trigger"
+           aria-haspopup="dialog"
+           aria-controls="cart-modal">
+
+            <div class="cart-icon">
+                <img src="icone/carrinho_icone.png" alt="" aria-hidden="true">
+                <span class="cart-count">0</span>
+            </div>
+
+            <div class="cart-text">
+                <strong>Meu carrinho</strong>
+                <span>R$ 0,00</span>
+            </div>
+
         </a>
-        <a href="#">
-            <i class="fa-solid fa-grip"></i>
-            Categorias
+
+    </div>
+
+    </section>
+
+    <!-- =========================================
+        MENU PRINCIPAL
+    ========================================== -->
+    <nav class="main-menu">
+
+    <ul class="menu-links">
+
+        <li>
+            <a href="index.html">
+                <span class="menu-icon">
+                    <img src="icone/inicio_icone.png" alt="" aria-hidden="true">
+                </span>
+                Início
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="menu-icon">
+                    <img src="icone/oferta_icone.png" alt="" aria-hidden="true">
+                </span>
+                Ofertas
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="menu-icon">
+                    <img src="icone/categoria_icone.png" alt="" aria-hidden="true">
+                </span>
+                Categorias
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="index.html">
+                <i class="fa-solid fa-wrench"></i>
+                Ferramentas
+            </a>
+        </li>
+
+        <li>
+            <a href="contato.html">
+                <i class="fa-solid fa-phone"></i>
+                Contato
+            </a>
+        </li>
+
+    </ul>
+
+
+    <div class="menu-divider"></div>
+
+
+    <!-- CARTÃO SUPERMAIS -->
+    <section class="card-supermais">
+
+        <div class="supermais-icon">
+            <img src="icone/cartao_mais_icone.png" alt="" aria-hidden="true">
+        </div>
+
+        <div class="supermais-text">
+            <strong>Cartão SuperMais</strong>
+            <span>Mais vantagens para você!</span>
+        </div>
+
+        <a href="#" class="request-card">
+            Peça o seu
+            <span class="button-arrow">
+                <img src="icone/seta_direita_icone.png" alt="" aria-hidden="true">
+            </span>
         </a>
-        <a class="ativo" href="index.html">
-            <i class="fa-solid fa-wrench"></i>
-            Ferramentas</a>
-        <a href="contato.html">
-            <i class="fa-solid fa-phone"></i>
-            Contato</a>
+
+    </section>
 
     </nav>
+
+    <!-- ===== CONTAINER COMEÇO ===== -->
+    <main class="container">
 
 
     <!-- ===== CARROSSEL DE OFERTAS ===== -->
@@ -134,8 +235,118 @@
     </section>
 
 
+    <!-- =========================================
+            CATEGORIAS DE FERRAMENTAS
+        ========================================== -->
+    <section class="categories">
+
+    <!-- FERRAMENTAS ELÉTRICAS -->
+    <a href="#" class="category-card electric-tools-card">
+
+        <div class="category-text">
+
+            <h2>Ferramentas Elétricas</h2>
+
+            <p>
+                Potência e praticidade
+                para seus projetos
+            </p>
+
+        </div>
+
+        <img
+            src="imagens/Duas Furadeiras Amarelas Isoladas.png"
+            alt="Ferramentas elétricas">
+
+    </a>
+
+
+    <!-- COLUNA CENTRAL -->
+    <div class="middle-categories">
+
+        <!-- FERRAMENTAS MANUAIS -->
+        <article class="category-card manual-tools-card">
+
+            <div class="category-text">
+
+                <h2>Ferramentas Manuais</h2>
+
+                <p>
+                    Essenciais para
+                    qualquer reparo
+                </p>
+
+                <a href="#">
+                    Ver produtos
+                </a>
+
+            </div>
+
+            <img
+                src="imagens/ferramentas.manuais.png"
+                alt="Ferramentas manuais">
+
+        </article>
+
+
+        <!-- MEDIÇÃO -->
+        <article class="category-card measurement-card">
+
+            <div class="category-text">
+
+                <h2>Medição</h2>
+
+                <p>
+                    Precisão para
+                    todos os projetos
+                </p>
+
+                <a href="#">
+                    Ver produtos
+                </a>
+
+            </div>
+
+            <img
+                src="imagens/ferramenta.medicao.png"
+                alt="Ferramentas de medição">
+
+        </article>
+
+    </div>
+
+
+    <!-- KITS E ACESSÓRIOS -->
+    <article class="category-card accessories-card">
+
+        <div class="category-text">
+
+            <h2>
+                Kits e
+                <span>Acessórios</span>
+            </h2>
+
+            <p>
+                Tudo o que você precisa
+                em um só lugar
+            </p>
+
+            <a href="#">
+                Ver produtos
+            </a>
+
+        </div>
+
+        <img
+            src="imagens/kit.acessorios.png"
+            alt="Kits e acessórios para ferramentas">
+
+    </article>
+
+    </section>
+
     <!-- ===== ÁREA DE PRODUTOS ===== -->
-    <main>
+    <section class="area-produtos">
 
         <div class="titulo-produtos">
 
@@ -186,7 +397,7 @@
                     R$ 199,90
                 </p>
 
-                <button class="adicionar-carrinho" data-produto="Furadeira Elétrica" data-preco="199,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Furadeira Elétrica" data-preco="199,90" type="button"> Adicionar ao carrinho</button>
 
             </article>
 
@@ -217,7 +428,7 @@
                     R$ 249,90
                 </p>
 
-                <button class="adicionar-carrinho" data-produto="Parafusadeira" data-preco="249,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Parafusadeira" data-preco="249,90" type="button"> Adicionar ao carrinho</button>
 
             </article>
 
@@ -248,7 +459,7 @@
                     R$ 89,90
                 </p>
 
-                <button class="adicionar-carrinho" data-produto="Kit de Chaves" data-preco="89,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Kit de Chaves" data-preco="89,90" type="button"> Adicionar ao carrinho</button>
 
             </article>
 
@@ -279,7 +490,7 @@
                     R$ 52,90
                 </p>
 
-                <button class="adicionar-carrinho" data-produto="Alicate Universal" data-preco="52,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Alicate Universal" data-preco="52,90" type="button"> Adicionar ao carrinho</button>
 
             </article>
 
@@ -310,7 +521,7 @@
                     R$ 40,90
                 </p>
 
-                <button class="adicionar-carrinho" data-produto="Martelo" data-preco="40,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Martelo" data-preco="40,90" type="button"> Adicionar ao carrinho</button>
 
             </article>
 
@@ -340,7 +551,7 @@
                     R$ 35,90
                 </p>
 
-                <button class="adicionar-carrinho" data-produto="Trena 5 metros" data-preco="35,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Trena 5 metros" data-preco="35,90" type="button"> Adicionar ao carrinho</button>
 
             </article>
 
@@ -353,7 +564,7 @@
                 <p class="descricao">Serra circular 1200W</p>
                 <p class="preco-antigo">R$ 449,90</p>
                 <p class="preco">R$ 413,90</p>
-                <button class="adicionar-carrinho" data-produto="Serra Circular" data-preco="413,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Serra Circular" data-preco="413,90" type="button">Adicionar ao carrinho</button>
             </article>
 
             <!-- Produto 8 -->
@@ -365,7 +576,7 @@
                 <p class="descricao">Nível de alumínio 60cm</p>
                 <p class="preco-antigo">R$ 79,90</p>
                 <p class="preco">R$ 71,90</p>
-                <button class="adicionar-carrinho" data-produto="Nível Profissional" data-preco="71,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Nível Profissional" data-preco="71,90" type="button"> Adicionar ao carrinho</button>
             </article>
 
             <!-- Produto 9 -->
@@ -377,7 +588,7 @@
                 <p class="descricao">Chave ajustável de 10 polegadas</p>
                 <p class="preco-antigo">R$ 69,90</p>
                 <p class="preco">R$ 61,50</p>
-                <button class="adicionar-carrinho" data-produto="Chave Inglesa" data-preco="61,50" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Chave Inglesa" data-preco="61,50" type="button"> Adicionar ao carrinho</button>
             </article>
 
             <!-- Produto 10 -->
@@ -389,48 +600,154 @@
                 <p class="descricao">Kit completo com 46 peças</p>
                 <p class="preco-antigo">R$ 299,90</p>
                 <p class="preco">R$ 254,90</p>
-                <button class="adicionar-carrinho" data-produto="Kit de Ferramentas" data-preco="254,90" type="button">🛒 Adicionar ao carrinho</button>
+                <button class="adicionar-carrinho" data-produto="Kit de Ferramentas" data-preco="254,90" type="button"> Adicionar ao carrinho</button>
             </article>
 
 
         </section>
 
-    </main>
-
-
-    <!-- ===== BENEFÍCIOS ===== -->
-    <section class="beneficios">
-
-        <div class="beneficio">
-            <h3>✓ Qualidade</h3>
-            <p>Produtos selecionados</p>
-        </div>
-
-        <div class="beneficio">
-            <h3>🚚 Entrega rápida</h3>
-            <p>Receba seus produtos com segurança</p>
-        </div>
-
-        <div class="beneficio">
-            <h3>🔒 Compra segura</h3>
-            <p>Seus dados protegidos</p>
-        </div>
-
-        <div class="beneficio">
-            <h3>🎁 Ofertas especiais</h3>
-            <p>Economize nas suas compras</p>
-        </div>
-
     </section>
 
 
-    <!-- ===== RODAPÉ ===== -->
-    <footer>
+   
+    <!-- =========================================
+             FOOTER (RODAPÉ)
+        ========================================== -->
+        <section class="bottom-section">
 
-        <p>© 2026 Super Mais</p>
-        <p>Todos os direitos reservados.</p>
 
-    </footer>
+            <!-- APP -->
+            <article class="app-card">
+
+                <div class="app-content">
+
+                    <h2>
+                        Ofertas exclusivas
+                        <span>no App SuperMais</span>
+                    </h2>
+
+                    <p>
+                        Baixe agora e aproveite!
+                    </p>
+
+
+                    <div class="app-buttons">
+
+                        <a href="#" class="store-button">
+                            <span class="store-icon"><img src="icone/Apple-Logo.png" alt="" aria-hidden="true"></span>
+
+
+                            <span> 
+                                <small>Disponível na</small> 
+                                App Store 
+                            </span> 
+                        </a> 
+ 
+ 
+                        <a href="#" class="store-button"> 
+                            <span class="store-icon"><img src="icone/Google-Play.png" alt="" aria-hidden="true"></span> 
+ 
+                            <span> 
+                                <small>Disponível no</small> 
+                                Google Play 
+                            </span> 
+                        </a> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+ 
+                <div class="app-phone"> 
+                    <img src="icone/logo_celular.png" alt="Aplicativo SuperMais"> 
+                </div> 
+ 
+            </article> 
+ 
+ 
+            <!-- BENEFÍCIOS --> 
+            <section class="benefits"> 
+ 
+ 
+                <article class="benefit"> 
+ 
+                    <div class="benefit-icon truck-icon"> 
+                        <img src="icone/entrega_icone.png" alt="" aria-hidden="true"> 
+                    </div> 
+ 
+                    <div> 
+                        <h3>Entrega rápida</h3> 
+ 
+                        <p> 
+                            Receba em casa 
+                            com agilidade 
+                        </p> 
+                    </div> 
+ 
+                </article> 
+ 
+ 
+                <article class="benefit"> 
+ 
+                    <div class="benefit-icon security-icon"> 
+                        <img src="icone/pagamento_seguro_icone.png" alt="" aria-hidden="true"> 
+                    </div> 
+ 
+                    <div> 
+                        <h3>Pagamento seguro</h3> 
+ 
+                        <p> 
+                            Seus dados protegidos 
+                            em todas as compras 
+                        </p> 
+                    </div> 
+ 
+                </article> 
+ 
+ 
+                <article class="benefit"> 
+ 
+                    <div class="benefit-icon gift-icon"> 
+                        <img src="icone/variedade_icone.png" alt="" aria-hidden="true"> 
+                    </div> 
+ 
+                    <div> 
+                        <h3>Variedade garantida</h3> 
+ 
+                        <p> 
+                            Milhares de produtos 
+                            para você 
+                        </p> 
+                    </div> 
+ 
+                </article> 
+ 
+ 
+                <article class="benefit"> 
+ 
+                    <div class="benefit-icon support-icon"> 
+                        <img src="icone/atendimento_humano_icone.png" alt="" aria-hidden="true"> 
+                    </div> 
+ 
+                    <div> 
+                        <h3>Atendimento humano</h3> 
+ 
+                        <p> 
+                            Estamos prontos para 
+                            te ajudar 
+                        </p> 
+                    </div> 
+ 
+                </article> 
+ 
+            </section> 
+ 
+        </section>
+
+        </main>
+
+
+
 
     <!-- ===== CARRINHO POPUP ===== -->
     <div class="carrinho-fundo" id="carrinho-fundo" hidden>
@@ -461,6 +778,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="inicio.js"></script>
 
 </body>
 
