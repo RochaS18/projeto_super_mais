@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Super Mais</title>
+<link rel="stylesheet" href="login-popup.css">
+</head>
+<body>
+<div class="popup-root">
+  <div class="popup-overlay" id="login-overlay"></div>
+  <section class="popup-dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <button id="login-close" class="popup-close" type="button" aria-label="Fechar">&times;</button>
+    <div class="login-card">
+      <div class="brand">
+        <div class="cart-logo"><span class="handle"></span><span class="basket"></span><span class="wheel one"></span><span class="wheel two"></span><span class="leaf"></span></div>
+        <div class="brand-name"><strong>Super</strong><strong>Mais</strong></div>
+      </div>
+
+      <div id="login-view">
+        <h1 id="login-title">Olá, Cliente!</h1>
+        <p class="subtitle">Entre na sua conta para continuar</p>
+        <form id="login-form">
+          <label for="login-email">E-mail</label>
+          <div class="input-wrap"><span>✉</span><input id="login-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" required></div>
+          <label for="login-password">Senha</label>
+          <div class="input-wrap"><span>🔒</span><input id="login-password" type="password" placeholder="Digite sua senha" autocomplete="current-password" required><button type="button" id="password-toggle" aria-label="Mostrar senha">◉</button></div>
+          <div class="form-options"><label class="remember"><input type="checkbox"> <span>Lembrar de mim</span></label><a href="#" id="forgot-password">Esqueci minha senha</a></div>
+          <button class="btn-green" type="submit">Entrar</button>
+        </form>
+        <div class="register">Não possui uma conta? <a href="#" id="open-register">Criar uma conta</a></div>
+        <div class="divider"><span>ou continue com</span></div>
+        <div class="social-buttons"><button type="button" class="social-btn"><strong>G</strong> Google</button><button type="button" class="social-btn"><strong></strong> Apple</button></div>
+      </div>
+
+      <div id="register-view" hidden>
+        <h1>Criar sua conta</h1>
+        <p class="subtitle">Preencha seus dados para começar.</p>
+        <form id="register-form">
+          <label for="register-name">Nome completo</label>
+          <div class="input-wrap"><span>👤</span><input id="register-name" type="text" placeholder="Digite seu nome completo" autocomplete="name" required></div>
+          <label for="register-email">E-mail</label>
+          <div class="input-wrap"><span>✉</span><input id="register-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" required></div>
+          <label for="register-password">Senha</label>
+          <div class="input-wrap"><span>🔒</span><input id="register-password" type="password" placeholder="Crie uma senha" minlength="6" autocomplete="new-password" required></div>
+          <label for="register-password-confirm">Confirmar senha</label>
+          <div class="input-wrap"><span>🔒</span><input id="register-password-confirm" type="password" placeholder="Digite a senha novamente" minlength="6" autocomplete="new-password" required></div>
+          <button class="btn-green" type="submit">Criar conta</button>
+        </form>
+        <div class="register-back">Já possui uma conta? <a href="#" id="back-to-login">Voltar para o login</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="login-popup.js"></script>
+</body>
+</html>
