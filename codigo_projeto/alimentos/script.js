@@ -161,10 +161,10 @@ const linkOfertas = document.getElementById('nav-ofertas');
 // Marca qual item do menu está ativo. No CSS a classe "active" fica no <li>
 // (e não no <a>), por isso usamos closest('li').
 // Chamada por inicializarMenu() e inicializarBotaoVerOfertas().
-function marcarLinkAtivo(linkClicado) {
-  document.querySelectorAll('.menu-links li').forEach((li) => li.classList.remove('active'));
-  linkClicado.closest('li').classList.add('active');
-}
+// function marcarLinkAtivo(linkClicado) {
+//   document.querySelectorAll('.menu-links li').forEach((li) => li.classList.remove('active'));
+//   linkClicado.closest('li').classList.add('active');
+// }
 
 // Mostra só os cards com data-oferta="true" (os maiores descontos).
 // Chama atualizarContadorProdutos().
@@ -190,18 +190,18 @@ function mostrarTodosProdutos() {
 // Liga os links do menu: "Ofertas" filtra, "Início" mostra tudo e os
 // demais só trocam o estilo ativo. Também limpa o campo de busca.
 // Chamada por init().
-function inicializarMenu() {
-  document.querySelectorAll('.menu-links a').forEach((link) => {
-    link.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      marcarLinkAtivo(link);
-      inputBusca.value = '';
+// function inicializarMenu() {
+//   document.querySelectorAll('.menu-links a').forEach((link) => {
+//     link.addEventListener('click', (evento) => {
+//       evento.preventDefault();
+//       marcarLinkAtivo(link);
+//       inputBusca.value = '';
 
-      if (link === linkOfertas) mostrarOfertas();
-      if (link === linkInicio) mostrarTodosProdutos();
-    });
-  });
-}
+//       if (link === linkOfertas) mostrarOfertas();
+//       if (link === linkInicio) mostrarTodosProdutos();
+//     });
+//   });
+// }
 
 // ================================================================
 // BOTÃO "Ver ofertas" DO BANNER

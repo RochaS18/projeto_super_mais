@@ -36,7 +36,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+/* body {
     position: relative;
     min-height: 100vh;
 
@@ -72,7 +72,7 @@ body::before {
         radial-gradient(circle at 52% 85%,
             rgba(240, 127, 87, 0.045),
             transparent 34%);
-}
+} */
 
 a {
     color: inherit;
@@ -114,7 +114,7 @@ css da parte da splash screen */
 /* 
 isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse modelo de estrutura pra conseguir mexer certinho no z-index */
 
-.site-content {
+/* .site-content {
     position: relative;
     z-index: 2;
     background:
@@ -125,7 +125,7 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
             #F2F3F2 100%);
     min-height: 100vh;
     box-shadow: 0px -15px 30px rgba(0, 0, 0, 0.2);
-}
+} */
 
 
 /* =========================================
@@ -204,7 +204,7 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 /* =========================================
    CABEÇALHO
 ========================================= */
-
+/* 
 .header {
     min-height: 130px;
 
@@ -224,7 +224,7 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
             rgba(218, 238, 235, 0.96),
             rgba(225, 233, 241, 0.96),
             rgba(239, 238, 238, 0.96));
-}
+} */
 
 
 /* =========================================
@@ -456,11 +456,12 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 }
 
 
+
 /* =========================================
    MENU PRINCIPAL
 ========================================= */
 
-.main-menu {
+/* .main-menu {
     min-height: 72px;
 
     margin: 0 40px 25px;
@@ -483,7 +484,7 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
         var(--sombra);
 
     backdrop-filter: blur(10px);
-}
+} */
 
 
 /* =========================================
