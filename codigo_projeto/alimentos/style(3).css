@@ -1,0 +1,1473 @@
+/* =========================================
+   RESET E CONFIGURAÇÕES GERAIS
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --verde:#27857A;
+    --verde-escuro:#17655D;
+    --verde-claro:#DDEFEA;
+
+    --laranja:#F07F57;
+    --laranja-escuro:#D96339;
+
+    --amarelo:#F3C257;
+    --amarelo-claro:#FFD96E;
+
+    --azul:#4F88D1;
+    --azul-escuro:#215B9D;
+
+    --cinza-claro:#F4F5F5;
+    --cinza-medio:#D9D9D9;
+    --cinza-texto:#687078;
+
+    --texto:#253036;
+    --branco:#FFFFFF;
+
+    --sombra:0 10px 30px rgba(26,43,55,.08);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    position:relative;
+    min-height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #EAF3F2 0%,
+            #F4F6F6 22%,
+            #F7F7F6 55%,
+            #F2F3F2 100%
+        );
+
+    color:var(--texto);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(39,133,122,.12),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 92% 12%,
+            rgba(79,136,209,.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 52% 85%,
+            rgba(240,127,87,.045),
+            transparent 34%
+        );
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+    object-fit:contain;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.top-bar{
+    min-height:40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #101D28,
+            #142433,
+            #1A2028
+        );
+
+    color:rgba(255,255,255,.88);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 50px;
+
+    font-size:14px;
+}
+
+.shipping-info,
+.top-links,
+.top-links a{
+    display:flex;
+    align-items:center;
+}
+
+.shipping-info{
+    gap:10px;
+}
+
+.shipping-info strong{
+    color:var(--amarelo);
+    font-weight:700;
+}
+
+.top-icon{
+    width:18px;
+    height:18px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+}
+
+.top-icon img,
+.inline-icon{
+    width:18px;
+    height:18px;
+
+    object-fit:contain;
+}
+
+.top-links{
+    gap:40px;
+}
+
+.top-links a{
+    gap:8px;
+    transition:.25s;
+}
+
+.top-links a:hover{
+    color:var(--amarelo);
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.header{
+    min-height:130px;
+
+    padding:22px 50px;
+
+    display:grid;
+
+    grid-template-columns:
+        230px
+        minmax(300px,1fr)
+        auto;
+
+    align-items:center;
+
+    gap:50px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(218,238,235,.96),
+            rgba(225,233,241,.96),
+            rgba(239,238,238,.96)
+        );
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+
+    width:185px;
+}
+
+.logo img{
+    width:100%;
+    max-height:80px;
+    object-fit:contain;
+}
+
+/* =========================================
+   PESQUISA
+========================================= */
+
+.search-box{
+    width:100%;
+}
+
+.search-box form{
+    width:100%;
+    height:58px;
+
+    display:flex;
+
+    padding:4px;
+
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:50px;
+
+    background:rgba(255,255,255,.50);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(180,190,200,.30),
+        0 5px 20px rgba(50,65,80,.05);
+
+    backdrop-filter:blur(8px);
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    padding:0 25px;
+
+    color:var(--texto);
+}
+
+.search-box input::placeholder{
+    color:#69737B;
+}
+
+.search-box button{
+    width:52px;
+    height:50px;
+
+    flex-shrink:0;
+
+    border:none;
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4F88D1,
+            #266AAE
+        );
+
+    color:#FFF;
+
+    cursor:pointer;
+
+    display:grid;
+    place-items:center;
+
+    box-shadow:
+        0 6px 15px rgba(38,106,174,.25);
+
+    transition:.25s;
+}
+
+.search-box button:hover{
+    transform:scale(1.05);
+}
+
+.search-box button img{
+    width:20px;
+    height:20px;
+}
+
+/* =========================================
+   CLIENTE E CARRINHO
+========================================= */
+
+.user-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.user-card,
+.cart-card{
+    min-height:64px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+    padding:10px 18px;
+
+    border-radius:32px;
+
+    background:rgba(255,255,255,.45);
+
+    border:1px solid rgba(255,255,255,.70);
+
+    box-shadow:
+        0 5px 18px rgba(35,50,60,.05);
+
+    transition:.25s;
+}
+
+.user-card:hover,
+.cart-card:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.65);
+}
+
+.user-icon{
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+}
+
+.user-icon img{
+    width:30px;
+    height:30px;
+}
+
+.user-text,
+.cart-text{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+
+    white-space:nowrap;
+}
+
+.user-text strong,
+.cart-text strong{
+    font-size:14px;
+}
+
+.user-text span,
+.cart-text span{
+    font-size:12px;
+    color:#687078;
+}
+
+.cart-icon{
+    position:relative;
+
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+}
+
+.cart-icon > img{
+    width:29px;
+    height:29px;
+}
+
+.cart-count{
+    position:absolute;
+
+    top:-7px;
+    right:-8px;
+
+    width:20px;
+    height:20px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--amarelo);
+
+    color:#29323A;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* =========================================
+   MENU PRINCIPAL
+========================================= */
+
+.main-menu{
+    min-height:72px;
+
+    margin:0 40px 25px;
+
+    padding:8px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:38px;
+
+    background:rgba(255,255,255,.58);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:var(--sombra);
+
+    backdrop-filter:blur(10px);
+}
+
+.menu-links{
+    width:100%;
+    max-width:900px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+    margin:0 auto;
+}
+
+.menu-links li{
+    flex:1 1 0;
+    min-width:0;
+}
+
+.menu-links li a{
+    width:100%;
+    min-height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:11px;
+
+    padding:0 18px;
+
+    border-radius:28px;
+
+    color:#303A42;
+
+    font-size:15px;
+    font-weight:500;
+
+    white-space:nowrap;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+.menu-links li:not(.active) a:hover{
+    background:rgba(39,133,122,.10);
+    color:var(--verde);
+    transform:translateY(-1px);
+}
+
+.menu-links .active a{
+    color:#27857A;
+    background:#E2F1EF;
+
+    box-shadow:
+        0 0 15px rgba(39,133,122,.12),
+        0 4px 10px rgba(39,133,122,.08);
+
+    font-weight:600;
+}
+
+.menu-icon{
+    width:22px;
+    height:22px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+}
+
+.menu-icon img{
+    width:21px;
+    height:21px;
+    object-fit:contain;
+}
+
+.container{
+    width:min(1440px, calc(100% - 80px));
+    margin:0 auto;
+}
+
+
+/* Linha vertical que separa os links do cartão SuperMais */
+.menu-divider {
+    width: 1px;
+    height: 35px;
+    margin-left: auto;
+    background: #C8CDD0;
+}
+
+/* Bloco do Cartão SuperMais (ícone, texto e botão) */
+.card-supermais {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 10px;
+}
+
+/* Quadradinho verde claro atrás do ícone do cartão */
+.supermais-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #E2F1EF;
+    box-shadow: 0 4px 12px rgba(39, 133, 122, 0.15);
+}
+
+/* Tamanho do ícone do cartão */
+.supermais-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Texto do cartão SuperMais, empilhado */
+.supermais-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+/* Título verde do cartão */
+.supermais-text strong {
+    color: #256D66;
+    font-size: 14px;
+}
+
+/* Subtítulo cinza do cartão */
+.supermais-text span {
+    color: #5C646A;
+    font-size: 12px;
+}
+
+/* Botão amarelo "Peça o seu" */
+.request-card {
+    min-width: 145px;
+    height: 44px;
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #F8CF56, #F1B92D);
+    color: #2E332E;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 7px 18px rgba(243, 194, 87, 0.25);
+    transition: 0.25s;
+}
+
+/* Botão amarelo sobe um pouco ao passar o mouse */
+.request-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Caixa da setinha do botão */
+.button-arrow {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+}
+
+/* Tamanho da setinha */
+.button-arrow img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* =========================================
+   BANNER
+========================================= */
+/* Banner: limita a largura e centraliza */
+.banner_principal {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+/* Cartão do banner: fundo em degradê, texto à esquerda e imagem à direita */
+.conteudo_banner_principal {
+    background: linear-gradient(120deg, #E7F3EE 0%, #F7F1E3 100%);
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 40px 50px;
+    overflow: hidden;
+}
+
+/* Largura máxima do bloco de texto do banner */
+.texto_banner_principal {
+    max-width: 420px;
+}
+
+/* Quadradinho branco para um ícone acima do título (opcional) */
+.icone_banner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fff;
+
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Título grande do banner */
+.texto_banner_principal h1 {
+    font-size: 40px;
+    color: #16222B;
+    margin-bottom: 14px;
+}
+
+/* Texto de apoio do banner */
+.texto_banner_principal p {
+    color: #4A555C;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* Botão verde "Ver ofertas" */
+.botao_banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #226B65;
+    color: #fff;
+
+    padding: 13px 24px;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+/* Botão fica verde mais escuro ao passar o mouse */
+.botao_banner:hover {
+    background: #1B544F;
+}
+
+/* Espaço reservado para a imagem do banner (fica vazio até colocar a imagem) */
+.imagem_banner_principal {
+    flex-shrink: 0;
+    width: 380px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* A imagem do banner se ajusta à altura do espaço */
+.imagem_banner_principal img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* =========================================
+   SEÇÃO DE PRODUTOS
+========================================= */
+/* Área de produtos: largura máxima e centralizada */
+.secao_produtos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+/* Bloco interno da seção de produtos */
+.conteudo_secao_produtos {
+    display: block;
+}
+
+/* Linha com o título "Alimentos" à esquerda e o "Ordenar por" à direita */
+.barra_ferramentas_produtos {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+/* Título da seção */
+.barra_ferramentas_produtos h2 {
+    font-size: 24px;
+    color: #16222B;
+}
+
+/* Texto "X produtos encontrados" (o JS atualiza) */
+.quantidade_produtos {
+    margin-top: 4px;
+    color: #8B959B;
+    font-size: 13px;
+}
+
+/* Rótulo + seletor de ordenação lado a lado */
+.caixa_ordenacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 13px;
+    color: #6C747A;
+}
+
+/* Aparência do seletor "Ordenar por" */
+.caixa_ordenacao select {
+    padding: 9px 14px;
+    border: 1px solid #E3EAEC;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1A2B37;
+    background: #fff;
+}
+
+/* =========================================
+   GRADE DE PRODUTOS
+========================================= */
+/* Grade de produtos: 5 colunas (muda nas media queries do final) */
+.grade_produtos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+/* Card do produto: fundo branco, cantos arredondados; position: relative para o selo e o favorito */
+.cartao_produto {
+    min-height: 260px;
+
+    position: relative;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    transition: 0.25s;
+    
+}
+
+/* Card sobe e ganha sombra ao passar o mouse */
+.cartao_produto:hover {
+   transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(26, 43, 55, 0.13);
+}
+
+/* Selo verde de desconto no canto superior esquerdo */
+.selo_promocao {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #226B65;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    padding: 4px 9px;
+    border-radius: 6px;
+}
+
+/* Botão de coração no canto superior direito */
+.botao_favorito {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+/* Tamanho do ícone do coração */
+.botao_favorito img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+/* Coração cresce ao passar o mouse */
+.botao_favorito:hover {
+    color: #E0576F;
+    transform: scale(1.12);
+}
+
+/* Espaço da imagem do produto (altura fixa mantém os cards alinhados mesmo sem imagem) */
+.imagem_produto {
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Ajuste da imagem dentro do espaço */
+.imagem_produto img {
+    max-height: 145px;
+    object-fit: contain;
+
+    transform: scale(2.8);
+}
+
+/* Nome do produto */
+.cartao_produto h3 {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Marca e peso do produto, em cinza */
+.detalhes_produto {
+    margin-top: 7px;
+    color: #6C747A;
+    font-size: 12px;
+}
+
+/* Preço atual em laranja */
+.preco {
+    margin-top: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+    color: #E07B1A;
+}
+
+/* Preço antigo riscado, em cinza claro */
+.preco_antigo {
+    margin-left: 8px;
+
+    font-size: 12px;
+    font-weight: 400;
+    color: #B5BEC3;
+    text-decoration: line-through;
+}
+
+/* Botão amarelo "Adicionar ao carrinho" */
+.botao_adicionar_carrinho {
+    width: 100%;
+    margin-top: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #FFC107;
+    color: #16222B;
+
+    border: none;
+    border-radius: 30px;
+    padding: 11px 0;
+
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+/* Amarelo mais escuro ao passar o mouse */
+.botao_adicionar_carrinho:hover {
+    background: #F2A900;
+}
+
+/* =========================================
+   ESPECÍFICO DA PÁGINA DE ALIMENTOS
+========================================= */
+/* Esconde o card quando o JS filtra a lista (busca ou aba Ofertas). Sem isso o display: grid ignora o hidden */
+.cartao_produto[hidden] {
+    display: none;
+}
+
+.botao_banner {
+    cursor: pointer;
+}
+
+/* Estado do botão logo após clicar: fica verde ("Adicionado ✓") */
+.botao_adicionar_carrinho.added {
+    background: #226B65;
+    color: #fff;
+}
+
+/* Efeito de "apertar" o botão ao clicar */
+.botao_adicionar_carrinho:active {
+    transform: scale(0.97);
+}
+
+/* Mensagem exibida quando a busca não encontra nada */
+.sem_resultados {
+    text-align: center;
+    color: #6C747A;
+    padding: 40px 0;
+}
+
+/* =========================================
+   BENEFÍCIOS (RODAPÉ)
+========================================= */
+/* Faixa de benefícios no rodapé: largura máxima e centralizada */
+.beneficios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+/* Grade com 4 benefícios lado a lado */
+.conteudo_beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Card translúcido de cada benefício */
+.item_beneficio {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Título do benefício */
+.item_beneficio h4 {
+    font-size: 14px;
+    color: #256D66;
+    margin-bottom: 3px;
+}
+
+/* Descrição do benefício */
+.item_beneficio p {
+    font-size: 12px;
+    color: #5C646A;
+    line-height: 1.4;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+/* Telas médias: 3 colunas de produtos, cabeçalho em 2 colunas, menu quebra linha */
+@media (max-width: 1080px) {
+    .grade_produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .conteudo_beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        grid-template-columns: 160px 1fr;
+        gap: 20px 30px;
+    }
+
+    .user-area {
+        grid-column: 1 / -1;
+    }
+
+    .main-menu {
+        flex-wrap: wrap;
+        border-radius: 28px;
+    }
+
+    .menu-divider {
+        display: none;
+    }
+}
+
+/* Tablets: esconde o Cartão SuperMais e empilha o banner */
+@media (max-width: 900px) {
+    .top-bar {
+        padding: 8px 20px;
+    }
+
+    .main-menu {
+        margin: 0 20px 30px;
+    }
+
+    .menu-links {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .card-supermais {
+        display: none;
+    }
+
+    .conteudo_banner_principal {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+    }
+
+    .texto_banner_principal {
+        max-width: 100%;
+    }
+
+    .imagem_banner_principal {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Celulares: 2 colunas de produtos, esconde links do topo, benefícios em 1 coluna */
+@media (max-width: 640px) {
+    .top-links {
+        display: none;
+    }
+
+    .header {
+        padding: 18px 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .user-area {
+        flex-wrap: wrap;
+    }
+
+    .grade_produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .barra_ferramentas_produtos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .conteudo_beneficios {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celulares pequenos: 1 coluna de produtos */
+@media (max-width: 420px) {
+    .grade_produtos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Favorito ativo */
+/* Coração marcado como favorito: muda a cor do ícone (o JS liga/desliga a classe .ativo) */
+.botao_favorito.ativo img {
+    filter: invert(36%) sepia(80%) saturate(1800%) hue-rotate(320deg);
+}
+
+
+/* Ajuste do menu padronizado: somente os cinco links de navegação */
+.main-menu .menu-links li {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.main-menu .menu-links li a {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 650px) {
+    .main-menu .menu-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .main-menu .menu-links li {
+        width: 100%;
+    }
+}
+
+
+
+/* =========================================
+   APP + BENEFÍCIOS
+========================================= */
+
+.bottom-section {
+    width: min(1400px, calc(100% - 120px));
+
+    margin: 25px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        35%
+        65%;
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+/* =========================================
+   APP COM TÍTULOS DOS APLICATIVOS MENORES
+========================================= */
+
+.app-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 135px;
+
+    padding: 16px 24px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1C5DA8 0%,
+            #2B71BC 55%,
+            #3D8AD9 100%
+        );
+
+    color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+}
+
+.app-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    top: -40px;
+    right: -20px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    z-index: 1;
+}
+
+.app-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    max-width: 260px;
+}
+
+.app-card h2 {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    margin-bottom: 6px;
+}
+
+.app-card h2 span {
+    display: block;
+}
+
+.app-card p {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+
+    color: rgba(255,255,255,.92);
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.app-buttons {
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 8px;
+}
+
+.store-button {
+    width: 115px;
+
+    min-height: 36px;
+
+    padding: 5px 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border-radius: 8px;
+
+    background: #111820;
+
+    color: #FFFFFF;
+
+    transition: .25s ease;
+}
+
+.store-button:hover {
+    background: #0A1015;
+
+    transform: translateY(-2px);
+}
+
+.store-button small {
+    display: block;
+
+    margin-bottom: 1px;
+
+    color: #D5D9DE;
+
+    font-size: 6px;
+
+    font-weight: 400;
+}
+
+/* TEXTO APP STORE E GOOGLE PLAY MENOR */
+
+.store-button span:not(.store-icon) {
+    font-size: 10px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.store-icon {
+    width: 16px;
+    height: 16px;
+
+    flex-shrink: 0;
+}
+
+.store-icon img {
+    width: 16px;
+    height: 16px;
+
+    object-fit: contain;
+}
+
+/* =========================================
+   CELULAR MAIOR E CENTRALIZADO
+========================================= */
+
+.app-phone {
+    position: absolute;
+
+    right: 18px;
+
+    bottom: -2px;
+
+    width: 145px;
+
+    z-index: 2;
+}
+
+.app-phone img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   BENEFÍCIOS
+========================================= */
+
+.benefits {
+    min-height: 165px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    padding: 20px 28px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F8F9FA
+        );
+
+    box-shadow:
+        0 8px 25px rgba(26,43,55,.05);
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 85px;
+}
+
+.benefit-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+}
+
+.benefit-icon img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.truck-icon {
+    background: #EAF5EE;
+}
+
+.security-icon {
+    background: #EAF1F8;
+}
+
+.gift-icon {
+    background: #FBF0E9;
+}
+
+.support-icon {
+    background: #FBF4E4;
+}
+
+.benefit h3 {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+
+    color: #253036;
+}
+
+.benefit p {
+    color: #687078;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .bottom-section {
+        width: calc(100% - 60px);
+
+        grid-template-columns: 1fr;
+    }
+
+    .app-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .benefits {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .bottom-section {
+        width: calc(100% - 40px);
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .app-phone {
+        display: none;
+    }
+
+    .app-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app-buttons {
+        flex-wrap: wrap;
+    }
+}
