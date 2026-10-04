@@ -68,7 +68,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .icone { position: relative; display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; }
 .icone img { width: 29px; height: 29px; object-fit: contain; }
 .bolinha { position: absolute; top: -7px; right: -8px; display: grid; place-items: center; width: 20px; height: 20px; color: #29323a; background: var(--amarelo); border-radius: 50%; font-size: 11px; font-weight: bold; }
-.navegacao { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 72px; margin: 0 40px 30px; padding: 8px 14px; background: rgb(255 255 255 / 58%); border: 1px solid rgb(255 255 255 / 75%); border-radius: 38px; box-shadow: var(--sombra); backdrop-filter: blur(10px); }
+.navegacao { display: flex; align-items: center; justify-content: center; gap: 20px; min-height: 72px; margin: 0 40px 30px; padding: 8px 14px; background: rgb(255 255 255 / 58%); border: 1px solid rgb(255 255 255 / 75%); border-radius: 38px; box-shadow: var(--sombra); backdrop-filter: blur(10px); }
 .links-navegacao { display: flex; align-items: center; gap: 8px; }
 .navegacao a { display: flex; align-items: center; gap: 12px; min-height: 50px; padding: 0 22px; color: #303a42; text-decoration: none; font-size: 15px; border-radius: 28px; transition: .25s; }
 .navegacao a:not(.ativo):hover { color: var(--verde); background: rgb(39 133 122 / 10%); }
