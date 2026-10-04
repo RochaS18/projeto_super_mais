@@ -321,7 +321,7 @@ img {
     padding: 8px 14px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     border-radius: 38px;
     background: rgba(255, 255, 255, 0.58);
@@ -459,13 +459,12 @@ img {
    BANNER
 ========================================= */
 .banner_principal {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 20px auto 0;
     padding: 0 20px;
 }
 
 .conteudo_banner_principal {
-    background: linear-gradient(120deg, #E7F3EE 0%, #F7F1E3 100%);
     border-radius: 22px;
 
     display: flex;
@@ -475,6 +474,8 @@ img {
 
     padding: 40px 50px;
     overflow: hidden;
+
+    background-size: cover;
 }
 
 .texto_banner_principal {
@@ -513,7 +514,7 @@ img {
     align-items: center;
     gap: 10px;
 
-    background: #226B65;
+    background: #AE565B;
     color: #fff;
 
     padding: 13px 24px;
@@ -523,6 +524,7 @@ img {
     font-weight: bold;
 
     transition: 0.2s;
+
 }
 
 .botao_banner:hover {
@@ -548,13 +550,13 @@ img {
    SEÇÃO DE PRODUTOS
 ========================================= */
 .secao_produtos {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 30px 20px 50px;
 }
 
 .conteudo_secao_produtos {
-    display: block;
+    display: relative;
 }
 
 .barra_ferramentas_produtos {
@@ -599,8 +601,11 @@ img {
 ========================================= */
 .grade_produtos {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 5fr));
     gap: 15px;
+    margin-top: 22px;
+    padding-bottom: 30px;
+
 }
 
 .cartao_produto {
@@ -615,6 +620,13 @@ img {
     background: white;
 
     transition: 0.25s;
+
+    display:flex;
+
+    flex-direction: column;
+
+    align-content: space-between;
+    gap: 16px;
     
 }
 
@@ -666,18 +678,24 @@ img {
 }
 
 .imagem_produto {
-    height: 155px;
 
+    width: 100%;
+    height: 180px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: -50px;
 
 }
 
 .imagem_produto img {
-    max-height: 145px;
-    object-fit: contain;
 
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    margin-top: 20px;
     transform: scale(2.8);
 }
 
@@ -718,11 +736,11 @@ img {
     justify-content: center;
     gap: 8px;
 
-    background: #FFC107;
+    background: #F3C257;
     color: #16222B;
 
     border: none;
-    border-radius: 30px;
+    border-radius: 9px;
     padding: 11px 0;
 
     font-size: 13px;
@@ -754,7 +772,7 @@ img {
 
 }
 .botao_adicionar_carrinho:hover {
-    background: #F2A900;
+    background: #E5B548;
 }
 
 /* =========================================
@@ -817,4 +835,15 @@ img {
     }
 }
 
-
+.favorito {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    color: #a1abad;
+    cursor: pointer;
+}
+ 
+.favorito:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}

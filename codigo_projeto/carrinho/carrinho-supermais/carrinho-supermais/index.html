@@ -10,37 +10,51 @@
     <script src="js/app.js" defer></script>
   </head>
   <body>
-    <div class="topo-aviso">
-      <span>🚚 Frete <strong>grátis</strong> nas compras acima de <strong>R$ 200,00</strong></span>
-      <span>🎧 Central de Atendimento &nbsp; · &nbsp; 📍 Encontre uma loja</span>
-    </div>
+    <header class="topo-aviso">
+      <div class="informacao-frete">
+        <img src="../../../higiene/icone/frete_gratis_icone.png" alt="" aria-hidden="true" />
+        <span>Frete <strong>grátis</strong> nas compras acima de <strong>R$ 150,00</strong></span>
+      </div>
+      <nav class="links-topo" aria-label="Links rápidos">
+        <a href="#contato"><img src="../../../higiene/icone/atendimento-ao-cliente_icone.png" alt="" aria-hidden="true" />Central de Atendimento</a>
+        <a href="#lojas"><img src="../../../higiene/icone/local_icone.png" alt="" aria-hidden="true" />Encontre uma loja</a>
+      </nav>
+    </header>
 
-    <header class="cabecalho">
+    <section class="cabecalho">
       <a class="logo" href="#inicio" aria-label="SuperMais — início">
-        <img src="assets/images/logo-supermais.png" alt="SuperMais" />
+        <img src="assets/images/logo.png" alt="SuperMais" />
       </a>
 
       <form class="busca" role="search" id="formBusca">
         <label class="visualmente-oculto" for="campoBusca">O que você procura?</label>
         <input id="campoBusca" type="search" placeholder="O que você procura hoje?" />
-        <button type="submit" aria-label="Buscar">⌕</button>
+        <button type="submit" aria-label="Buscar"><span aria-hidden="true"></span></button>
       </form>
 
       <div class="area-cliente">
-        <div><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></div>
+        <a class="cliente" href="#login"><img src="../../../higiene/icone/perfil_icone.png" alt="" aria-hidden="true" /><span><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></span></a>
         <div class="mini-carrinho">
-          <span class="icone" aria-hidden="true">🛒<span class="bolinha" id="contadorTopo">0</span></span>
+          <span class="icone"><img src="../../../higiene/icone/carrinho_icone.png" alt="" aria-hidden="true" /><span class="bolinha" id="contadorTopo">0</span></span>
           <span><b>Meu carrinho</b><small id="totalTopo">R$ 0,00</small></span>
         </div>
       </div>
-    </header>
+    </section>
 
     <nav class="navegacao" aria-label="Navegação principal">
-      <a class="ativo" href="#inicio">⌂ Início</a>
-      <a href="#ofertas">◇ Ofertas</a>
-      <a href="#categorias">▦ Categorias</a>
-      <a href="#cartoes">▣ Cartões</a>
-      <a href="#contato">✉ Contato</a>
+      <div class="links-navegacao">
+        <a class="ativo" href="#inicio"><img src="../../../higiene/icone/inicio_icone.png" alt="" aria-hidden="true" />Início</a>
+        <a href="#ofertas"><img src="../../../higiene/icone/oferta_icone.png" alt="" aria-hidden="true" />Ofertas</a>
+        <a href="#categorias"><img src="../../../higiene/icone/categoria_icone.png" alt="" aria-hidden="true" />Categorias</a>
+        <a href="#cartoes"><img src="../../../higiene/icone/cartao_icone.png" alt="" aria-hidden="true" />Cartões</a>
+        <a href="#contato"><img src="../../../higiene/icone/contato_icone.png" alt="" aria-hidden="true" />Contato</a>
+      </div>
+      <span class="divisor-menu" aria-hidden="true"></span>
+      <div class="card-supermais">
+        <div class="supermais-icon"><img src="../../../higiene/icone/cartao_mais_icone.png" alt="" aria-hidden="true" /></div>
+        <div class="supermais-text"><strong>Cartão SuperMais</strong><span>Mais vantagens para você!</span></div>
+        <a class="request-card" href="#cartoes">Peça o seu <span aria-hidden="true">›</span></a>
+      </div>
     </nav>
 
     <main id="inicio">
@@ -63,7 +77,7 @@
         <aside class="card resumo" aria-labelledby="tituloResumo">
           <h2 id="tituloResumo">Resumo do pedido</h2>
           <div class="frete-gratis" id="avisoFrete" aria-live="polite">
-            <span aria-hidden="true">🚚</span><div><strong id="tituloFrete">Calcule seu frete</strong><span id="textoFrete">Adicione produtos ao carrinho.</span></div>
+            <span class="frete-icone" aria-hidden="true"><img src="../../../higiene/icone/frete_gratis_icone.png" alt="" /></span><div><strong id="tituloFrete">Calcule seu frete</strong><span id="textoFrete">Adicione produtos ao carrinho.</span></div>
           </div>
           <form class="cupom" id="formCupom">
             <label class="visualmente-oculto" for="campoCupom">Código do cupom</label>
@@ -77,7 +91,7 @@
           <div class="total"><strong>Total</strong><strong id="valorTotal">R$ 0,00</strong></div>
           <button class="finalizar" id="botaoFinalizar" type="button">Ir para o pagamento →</button>
           <p class="mensagem-checkout" id="mensagemCheckout" aria-live="polite"></p>
-          <p class="compra-segura">🔒 Compra segura e protegida</p>
+          <p class="compra-segura"><img src="../../../higiene/icone/pagamento_seguro_icone.png" alt="" aria-hidden="true" />Compra segura e protegida</p>
         </aside>
       </div>
 
@@ -88,7 +102,7 @@
             <h2 id="tituloSugestoes">Você também pode gostar</h2>
             <p>Complete suas compras com estes produtos.</p>
           </div>
-          <span class="sugestoes-destaque" aria-hidden="true">✨</span>
+          <span class="sugestoes-destaque" aria-hidden="true"></span>
         </div>
         <div class="grade-sugestoes" id="listaSugestoes" aria-live="polite"></div>
         <p class="mensagem-sugestao" id="mensagemSugestao" aria-live="polite"></p>

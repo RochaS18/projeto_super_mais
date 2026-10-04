@@ -34,44 +34,43 @@
 
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    position: relative;
-    min-height: 100vh;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        linear-gradient(180deg,
-            #EAF3F2 0%,
-            #F4F6F6 22%,
-            #F7F7F6 55%,
-            #F2F3F2 100%);
-
-    color: var(--texto);
     overflow-x: hidden;
 }
 
+/* IMPORTANTE (sticky): o body NÃO pode ter overflow (hidden/auto/scroll),
+   senão ele vira o "container de rolagem" e o position: sticky da splash
+   deixa de funcionar. O overflow-x já é tratado no html. */
+/* Espaço de 1 tela onde a splash aparece; o site começa logo depois */
 body::before {
     content: "";
+    display: block;
+    height: 100vh;
+    height: 100dvh;
+}
 
-    position: fixed;
-    inset: 0;
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+}
 
-    z-index: -1;
-    pointer-events: none;
+/* Todo o site (exceto a splash) fica dentro desta div, ACIMA da splash.
+   Ela precisa de fundo opaco para "cobrir" a splash ao rolar. */
+.site-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
 
     background:
-        radial-gradient(circle at 8% 18%,
-            rgba(39, 133, 122, 0.12),
-            transparent 27%),
-        radial-gradient(circle at 92% 12%,
-            rgba(79, 136, 209, 0.10),
-            transparent 28%),
-        radial-gradient(circle at 52% 85%,
-            rgba(240, 127, 87, 0.045),
-            transparent 34%);
+        radial-gradient(circle at 8% 18%, rgba(39, 133, 122, 0.12), transparent 27%),
+        radial-gradient(circle at 92% 12%, rgba(79, 136, 209, 0.10), transparent 28%),
+        radial-gradient(circle at 52% 85%, rgba(240, 127, 87, 0.045), transparent 34%),
+        linear-gradient(180deg, #EAF3F2 0%, #F4F6F6 22%, #F7F7F6 55%, #F2F3F2 100%);
+    background-attachment: fixed, fixed, fixed, scroll;
+
+    /* sombra da "cortina" subindo sobre a splash */
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -94,39 +93,6 @@ input {
     font: inherit;
 }
 
-/* 
-css da parte da splash screen */
-
-.splash-screen {
-    width: 100%;
-    height: 100vh;
-    background-color: #57D3C8;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 0;
-}
-/* 
-isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse modelo de estrutura pra conseguir mexer certinho no z-index */
-
-.site-content {
-    position: relative;
-    z-index: 2;
-    background:
-        linear-gradient(180deg,
-            #EAF3F2 0%,
-            #F4F6F6 22%,
-            #F7F7F6 55%,
-            #F2F3F2 100%);
-    min-height: 100vh;
-    box-shadow: 0px -15px 30px rgba(0, 0, 0, 0.2);
-}
-
 
 /* =========================================
    BARRA SUPERIOR
@@ -136,10 +102,12 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     min-height: 40px;
 
     background:
-        linear-gradient(90deg,
+        linear-gradient(
+            90deg,
             #101D28,
             #142433,
-            #1A2028);
+            #1A2028
+        );
 
     color: rgba(255, 255, 255, 0.88);
 
@@ -171,10 +139,8 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .top-icon {
     width: 18px;
     height: 18px;
-
     display: grid;
     place-items: center;
-
     flex-shrink: 0;
 }
 
@@ -182,7 +148,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .inline-icon {
     width: 18px;
     height: 18px;
-
     object-fit: contain;
 }
 
@@ -192,7 +157,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .top-links a {
     gap: 8px;
-
     transition: 0.25s;
 }
 
@@ -211,44 +175,33 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     padding: 22px 50px;
 
     display: grid;
-
-    grid-template-columns:
-        230px minmax(300px, 1fr) auto;
-
+    grid-template-columns: 230px minmax(300px, 1fr) auto;
     align-items: center;
-
     gap: 50px;
 
     background:
-        linear-gradient(105deg,
+        linear-gradient(
+            105deg,
             rgba(218, 238, 235, 0.96),
             rgba(225, 233, 241, 0.96),
-            rgba(239, 238, 238, 0.96));
+            rgba(239, 238, 238, 0.96)
+        );
 }
-
-
-/* =========================================
-   LOGO
-========================================= */
 
 .logo {
     display: flex;
     align-items: center;
-
     width: 185px;
 }
 
 .logo img {
     width: 100%;
     max-height: 80px;
-
     object-fit: contain;
 }
 
 
-/* =========================================
-   PESQUISA
-========================================= */
+/* PESQUISA */
 
 .search-box {
     width: 100%;
@@ -301,9 +254,11 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     border-radius: 50%;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #4F88D1,
-            #266AAE);
+            #266AAE
+        );
 
     color: white;
 
@@ -330,14 +285,11 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 }
 
 
-/* =========================================
-   CLIENTE E CARRINHO
-========================================= */
+/* CLIENTE E CARRINHO */
 
 .user-area {
     display: flex;
     align-items: center;
-
     gap: 14px;
 }
 
@@ -347,7 +299,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     display: flex;
     align-items: center;
-
     gap: 12px;
 
     padding: 10px 18px;
@@ -367,24 +318,20 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .user-card:hover,
 .cart-card:hover {
     transform: translateY(-2px);
-
     background: rgba(255, 255, 255, 0.65);
 }
 
 .user-icon {
     width: 34px;
     height: 34px;
-
     display: grid;
     place-items: center;
-
     flex-shrink: 0;
 }
 
 .user-icon img {
     width: 30px;
     height: 30px;
-
     object-fit: contain;
 }
 
@@ -392,7 +339,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .cart-text {
     display: flex;
     flex-direction: column;
-
     gap: 3px;
 
     white-space: nowrap;
@@ -406,7 +352,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .user-text span,
 .cart-text span {
     font-size: 12px;
-
     color: #687078;
 }
 
@@ -416,20 +361,16 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .cart-icon {
     position: relative;
-
     width: 34px;
     height: 34px;
-
     display: grid;
     place-items: center;
-
     flex-shrink: 0;
 }
 
-.cart-icon>img {
+.cart-icon > img {
     width: 29px;
     height: 29px;
-
     object-fit: contain;
 }
 
@@ -463,13 +404,14 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .main-menu {
     min-height: 72px;
 
-    margin: 0 40px 25px;
+    margin: 0 40px 30px;
 
-    padding: 8px 18px;
+    padding: 8px 14px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 20px;
 
     border-radius: 38px;
 
@@ -485,75 +427,35 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     backdrop-filter: blur(10px);
 }
 
-
-/* =========================================
-   LINKS DO MENU
-========================================= */
-
 .menu-links {
-    width: 100%;
-    max-width: 900px;
-
     display: flex;
     align-items: center;
-    justify-content: center;
-
     gap: 8px;
-
-    margin: 0 auto;
 }
-
-
-/* =========================================
-   ITENS DO MENU
-========================================= */
-
-.menu-links li {
-    flex: 1 1 0;
-
-    min-width: 0;
-}
-
-
-/* =========================================
-   LINKS
-========================================= */
 
 .menu-links li a {
-    width: 100%;
     min-height: 50px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
 
-    gap: 11px;
-
-    padding: 0 18px;
+    padding: 0 22px;
 
     border-radius: 28px;
 
     color: #303A42;
 
     font-size: 15px;
-    font-weight: 500;
 
-    white-space: nowrap;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+    transition: 0.25s;
 }
 
 .menu-links li:not(.active) a:hover {
     background: rgba(39, 133, 122, 0.10);
-
     color: var(--verde);
-
-    transform: translateY(-1px);
 }
+
 
 .menu-links .active a {
     color: #27857A;
@@ -564,29 +466,130 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
         0 0 15px rgba(39, 133, 122, 0.12),
         0 4px 10px rgba(39, 133, 122, 0.08);
 
-    font-weight: 600;
+    font-weight: 500;
 }
 
-
-/* =========================================
-   ÍCONES DO MENU
-========================================= */
 
 .menu-icon {
     width: 22px;
     height: 22px;
-
     display: grid;
     place-items: center;
-
     flex-shrink: 0;
 }
 
 .menu-icon img {
     width: 21px;
     height: 21px;
-
     object-fit: contain;
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    display: grid;
+    place-items: center;
+}
+
+.arrow img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+.arrow {
+    margin-left: 5px;
+}
+
+.menu-divider {
+    width: 1px;
+    height: 35px;
+
+    margin-left: auto;
+
+    background: #C8CDD0;
+}
+
+.card-supermais {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding-left: 10px;
+}
+
+.supermais-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: #E2F1EF;
+
+    box-shadow:
+        0 4px 12px rgba(39, 133, 122, 0.15);
+}
+
+.supermais-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.supermais-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    white-space: nowrap;
+}
+
+.supermais-text strong {
+    color: #256D66;
+    font-size: 14px;
+}
+
+.supermais-text span {
+    color: #5C646A;
+    font-size: 12px;
+}
+
+.request-card {
+    min-width: 145px;
+    height: 44px;
+
+    margin-left: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F8CF56,
+            #F1B92D
+        );
+
+    color: #2E332E;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow:
+        0 7px 18px rgba(243, 194, 87, 0.25);
+
+    transition: 0.25s;
+}
+
+.request-card:hover {
+    transform: translateY(-2px);
 }
 
 
@@ -596,8 +599,409 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .container {
     width: min(1440px, calc(100% - 80px));
-
     margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-section {
+    display: grid;
+    grid-template-columns: minmax(0, 2.15fr) minmax(380px, 0.95fr);
+    gap: 18px;
+}
+
+
+/* BANNER */
+
+.banner,
+.daily-offer,
+.category-card,
+.app-card,
+.benefits,
+.product-card {
+    border:
+        1px solid rgba(220, 225, 228, 0.8);
+
+    box-shadow:
+        var(--sombra);
+}
+
+.banner {
+    min-height: 286px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #FFFFFF,
+            #F8F9FA 50%,
+            #EAF0F7
+        );
+}
+
+.banner::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: 0;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(240, 127, 87, 0.13),
+            rgba(240, 127, 87, 0)
+        );
+}
+
+.banner-content {
+    height: 100%;
+
+    min-height: 286px;
+
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 45px 40% 1fr 45px;
+    align-items: center;
+}
+
+.banner-text {
+    padding: 25px 0;
+}
+
+.banner-text h1 {
+    max-width: 430px;
+
+    margin-bottom: 15px;
+
+    font-size: clamp(28px, 2.2vw, 38px);
+    line-height: 1.15;
+}
+
+.banner-text h1 span {
+    display: block;
+    color: var(--laranja-escuro);
+}
+
+.banner-text p {
+    max-width: 350px;
+
+    margin-bottom: 25px;
+
+    color: #59646D;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.main-button {
+    width: max-content;
+
+    min-height: 41px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #27857A,
+            #17655D
+        );
+
+    box-shadow:
+        0 6px 16px rgba(39, 133, 122, 0.20);
+
+    font-size: 14px;
+
+    transition: 0.25s;
+}
+
+.main-button:hover {
+    transform: translateY(-2px);
+}
+
+.button-arrow {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+}
+
+.button-arrow img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+.banner-image {
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.banner-image img {
+    width: min(100%, 500px);
+    height: 280px;
+    max-height: 280px;
+    object-fit: contain;
+    object-position: center bottom;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.banner-image.is-changing img,
+.banner-text.is-changing {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.slider-arrow,
+.offer-arrow {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        rgba(255, 255, 255, 0.80);
+
+    color: #35424A;
+
+    box-shadow:
+        0 4px 14px rgba(30, 40, 50, 0.10);
+
+    cursor: pointer;
+
+    font-size: 30px;
+    line-height: 1;
+
+    transition: 0.25s;
+}
+
+.slider-arrow img,
+.offer-arrow img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.slider-arrow:hover,
+.offer-arrow:hover {
+    transform: scale(1.08);
+}
+
+.slider-left {
+    justify-self: center;
+}
+
+.slider-right {
+    justify-self: center;
+}
+
+.slider-dots {
+    position: absolute;
+
+    bottom: 28px;
+    left: 38%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #AEB5BA;
+    cursor: pointer;
+    transition: width 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.slider-dots button:hover {
+    transform: scale(1.15);
+}
+
+.slider-dots .active-dot {
+    width: 11px;
+    height: 11px;
+    background: var(--verde);
+}
+
+
+/* =========================================
+   OFERTA DO DIA
+========================================= */
+
+.daily-offer {
+    min-height: 286px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F7F8F9
+        );
+}
+
+.daily-offer h2 {
+    margin-bottom: 15px;
+
+    color: var(--laranja-escuro);
+
+    font-size: 18px;
+}
+
+.offer-content {
+    display: grid;
+    grid-template-columns: 35px 125px 1fr 35px;
+    align-items: center;
+    gap: 8px;
+}
+
+.offer-arrow {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+}
+
+.offer-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 155px;
+}
+
+.offer-image img {
+    max-height: 155px;
+    object-fit: contain;
+}
+
+.offer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.offer-info h3 {
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.product-type {
+    margin-bottom: 10px;
+
+    color: #5E666D;
+    font-size: 13px;
+}
+
+.price {
+    color: var(--laranja-escuro);
+
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.price small {
+    font-size: 13px;
+}
+
+.old-price {
+    margin: 5px 0 10px;
+
+    color: #8C9499;
+
+    text-decoration: line-through;
+
+    font-size: 13px;
+}
+
+.discount {
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    background: #FFD76A;
+
+    color: #4B4230;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.offer-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #E1E4E5;
+}
+
+.progress-bar span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--verde);
+}
+
+.offer-progress small {
+    white-space: nowrap;
+
+    color: #737A80;
+    font-size: 10px;
 }
 
 
@@ -606,55 +1010,30 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 ========================================= */
 
 .categories {
-    width: 100%;
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
+    grid-template-columns: 1fr 1.22fr 1.45fr;
     gap: 14px;
-
-    margin-top: 0;
+    margin-top: 18px;
 }
 
 .category-card {
     position: relative;
-
-    min-height: 215px;
-
     overflow: hidden;
 
     border-radius: 16px;
 
-    border:
-        1px solid rgba(228, 233, 237, 0.8);
+    border: 1px solid rgba(228, 233, 237, 0.8);
 
     box-shadow:
         0 4px 12px rgba(31, 45, 55, 0.04);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(31, 45, 55, 0.10);
 }
 
 .category-text {
     position: relative;
-
     z-index: 2;
 }
 
-
-/* =========================================
-   TÍTULOS DAS CATEGORIAS
-========================================= */
+/* TITULOS */
 
 .category-card h2 {
     margin-bottom: 12px;
@@ -665,7 +1044,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     font-weight: 700;
 
     line-height: 1.25;
-
     letter-spacing: -0.3px;
 }
 
@@ -673,10 +1051,7 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     display: block;
 }
 
-
-/* =========================================
-   DESCRIÇÃO
-========================================= */
+/* DESCRIÇÃO */
 
 .category-card p {
     max-width: 175px;
@@ -688,20 +1063,11 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     line-height: 1.7;
 }
 
+/* LINK */
 
-/* =========================================
-   LINKS DAS CATEGORIAS
-========================================= */
-
-.category-card>a:not(.category-card) {
+.category-card a {
     display: inline-flex;
-}
-
-.category-text>a {
-    display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
 
     margin-top: 20px;
@@ -711,24 +1077,20 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     font-size: 13px;
     font-weight: 700;
 
-    transition: 0.25s ease;
+    transition: .25s ease;
 }
 
-.category-text>a:hover {
+.category-card a:hover {
     transform: translateX(3px);
 }
 
-.category-text>a .button-arrow {
-    width: 18px;
-    height: 18px;
+.category-card a span {
+    font-size: 18px;
 }
 
+/* IMAGENS */
 
-/* =========================================
-   IMAGENS DAS CATEGORIAS
-========================================= */
-
-.category-card>img {
+.category-card img {
     position: absolute;
 
     right: 0;
@@ -740,29 +1102,32 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     object-position: bottom right;
 
     filter:
-        drop-shadow(0 12px 16px rgba(31, 45, 55, 0.10));
+        drop-shadow(
+            0 12px 16px rgba(31, 45, 55, 0.10)
+        );
 
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
-.category-card:hover>img {
+.category-card:hover img {
     transform: scale(1.04);
 }
-
 
 /* =========================================
    ALIMENTOS
 ========================================= */
 
 .food-card {
+    min-height: 215px;
     padding: 18px;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #FFFFFF 0%,
             #F3FAF2 45%,
-            #DFF3E1 100%);
+            #DFF3E1 100%
+        );
 }
 
 .food-card h2 {
@@ -774,92 +1139,102 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     max-height: 200px;
 }
 
-
 /* =========================================
-   MIDDLE CATEGORIES
+   COLUNA CENTRAL
 ========================================= */
 
 .middle-categories {
-    display: contents;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
 }
-
 
 /* =========================================
    DOCES
 ========================================= */
 
 .sweets-card {
-    padding: 18px;
+    min-height: 103px;
+    padding: 14px 18px;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #FFFFFF 0%,
             #FFF4F7 50%,
-            #FFDDE7 100%);
+            #FFDDE7 100%
+        );
 }
 
 .sweets-card h2 {
     color: #C03A6B;
 }
 
-.sweets-card p {
-    max-width: 185px;
-
-    font-size: 11px;
-
-    line-height: 1.6;
-}
-
-.sweets-card img {
-    width: 43%;
-    max-height: 150px;
-}
-
-
 /* =========================================
    HIGIENE
 ========================================= */
 
 .hygiene-card {
-    padding: 18px;
+    min-height: 103px;
+    padding: 14px 18px;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #FFFFFF 0%,
             #EEF7FF 50%,
-            #D7EAFF 100%);
+            #D7EAFF 100%
+        );
 }
 
 .hygiene-card h2 {
     color: #1E69D2;
 }
 
+.sweets-card h2,
+.hygiene-card h2 {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.sweets-card p,
 .hygiene-card p {
     max-width: 185px;
-
     font-size: 11px;
-
     line-height: 1.6;
+}
+
+.sweets-card a,
+.hygiene-card a {
+    margin-top: 8px;
+}
+
+.sweets-card img {
+    width: 43%;
+    max-height: 105px;
 }
 
 .hygiene-card img {
     width: 42%;
-    max-height: 150px;
+    max-height: 100px;
 }
-
 
 /* =========================================
    FERRAMENTAS
 ========================================= */
 
 .tools-card {
+    min-height: 215px;
     padding: 18px;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #FFFFFF 0%,
             #FFF8E8 45%,
-            #FFE7A6 100%);
+            #FFE7A6 100%
+        );
 }
 
 .tools-card h2 {
@@ -878,15 +1253,11 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .bottom-section {
     display: grid;
-
-    grid-template-columns:
-        0.92fr 1.48fr;
-
+    grid-template-columns: 0.92fr 1.48fr;
     gap: 18px;
 
     margin-top: 18px;
 }
-
 
 /* =========================================
    BANNER APP
@@ -894,7 +1265,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .app-card {
     position: relative;
-
     overflow: hidden;
 
     min-height: 120px;
@@ -905,12 +1275,15 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     color: #FFFFFF;
 
-    background:
-        linear-gradient(120deg,
-            #1C5DA8 0%,
-            #2B71BC 55%,
-            #3D8AD9 100%);
+    background: linear-gradient(
+        120deg,
+        #1C5DA8 0%,
+        #2B71BC 55%,
+        #3D8AD9 100%
+    );
 }
+
+/* círculo decorativo */
 
 .app-card::after {
     content: "";
@@ -930,13 +1303,16 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     z-index: 1;
 }
 
+/* conteúdo */
+
 .app-content {
     position: relative;
-
     z-index: 3;
 
     max-width: 210px;
 }
+
+/* título */
 
 .app-card h2 {
     max-width: 200px;
@@ -953,6 +1329,8 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     display: block;
 }
 
+/* descrição */
+
 .app-card p {
     margin-bottom: 10px;
 
@@ -963,9 +1341,10 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     line-height: 1.4;
 }
 
+/* botões */
+
 .app-buttons {
     display: flex;
-
     gap: 8px;
 }
 
@@ -984,6 +1363,8 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     background: #1A1D22;
 
     color: #FFFFFF;
+
+    text-decoration: none;
 
     font-size: 11px;
     font-weight: 600;
@@ -1006,6 +1387,8 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     font-weight: 400;
 }
 
+/* ícones */
+
 .store-icon {
     width: 16px;
     height: 16px;
@@ -1023,6 +1406,8 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     object-fit: contain;
 }
+
+/* celular */
 
 .app-phone {
     position: absolute;
@@ -1044,19 +1429,13 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     object-fit: contain;
 }
 
-
-/* =========================================
-   BENEFÍCIOS
-========================================= */
+/* BENEFÍCIOS */
 
 .benefits {
     min-height: 118px;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 
     padding: 18px;
@@ -1064,48 +1443,42 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     border-radius: 16px;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #FFFFFF,
-            #F8F9FA);
+            #F8F9FA
+        );
 }
 
 .benefit {
     display: flex;
     align-items: center;
-
     gap: 12px;
 }
 
 .benefit-icon {
     width: 54px;
     height: 54px;
-
     flex-shrink: 0;
-
     display: grid;
     place-items: center;
-
     border-radius: 50%;
-
     background: #F0F2F1;
 }
 
 .benefit-icon img {
     width: 25px;
     height: 25px;
-
     object-fit: contain;
 }
 
 .security-icon {
     color: var(--azul);
-
     background: #EAF1F8;
 }
 
 .gift-icon {
     color: var(--laranja);
-
     background: #FBF0E9;
 }
 
@@ -1123,7 +1496,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     color: #5C656B;
 
     font-size: 10px;
-
     line-height: 1.45;
 }
 
@@ -1134,7 +1506,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .products {
     margin-top: 22px;
-
     padding-bottom: 30px;
 }
 
@@ -1153,7 +1524,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .products-header a {
     display: flex;
     align-items: center;
-
     gap: 10px;
 
     color: #226B65;
@@ -1168,10 +1538,7 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .product-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(5, 1fr);
-
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
 }
 
@@ -1198,21 +1565,14 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .favorite {
     position: absolute;
-
     top: 15px;
     right: 15px;
-
     width: 30px;
     height: 30px;
-
     padding: 0;
-
     border: none;
-
     background: transparent;
-
     cursor: pointer;
-
     display: grid;
     place-items: center;
 }
@@ -1220,11 +1580,8 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .favorite img {
     width: 23px;
     height: 23px;
-
     object-fit: contain;
-
-    transition:
-        transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .favorite:hover img {
@@ -1241,13 +1598,11 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 .product-image img {
     max-height: 145px;
-
     object-fit: contain;
 }
 
 .product-card h3 {
     margin-top: 10px;
-
     font-size: 14px;
 }
 
@@ -1261,83 +1616,43 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
 
 /* =========================================
-   PADRONIZAÇÃO DE ÍCONES
-========================================= */
-
-.inline-icon,
-.top-icon img,
-.menu-icon img,
-.arrow img,
-.user-icon img,
-.cart-icon>img,
-.store-icon img,
-.benefit-icon img,
-.favorite img,
-.button-arrow img {
-    object-fit: contain;
-
-    object-position: center;
-
-    flex-shrink: 0;
-}
-
-.favorite:focus-visible {
-    outline: 2px solid var(--azul);
-    outline-offset: 3px;
-}
-
-
-/* =========================================
-   IMAGENS
-========================================= */
-
-.category-card img,
-.product-image img,
-.app-phone img {
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* =========================================
    RESPONSIVIDADE
 ========================================= */
 
 @media (max-width: 1250px) {
 
     .header {
-        grid-template-columns:
-            180px 1fr;
+        grid-template-columns: 180px 1fr;
     }
 
     .user-area {
         grid-column: 1 / -1;
-
         justify-content: flex-end;
     }
 
-
-    /* MENU */
-
     .main-menu {
-        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .menu-links {
-        max-width: 850px;
+    .menu-divider {
+        display: none;
     }
 
+    .card-supermais {
+        margin-left: auto;
+    }
 
-    /* CATEGORIAS */
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
 
     .categories {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr 1fr;
     }
 
-
-    /* APP */
+    .tools-card {
+        min-height: 215px;
+    }
 
     .bottom-section {
         grid-template-columns: 1fr;
@@ -1346,17 +1661,11 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 }
 
 
-/* =========================================
-   TABLETS
-========================================= */
-
 @media (max-width: 900px) {
 
     .top-bar {
         padding: 10px 25px;
-
         gap: 15px;
-
         flex-wrap: wrap;
     }
 
@@ -1366,7 +1675,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     .header {
         padding: 25px;
-
         gap: 20px;
     }
 
@@ -1376,67 +1684,39 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     .main-menu {
         margin: 0 20px 20px;
-
-        padding: 8px 12px;
-
-        border-radius: 28px;
     }
 
-
-    /* MENU */
-
     .menu-links {
-        max-width: 100%;
-
-        gap: 5px;
+        flex-wrap: wrap;
     }
 
     .menu-links li a {
-        padding: 0 12px;
-
-        gap: 8px;
+        padding: 0 14px;
     }
 
-
-    /* CATEGORIAS */
-
     .categories {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
     }
 
     .middle-categories {
-        display: contents;
+        min-height: 220px;
     }
-
-
-    /* BENEFÍCIOS */
 
     .benefits {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-
-    /* PRODUTOS */
-
     .product-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
 }
 
 
-/* =========================================
-   CELULAR
-========================================= */
-
 @media (max-width: 650px) {
 
     .top-bar {
         justify-content: center;
-
         text-align: center;
     }
 
@@ -1446,14 +1726,9 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     .top-links {
         width: 100%;
-
         justify-content: center;
-
         flex-wrap: wrap;
     }
-
-
-    /* CABEÇALHO */
 
     .header {
         display: flex;
@@ -1466,102 +1741,83 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 
     .user-area {
         width: 100%;
-
         justify-content: center;
-
         flex-wrap: wrap;
     }
 
-
-    /* MENU */
-
     .main-menu {
         border-radius: 20px;
-
-        padding: 8px;
+        justify-content: center;
     }
 
     .menu-links {
         width: 100%;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 5px;
+        justify-content: center;
     }
 
-    .menu-links li {
+    .card-supermais {
         width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .menu-links li a {
-        min-height: 44px;
-
-        padding: 0 8px;
-
-        gap: 7px;
-
-        font-size: 13px;
+    .request-card {
+        margin-left: 0;
     }
-
-    .menu-icon {
-        width: 19px;
-        height: 19px;
-    }
-
-    .menu-icon img {
-        width: 19px;
-        height: 19px;
-    }
-
-
-    /* CONTAINER */
 
     .container {
         width: calc(100% - 24px);
     }
 
+    .banner-content {
+        min-height: 480px;
 
-    /* CATEGORIAS */
-
-    .categories {
-        grid-template-columns: 1fr;
+        grid-template-columns: 40px 1fr 40px;
+        grid-template-rows: auto 230px;
     }
 
-    .category-card {
-        min-height: 215px;
+    .banner-text {
+        grid-column: 2;
     }
 
+    .banner-image {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
 
-    /* APP */
+    .slider-left {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .slider-right {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .slider-dots {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .offer-content {
+        grid-template-columns: 35px 110px 1fr 35px;
+    }
 
     .bottom-section {
         grid-template-columns: 1fr;
     }
 
-
-    /* BENEFÍCIOS */
-
     .benefits {
         grid-template-columns: 1fr;
     }
 
-
-    /* PRODUTOS */
-
     .product-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
-
-/* =========================================
-   CELULARES PEQUENOS
-========================================= */
 
 @media (max-width: 420px) {
 
@@ -1569,42 +1825,41 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
         flex-direction: column;
     }
 
-
-    /* MENU */
-
-    .menu-links {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 4px;
-    }
-
     .menu-links li a {
         min-height: 42px;
-
-        padding: 0 7px;
-
-        gap: 6px;
-
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .menu-icon {
-        width: 18px;
-        height: 18px;
+        font-size: 16px;
     }
 
-    .menu-icon img {
-        width: 18px;
-        height: 18px;
+    .supermais-text {
+        display: none;
     }
 
+    .offer-content {
+        grid-template-columns: 30px 90px 1fr;
+    }
 
-    /* APP */
+    .offer-arrow.right {
+        display: none;
+    }
+
+    .offer-image {
+        height: 130px;
+    }
+
+    .offer-image img {
+        max-height: 130px;
+    }
+
+    .price {
+        font-size: 23px;
+    }
 
     .app-phone {
         opacity: 0.35;
-
         right: -15px;
     }
 
@@ -1612,11 +1867,95 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
         min-width: auto;
     }
 
+}
 
-    /* PRODUTOS */
+/* =========================================
+   PADRONIZAÇÃO DE ÍCONES PERSONALIZADOS
+========================================= */
 
-    .product-grid {
-        grid-template-columns: 1fr;
+.inline-icon,
+.top-icon img,
+.menu-icon img,
+.arrow img,
+.user-icon img,
+.cart-icon > img,
+.supermais-icon img,
+.store-icon img,
+.benefit-icon img,
+.favorite img,
+.slider-arrow img,
+.offer-arrow img,
+.button-arrow img {
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+.slider-arrow:focus-visible,
+.offer-arrow:focus-visible,
+.slider-dots button:focus-visible,
+.favorite:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 3px;
+}
+
+/* Imagens da categoria e do banner: evita deformação em telas menores. */
+.banner-image img,
+.category-card img,
+.offer-image img,
+.product-image img,
+.app-phone img {
+    height: auto;
+    object-fit: contain;
+}
+
+/* Transição do conteúdo do carrossel. */
+.banner-text,
+.banner-image {
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* Ajuste visual para o banner manter proporção próxima da referência. */
+.banner {
+    isolation: isolate;
+}
+
+@media (max-width: 900px) {
+    .banner-image img {
+        width: min(90%, 430px);
+    }
+}
+
+@media (max-width: 650px) {
+    .banner-image img {
+        width: min(90%, 360px);
+        height: 220px;
     }
 
+    .banner-image {
+        align-items: center;
+    }
+}
+
+.splash-screen {
+    /* FIXED: fica presa na tela e não depende de nenhum elemento pai
+       (diferente do sticky, que quebra com overflow em ancestrais). */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1;
+
+    background-color: #57D3C8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_splash{
+    max-width: 250px;
+    width: 80%;
+    height: auto;
 }

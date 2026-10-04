@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mais - Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <div class="top-bar">
+        <div class="shipping-info">
+            <span class="top-icon">
+                <img src="../icone/frete_gratis_icone.png" alt="" aria-hidden="true">
+            </span>
+
+            <span>
+                Frete <strong>grátis</strong> nas compras acima de
+                <strong>R$ 150,00</strong>
+            </span>
+        </div>
+
+        <div class="top-links">
+            <a href="#">
+                <img class="inline-icon" src="../icone/atendimento-ao-cliente_icone.png" alt="" aria-hidden="true">
+                Central de Atendimento
+            </a>
+
+            <a href="#">
+                <img class="inline-icon" src="../icone/local_icone.png" alt="" aria-hidden="true">
+                Encontre uma loja
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <section class="header">
+
+        <a href="index.html" class="logo">
+            <img src="../icone/logo.png" alt="Super Mais">
+        </a>
+
+        <div class="search-box">
+            <form action="#">
+                <input type="search" placeholder="O que você procura hoje?" aria-label="Pesquisar produtos">
+
+                <button type="submit" aria-label="Pesquisar">
+                    <img src="../icone/pesquisa_icone.png" alt="" aria-hidden="true">
+                </button>
+            </form>
+        </div>
+
+        <div class="user-area">
+
+            <a href="#" class="user-card" id="login-trigger" aria-haspopup="dialog" aria-controls="login-modal">
+
+                <div class="user-icon">
+                    <img src="../icone/perfil_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div class="user-text">
+                    <strong>Olá, Cliente</strong>
+                    <span>Entre ou cadastre-se</span>
+                </div>
+            </a>
+
+            <a href="#" class="cart-card" id="cart-trigger" aria-haspopup="dialog" aria-controls="cart-modal">
+
+                <div class="cart-icon">
+                    <img src="../icone/carrinho_icone.png" alt="" aria-hidden="true">
+                    <span class="cart-count">0</span>
+                </div>
+
+                <div class="cart-text">
+                    <strong>Meu carrinho</strong>
+                    <span>R$ 0,00</span>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+     MENU PRINCIPAL
+    ========================================== -->
+    <nav class="main-menu">
+
+        <ul class="menu-links">
+
+            <li>
+                <a href="../pagina_inicial.html">
+                    <span class="menu-icon">
+                        <img src="../icone/inicio_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-icon">
+                        <img src="../icone/oferta_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Ofertas
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-icon">
+                        <img src="../icone/categoria_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Categorias
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-icon">
+                        <img src="../icone/cartao_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Cartões
+                </a>
+            </li>
+
+            <li>
+                <a href="contato.html">
+                    <span class="menu-icon">
+                        <img src="../icone/contato_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Contato
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ===== CONTEÚDO DE CONTATO ===== -->
+    <main class="pagina-contato">
+        <section class="hero-contato">
+            <div class="cabecalho-contato">
+                <span class="etiqueta-contato">Atendimento de verdade</span>
+                <h2>Seu próximo projeto começa com uma boa conversa.</h2>
+                <p>Conte o que você precisa. A gente ajuda a encontrar a ferramenta certa, sem complicação.</p>
+            </div>
+            <div class="horario-destaque">
+                <span class="icone-atendimento"><i class="fa-solid fa-headset"></i></span>
+                <div>
+                    <strong>Estamos por aqui</strong>
+                    <span>Segunda a sábado, das 8h às 18h</span>
+                </div>
+                <i class="fa-solid fa-arrow-down seta-contato" aria-hidden="true"></i>
+            </div>
+        </section>
+
+        <section class="grade-contato">
+            <div class="cartao-contato">
+                <div class="titulo-bloco-contato">
+                    <span>01 / Atendimento</span>
+                    <h3>Fale com a gente</h3>
+                </div>
+
+                <a class="informacao-contato" href="tel:+551133332026">
+                    <strong><i class="fa-solid fa-phone"></i> Telefone</strong>
+                    <span>(11) 3333-2026</span>
+                </a>
+                <a class="informacao-contato" href="mailto:contato@supermais.com.br">
+                    <strong><i class="fa-solid fa-envelope"></i> E-mail</strong>
+                    <span>contato@supermais.com.br</span>
+                </a>
+                <p class="informacao-contato">
+                    <strong><i class="fa-solid fa-clock"></i> Horário</strong>
+                    <span>Segunda a sábado, das 8h às 18h</span>
+                </p>
+
+                <form class="formulario-contato" id="formulario-contato">
+                    <h4>Escreva para nossa equipe</h4>
+                    <label for="nome">Nome
+                        <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+                    </label>
+                    <label for="email">E-mail
+                        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+                    </label>
+                    <label for="mensagem">Mensagem
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?"
+                            required></textarea>
+                    </label>
+                    <button type="submit">Enviar mensagem</button>
+                    <small id="mensagem-formulario" aria-live="polite"></small>
+                </form>
+            </div>
+
+            <div class="mapa-ficticio">
+                <div class="titulo-bloco-contato">
+                    <span>02 / Visite a loja</span>
+                    <h3>Um bom conselho também se encontra pessoalmente.</h3>
+                </div>
+                <div class="mapa" aria-label="Mapa ilustrativo da localização da loja">
+                    <span class="rua rua-um"></span>
+                    <span class="rua rua-dois"></span>
+                    <span class="rua rua-tres"></span>
+                    <span class="marcador"><i class="fa-solid fa-location-dot"></i></span>
+                </div>
+                <p class="aviso-mapa"><i class="fa-solid fa-location-dot"></i> Rua das Ferramentas, 150 - São Paulo, SP
+                </p>
+                <div class="nota-loja">
+                    <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                    <span>Precisa de ajuda para escolher? Nossa equipe está pronta para trocar uma ideia.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================
+             FOOTER (RODAPÉ)
+        ========================================== -->
+    <section class="bottom-section">
+
+
+        <!-- APP -->
+        <article class="app-card">
+
+            <div class="app-content">
+
+                <h2>
+                    Ofertas exclusivas
+                    <span>no App SuperMais</span>
+                </h2>
+
+                <p>
+                    Baixe agora e aproveite!
+                </p>
+
+
+                <div class="app-buttons">
+
+                    <a href="#" class="store-button">
+                        <span class="store-icon"><img src="../icone/Apple-Logo.png" alt="" aria-hidden="true"></span>
+
+
+                        <span>
+                            <small>Disponível na</small>
+                            App Store
+                        </span>
+                    </a>
+
+
+                    <a href="#" class="store-button">
+                        <span class="store-icon"><img src="../icone/Google-Play.png" alt="" aria-hidden="true"></span>
+
+                        <span>
+                            <small>Disponível no</small>
+                            Google Play
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="app-phone">
+                <img src="../icone/logo_celular.png" alt="Aplicativo SuperMais">
+            </div>
+
+        </article>
+
+
+        <!-- BENEFÍCIOS -->
+        <section class="benefits">
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon truck-icon">
+                    <img src="../icone/entrega_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Entrega rápida</h3>
+
+                    <p>
+                        Receba em casa
+                        com agilidade
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon security-icon">
+                    <img src="../icone/pagamento_seguro_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Pagamento seguro</h3>
+
+                    <p>
+                        Seus dados protegidos
+                        em todas as compras
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon gift-icon">
+                    <img src="../icone/variedade_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Variedade garantida</h3>
+
+                    <p>
+                        Milhares de produtos
+                        para você
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon support-icon">
+                    <img src="../icone/atendimento_humano_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Atendimento humano</h3>
+
+                    <p>
+                        Estamos prontos para
+                        te ajudar
+                    </p>
+                </div>
+
+            </article>
+
+        </section>
+
+    </section>
+
+    </main>
+
+
+    <!-- ===== CARRINHO POPUP ===== -->
+    <div class="carrinho-fundo" id="carrinho-fundo" hidden>
+        <aside class="carrinho-popup" role="dialog" aria-modal="true" aria-labelledby="titulo-carrinho">
+            <button class="fechar-carrinho" type="button" aria-label="Fechar carrinho">&times;</button>
+            <h2 id="titulo-carrinho">Meu carrinho</h2>
+            <div id="itens-carrinho">
+                <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+            </div>
+            <div class="cupom-carrinho">
+                <label for="cupom">Cupom de desconto</label>
+                <div>
+                    <input id="cupom" type="text" placeholder="Ex.: SUPER10">
+                    <button id="aplicar-cupom" type="button">Aplicar</button>
+                </div>
+                <small id="mensagem-cupom" aria-live="polite"></small>
+            </div>
+            <div class="resumo-carrinho">
+                <p><span>Subtotal</span><strong id="subtotal-carrinho">R$ 0,00</strong></p>
+                <p><span>Desconto</span><strong id="desconto-carrinho">R$ 0,00</strong></p>
+                <div class="total-carrinho">
+                    <span>Total</span>
+                    <strong id="total-carrinho">R$ 0,00</strong>
+                </div>
+            </div>
+            <button class="finalizar-carrinho" type="button">Finalizar compra</button>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="contato.js"></script>
+</body>
+
+</html>

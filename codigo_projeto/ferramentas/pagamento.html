@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mais - Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <div class="top-bar">
+        <div class="shipping-info">
+            <span class="top-icon">
+                <img src="../icone/frete_gratis_icone.png" alt="" aria-hidden="true">
+            </span>
+
+            <span>
+                Frete <strong>grátis</strong> nas compras acima de
+                <strong>R$ 150,00</strong>
+            </span>
+        </div>
+
+        <div class="top-links">
+            <a href="#">
+                <img class="inline-icon" src="../icone/atendimento-ao-cliente_icone.png" alt="" aria-hidden="true">
+                Central de Atendimento
+            </a>
+
+            <a href="#">
+                <img class="inline-icon" src="../icone/local_icone.png" alt="" aria-hidden="true">
+                Encontre uma loja
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <section class="header">
+
+        <a href="index.html" class="logo">
+            <img src="../icone/logo.png" alt="Super Mais">
+        </a>
+
+        <div class="search-box">
+            <form action="#">
+                <input type="search" placeholder="O que você procura hoje?" aria-label="Pesquisar produtos">
+
+                <button type="submit" aria-label="Pesquisar">
+                    <img src="../icone/pesquisa_icone.png" alt="" aria-hidden="true">
+                </button>
+            </form>
+        </div>
+
+        <div class="user-area">
+
+            <a href="#" class="user-card" id="login-trigger" aria-haspopup="dialog" aria-controls="login-modal">
+
+                <div class="user-icon">
+                    <img src="../icone/perfil_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div class="user-text">
+                    <strong>Olá, Cliente</strong>
+                    <span>Entre ou cadastre-se</span>
+                </div>
+            </a>
+
+            <a href="#" class="cart-card" id="cart-trigger" aria-haspopup="dialog" aria-controls="cart-modal">
+
+                <div class="cart-icon">
+                    <img src="../icone/carrinho_icone.png" alt="" aria-hidden="true">
+                    <span class="cart-count">0</span>
+                </div>
+
+                <div class="cart-text">
+                    <strong>Meu carrinho</strong>
+                    <span>R$ 0,00</span>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+     MENU PRINCIPAL
+    ========================================== -->
+    <nav class="main-menu">
+
+        <ul class="menu-links">
+
+            <li>
+                <a href="../pagina_inicial.html">
+                    <span class="menu-icon">
+                        <img src="../icone/inicio_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-icon">
+                        <img src="../icone/oferta_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Ofertas
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-icon">
+                        <img src="../icone/categoria_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Categorias
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="menu-icon">
+                        <img src="../icone/cartao_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Cartões
+                </a>
+            </li>
+
+            <li>
+                <a href="contato.html">
+                    <span class="menu-icon">
+                        <img src="../icone/contato_icone.png" alt="" aria-hidden="true">
+                    </span>
+                    Contato
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ===== CONTEÚDO DE PAGAMENTO ===== -->
+    <main class="pagina-pagamento">
+        <div class="cabecalho-pagamento">
+            <h2>Finalizar compra</h2>
+            <p>Revise as informações e conclua seu pagamento com segurança.</p>
+        </div>
+
+        <div class="metodos-pagamento" role="group" aria-label="Escolha a forma de pagamento">
+            <button class="metodo-pagamento ativo" type="button" data-metodo="pix" aria-pressed="true">
+                <i class="fa-brands fa-pix" aria-hidden="true"></i>
+                <span>Pix <small>Aprovação rápida</small></span>
+            </button>
+            <button class="metodo-pagamento" type="button" data-metodo="cartao" aria-pressed="false">
+                <i class="fa-regular fa-credit-card" aria-hidden="true"></i>
+                <span>Cartão de crédito <small>Preencha os dados</small></span>
+            </button>
+        </div>
+
+        <section class="area-pagamento">
+            <div class="visual-pix" id="visual-pix">
+                <div class="qrcode-pix" id="qrcode-pix" role="img" aria-label="QR Code Pix demonstrativo"></div>
+                <span class="selo-pix"><i class="fa-solid fa-bolt"></i> Pix demonstrativo</span>
+            </div>
+
+            <div class="visual-cartao" id="visual-cartao" hidden>
+                <div class="cartao-frente" aria-label="Cartão de crédito em pré-visualização">
+                    <div class="chip-cartao"></div>
+                    <p id="numero-cartao" class="numero-cartao">0000 0000 0000 0000</p>
+                    <div class="dados-cartao">
+                        <p>
+                            Titular
+                            <strong id="nome-cartao">NOME DO TITULAR</strong>
+                        </p>
+                        <p>
+                            Validade
+                            <span id="validade-cartao">MM/AA</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detalhes-pix">
+                <span class="etiqueta-pagamento">Pagamento instantâneo</span>
+                <h3>Pague com Pix</h3>
+                <p class="instrucao-pix">Abra o app do seu banco, escolha Pix e escaneie o QR Code ao lado.</p>
+                <div class="valor-pix">
+                    <span>Total do pedido</span>
+                    <strong id="valor-pix">R$ 0,00</strong>
+                </div>
+                <label class="rotulo-codigo-pix" for="codigo-pix">Ou copie e cole o código Pix</label>
+                <div class="linha-codigo-pix">
+                    <input id="codigo-pix" type="text" readonly aria-label="Código Pix demonstrativo">
+                    <button id="copiar-pix" type="button" aria-label="Copiar código Pix"><i
+                            class="fa-regular fa-copy"></i></button>
+                </div>
+                <small class="aviso-pix" id="mensagem-pix" aria-live="polite">Demonstração: nenhuma cobrança será
+                    processada.</small>
+                <button class="botao-pagamento" id="simular-pix" type="button">Simular pagamento</button>
+            </div>
+
+            <div class="formulario-pagamento" id="formulario-cartao" hidden>
+                <h3>Pagamento com cartão</h3>
+
+                <form id="formulario-pagamento" novalidate>
+                    <label class="campo-pagamento" for="nome-cartao-input">
+                        Nome no cartão
+                        <input id="nome-cartao-input" name="nome-cartao" type="text" placeholder="Seu nome completo"
+                            maxlength="30">
+                        <span class="erro-pagamento" data-erro="nome"></span>
+                    </label>
+
+                    <label class="campo-pagamento" for="numero-cartao-input">
+                        Número do cartão
+                        <input id="numero-cartao-input" name="numero-cartao" type="text" inputmode="numeric"
+                            maxlength="19" placeholder="1234 5678 9012 3456">
+                        <span class="erro-pagamento" data-erro="numero"></span>
+                    </label>
+
+                    <div class="campos-pequenos">
+                        <label class="campo-pagamento" for="mes-cartao">
+                            Mês
+                            <input id="mes-cartao" name="mes-cartao" type="text" inputmode="numeric" maxlength="2"
+                                placeholder="MM">
+                            <span class="erro-pagamento" data-erro="mes"></span>
+                        </label>
+
+                        <label class="campo-pagamento" for="ano-cartao">
+                            Ano
+                            <input id="ano-cartao" name="ano-cartao" type="text" inputmode="numeric" maxlength="2"
+                                placeholder="YY">
+                            <span class="erro-pagamento" data-erro="ano"></span>
+                        </label>
+
+                        <label class="campo-pagamento" for="cvc-cartao-input">
+                            CVC
+                            <input id="cvc-cartao-input" name="cvc-cartao" type="text" inputmode="numeric" maxlength="3"
+                                placeholder="123">
+                            <span class="erro-pagamento" data-erro="cvc"></span>
+                        </label>
+                    </div>
+
+                    <button class="botao-pagamento" type="submit">Confirmar pagamento</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================
+             FOOTER (RODAPÉ)
+        ========================================== -->
+    <section class="bottom-section">
+
+
+        <!-- APP -->
+        <article class="app-card">
+
+            <div class="app-content">
+
+                <h2>
+                    Ofertas exclusivas
+                    <span>no App SuperMais</span>
+                </h2>
+
+                <p>
+                    Baixe agora e aproveite!
+                </p>
+
+
+                <div class="app-buttons">
+
+                    <a href="#" class="store-button">
+                        <span class="store-icon"><img src="../icone/Apple-Logo.png" alt="" aria-hidden="true"></span>
+
+
+                        <span>
+                            <small>Disponível na</small>
+                            App Store
+                        </span>
+                    </a>
+
+
+                    <a href="#" class="store-button">
+                        <span class="store-icon"><img src="../icone/Google-Play.png" alt="" aria-hidden="true"></span>
+
+                        <span>
+                            <small>Disponível no</small>
+                            Google Play
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="app-phone">
+                <img src="../icone/logo_celular.png" alt="Aplicativo SuperMais">
+            </div>
+
+        </article>
+
+
+        <!-- BENEFÍCIOS -->
+        <section class="benefits">
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon truck-icon">
+                    <img src="../icone/entrega_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Entrega rápida</h3>
+
+                    <p>
+                        Receba em casa
+                        com agilidade
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon security-icon">
+                    <img src="../icone/pagamento_seguro_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Pagamento seguro</h3>
+
+                    <p>
+                        Seus dados protegidos
+                        em todas as compras
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon gift-icon">
+                    <img src="../icone/variedade_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Variedade garantida</h3>
+
+                    <p>
+                        Milhares de produtos
+                        para você
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <div class="benefit-icon support-icon">
+                    <img src="../icone/atendimento_humano_icone.png" alt="" aria-hidden="true">
+                </div>
+
+                <div>
+                    <h3>Atendimento humano</h3>
+
+                    <p>
+                        Estamos prontos para
+                        te ajudar
+                    </p>
+                </div>
+
+            </article>
+
+        </section>
+
+    </section>
+
+    </main>
+
+    <!-- ===== MODAL DE CONFIRMAÇÃO ===== -->
+    <div class="modal-pagamento" id="modal-pagamento" aria-hidden="true">
+        <div class="conteudo-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
+            <button class="fechar-modal" type="button" aria-label="Fechar modal">&times;</button>
+            <h2 id="titulo-modal">Pagamento confirmado</h2>
+            <p>Sua compra foi concluída com sucesso.</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+    <script src="pagamento.js"></script>
+</body>
+
+</html>
