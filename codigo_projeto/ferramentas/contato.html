@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mais - Pagamento</title>
+    <title>Super Mais - Contato</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -84,7 +84,6 @@
 
     </section>
 
-
     <!-- =========================================
      MENU PRINCIPAL
     ========================================== -->
@@ -142,109 +141,78 @@
     </nav>
 
 
-    <!-- ===== CONTEÚDO DE PAGAMENTO ===== -->
-    <main class="pagina-pagamento">
-        <div class="cabecalho-pagamento">
-            <h2>Finalizar compra</h2>
-            <p>Revise as informações e conclua seu pagamento com segurança.</p>
-        </div>
-
-        <div class="metodos-pagamento" role="group" aria-label="Escolha a forma de pagamento">
-            <button class="metodo-pagamento ativo" type="button" data-metodo="pix" aria-pressed="true">
-                <i class="fa-brands fa-pix" aria-hidden="true"></i>
-                <span>Pix <small>Aprovação rápida</small></span>
-            </button>
-            <button class="metodo-pagamento" type="button" data-metodo="cartao" aria-pressed="false">
-                <i class="fa-regular fa-credit-card" aria-hidden="true"></i>
-                <span>Cartão de crédito <small>Preencha os dados</small></span>
-            </button>
-        </div>
-
-        <section class="area-pagamento">
-            <div class="visual-pix" id="visual-pix">
-                <div class="qrcode-pix" id="qrcode-pix" role="img" aria-label="QR Code Pix demonstrativo"></div>
-                <span class="selo-pix"><i class="fa-solid fa-bolt"></i> Pix demonstrativo</span>
+    <!-- ===== CONTEÚDO DE CONTATO ===== -->
+    <main class="pagina-contato">
+        <section class="hero-contato">
+            <div class="cabecalho-contato">
+                <span class="etiqueta-contato">Atendimento de verdade</span>
+                <h2>Seu próximo projeto começa com uma boa conversa.</h2>
+                <p>Conte o que você precisa. A gente ajuda a encontrar a ferramenta certa, sem complicação.</p>
             </div>
-
-            <div class="visual-cartao" id="visual-cartao" hidden>
-                <div class="cartao-frente" aria-label="Cartão de crédito em pré-visualização">
-                    <div class="chip-cartao"></div>
-                    <p id="numero-cartao" class="numero-cartao">0000 0000 0000 0000</p>
-                    <div class="dados-cartao">
-                        <p>
-                            Titular
-                            <strong id="nome-cartao">NOME DO TITULAR</strong>
-                        </p>
-                        <p>
-                            Validade
-                            <span id="validade-cartao">MM/AA</span>
-                        </p>
-                    </div>
+            <div class="horario-destaque">
+                <span class="icone-atendimento"><i class="fa-solid fa-headset"></i></span>
+                <div>
+                    <strong>Estamos por aqui</strong>
+                    <span>Segunda a sábado, das 8h às 18h</span>
                 </div>
+                <i class="fa-solid fa-arrow-down seta-contato" aria-hidden="true"></i>
             </div>
+        </section>
 
-            <div class="detalhes-pix">
-                <span class="etiqueta-pagamento">Pagamento instantâneo</span>
-                <h3>Pague com Pix</h3>
-                <p class="instrucao-pix">Abra o app do seu banco, escolha Pix e escaneie o QR Code ao lado.</p>
-                <div class="valor-pix">
-                    <span>Total do pedido</span>
-                    <strong id="valor-pix">R$ 0,00</strong>
+        <section class="grade-contato">
+            <div class="cartao-contato">
+                <div class="titulo-bloco-contato">
+                    <span>01 / Atendimento</span>
+                    <h3>Fale com a gente</h3>
                 </div>
-                <label class="rotulo-codigo-pix" for="codigo-pix">Ou copie e cole o código Pix</label>
-                <div class="linha-codigo-pix">
-                    <input id="codigo-pix" type="text" readonly aria-label="Código Pix demonstrativo">
-                    <button id="copiar-pix" type="button" aria-label="Copiar código Pix"><i
-                            class="fa-regular fa-copy"></i></button>
-                </div>
-                <small class="aviso-pix" id="mensagem-pix" aria-live="polite">Demonstração: nenhuma cobrança será
-                    processada.</small>
-                <button class="botao-pagamento" id="simular-pix" type="button">Simular pagamento</button>
-            </div>
 
-            <div class="formulario-pagamento" id="formulario-cartao" hidden>
-                <h3>Pagamento com cartão</h3>
+                <a class="informacao-contato" href="tel:+551133332026">
+                    <strong><i class="fa-solid fa-phone"></i> Telefone</strong>
+                    <span>(11) 3333-2026</span>
+                </a>
+                <a class="informacao-contato" href="mailto:contato@supermais.com.br">
+                    <strong><i class="fa-solid fa-envelope"></i> E-mail</strong>
+                    <span>contato@supermais.com.br</span>
+                </a>
+                <p class="informacao-contato">
+                    <strong><i class="fa-solid fa-clock"></i> Horário</strong>
+                    <span>Segunda a sábado, das 8h às 18h</span>
+                </p>
 
-                <form id="formulario-pagamento" novalidate>
-                    <label class="campo-pagamento" for="nome-cartao-input">
-                        Nome no cartão
-                        <input id="nome-cartao-input" name="nome-cartao" type="text" placeholder="Seu nome completo"
-                            maxlength="30">
-                        <span class="erro-pagamento" data-erro="nome"></span>
+                <form class="formulario-contato" id="formulario-contato">
+                    <h4>Escreva para nossa equipe</h4>
+                    <label for="nome">Nome
+                        <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
                     </label>
-
-                    <label class="campo-pagamento" for="numero-cartao-input">
-                        Número do cartão
-                        <input id="numero-cartao-input" name="numero-cartao" type="text" inputmode="numeric"
-                            maxlength="19" placeholder="1234 5678 9012 3456">
-                        <span class="erro-pagamento" data-erro="numero"></span>
+                    <label for="email">E-mail
+                        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
                     </label>
-
-                    <div class="campos-pequenos">
-                        <label class="campo-pagamento" for="mes-cartao">
-                            Mês
-                            <input id="mes-cartao" name="mes-cartao" type="text" inputmode="numeric" maxlength="2"
-                                placeholder="MM">
-                            <span class="erro-pagamento" data-erro="mes"></span>
-                        </label>
-
-                        <label class="campo-pagamento" for="ano-cartao">
-                            Ano
-                            <input id="ano-cartao" name="ano-cartao" type="text" inputmode="numeric" maxlength="2"
-                                placeholder="YY">
-                            <span class="erro-pagamento" data-erro="ano"></span>
-                        </label>
-
-                        <label class="campo-pagamento" for="cvc-cartao-input">
-                            CVC
-                            <input id="cvc-cartao-input" name="cvc-cartao" type="text" inputmode="numeric" maxlength="3"
-                                placeholder="123">
-                            <span class="erro-pagamento" data-erro="cvc"></span>
-                        </label>
-                    </div>
-
-                    <button class="botao-pagamento" type="submit">Confirmar pagamento</button>
+                    <label for="mensagem">Mensagem
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?"
+                            required></textarea>
+                    </label>
+                    <button type="submit">Enviar mensagem</button>
+                    <small id="mensagem-formulario" aria-live="polite"></small>
                 </form>
+            </div>
+
+            <div class="mapa-ficticio">
+                <div class="titulo-bloco-contato">
+                    <span>02 / Visite a loja</span>
+                    <h3>Um bom conselho também se encontra pessoalmente.</h3>
+                </div>
+                <div class="mapa" aria-label="Mapa ilustrativo da localização da loja">
+                    <span class="rua rua-um"></span>
+                    <span class="rua rua-dois"></span>
+                    <span class="rua rua-tres"></span>
+                    <span class="marcador"><i class="fa-solid fa-location-dot"></i></span>
+                </div>
+                <p class="aviso-mapa"><i class="fa-solid fa-location-dot"></i> Rua das Ferramentas, 150 - São Paulo, SP
+                </p>
+                <div class="nota-loja">
+                    <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                    <span>Precisa de ajuda para escolher? Nossa equipe está pronta para trocar uma ideia.</span>
+                </div>
             </div>
         </section>
     </main>
@@ -385,18 +353,37 @@
 
     </main>
 
-    <!-- ===== MODAL DE CONFIRMAÇÃO ===== -->
-    <div class="modal-pagamento" id="modal-pagamento" aria-hidden="true">
-        <div class="conteudo-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
-            <button class="fechar-modal" type="button" aria-label="Fechar modal">&times;</button>
-            <h2 id="titulo-modal">Pagamento confirmado</h2>
-            <p>Sua compra foi concluída com sucesso.</p>
-        </div>
+
+    <!-- ===== CARRINHO POPUP ===== -->
+    <div class="carrinho-fundo" id="carrinho-fundo" hidden>
+        <aside class="carrinho-popup" role="dialog" aria-modal="true" aria-labelledby="titulo-carrinho">
+            <button class="fechar-carrinho" type="button" aria-label="Fechar carrinho">&times;</button>
+            <h2 id="titulo-carrinho">Meu carrinho</h2>
+            <div id="itens-carrinho">
+                <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+            </div>
+            <div class="cupom-carrinho">
+                <label for="cupom">Cupom de desconto</label>
+                <div>
+                    <input id="cupom" type="text" placeholder="Ex.: SUPER10">
+                    <button id="aplicar-cupom" type="button">Aplicar</button>
+                </div>
+                <small id="mensagem-cupom" aria-live="polite"></small>
+            </div>
+            <div class="resumo-carrinho">
+                <p><span>Subtotal</span><strong id="subtotal-carrinho">R$ 0,00</strong></p>
+                <p><span>Desconto</span><strong id="desconto-carrinho">R$ 0,00</strong></p>
+                <div class="total-carrinho">
+                    <span>Total</span>
+                    <strong id="total-carrinho">R$ 0,00</strong>
+                </div>
+            </div>
+            <button class="finalizar-carrinho" type="button">Finalizar compra</button>
+        </aside>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
-    <script src="pagamento.js"></script>
+    <script src="contato.js"></script>
 </body>
 
 </html>
