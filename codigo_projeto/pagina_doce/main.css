@@ -321,7 +321,7 @@ img {
     padding: 8px 14px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     border-radius: 38px;
     background: rgba(255, 255, 255, 0.58);
@@ -556,7 +556,7 @@ img {
 }
 
 .conteudo_secao_produtos {
-    display: block;
+    display: relative;
 }
 
 .barra_ferramentas_produtos {
@@ -601,17 +601,19 @@ img {
 ========================================= */
 .grade_produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 9fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 5fr));
+    gap: 15px;
+    margin-top: 22px;
+    padding-bottom: 30px;
 
 }
 
 .cartao_produto {
-    min-height: 380px;
+    min-height: 260px;
 
     position: relative;
 
-    padding: 24px;
+    padding: 15px;
 
     border-radius: 15px;
 
@@ -683,6 +685,7 @@ img {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-bottom: -50px;
 
 }
 
@@ -733,11 +736,11 @@ img {
     justify-content: center;
     gap: 8px;
 
-    background: #FFC107;
+    background: #F3C257;
     color: #16222B;
 
     border: none;
-    border-radius: 30px;
+    border-radius: 9px;
     padding: 11px 0;
 
     font-size: 13px;
@@ -769,7 +772,7 @@ img {
 
 }
 .botao_adicionar_carrinho:hover {
-    background: #F2A900;
+    background: #E5B548;
 }
 
 /* =========================================
