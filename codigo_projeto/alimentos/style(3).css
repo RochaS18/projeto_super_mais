@@ -36,7 +36,7 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
+/* body{
     position:relative;
     min-height:100vh;
     font-family:Arial, Helvetica, sans-serif;
@@ -77,7 +77,7 @@ body::before{
             rgba(240,127,87,.045),
             transparent 34%
         );
-}
+} */
 
 a{
     color:inherit;
@@ -176,7 +176,7 @@ input{
    CABEÇALHO
 ========================================= */
 
-.header{
+/* .header{
     min-height:130px;
 
     padding:22px 50px;
@@ -199,7 +199,7 @@ input{
             rgba(225,233,241,.96),
             rgba(239,238,238,.96)
         );
-}
+} */
 
 /* =========================================
    LOGO
@@ -414,7 +414,7 @@ input{
    MENU PRINCIPAL
 ========================================= */
 
-.main-menu{
+/* .main-menu{
     min-height:72px;
 
     margin:0 40px 25px;
@@ -434,7 +434,7 @@ input{
     box-shadow:var(--sombra);
 
     backdrop-filter:blur(10px);
-}
+} */
 
 .menu-links{
     width:100%;
