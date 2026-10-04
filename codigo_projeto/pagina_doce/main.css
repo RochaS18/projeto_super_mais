@@ -125,22 +125,21 @@ img {
 /* =========================================
    CABEÇALHO
 ========================================= */
+.site-content {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    min-height: 100vh;
+}
+
 .header {
     min-height: 130px;
-
     padding: 22px 50px;
-
     display: grid;
     grid-template-columns: 230px minmax(300px, 1fr) auto;
     align-items: center;
     gap: 50px;
-
-    background: 
-    linear-gradient(
-        105deg,
-        rgba(218, 238, 235, 0.96), 
-        rgba(225, 233, 241, 0.96),
-        rgba(239, 238, 238, 0.96));
+    background: transparent;
 }
 
 .logo {
