@@ -12,13 +12,13 @@ const CONFIG = {
   imagemPadrao: "assets/images/produto-placeholder.svg",
 };
 
-// Cada produto usa uma imagem local. Troque o caminho por sua própria imagem
-// dentro de assets/images/ quando quiser personalizar o catálogo.
-const carrinho = [
-  { id: 1, nome: "Arroz Branco Camil Tipo 1", detalhe: "Pacote 5 kg", preco: 22.9, quantidade: 2, selo: "Oferta do dia", imagem: CONFIG.imagemPadrao },
-  { id: 2, nome: "Leite Integral Italac", detalhe: "Caixa 1 L", preco: 6.49, quantidade: 3, selo: "Leve 3, pague 2", imagem: CONFIG.imagemPadrao },
-  { id: 3, nome: "Banana Prata", detalhe: "Aproximadamente 1 kg", preco: 7.99, quantidade: 1, selo: "Produto fresco", imagem: CONFIG.imagemPadrao },
-];
+// Cada produto usa uma imagem local. dai é so trocar o caminho por sua própria imagem
+// dentro de assets/images/ .
+//const carrinho = [
+ // { id: 1, nome: "Arroz Branco Camil Tipo 1", detalhe: "Pacote 5 kg", preco: 22.9, quantidade: 2, selo: "Oferta do dia", imagem: CONFIG.imagemPadrao },
+ // { id: 2, nome: "Leite Integral Italac", detalhe: "Caixa 1 L", preco: 6.49, quantidade: 3, selo: "Leve 3, pague 2", imagem: CONFIG.imagemPadrao },
+ // { id: 3, nome: "Banana Prata", detalhe: "Aproximadamente 1 kg", preco: 7.99, quantidade: 1, selo: "Produto fresco", imagem: CONFIG.imagemPadrao },
+//];
 
 // Recomendações de exemplo. Produtos adicionados passam a integrar o carrinho.
 const sugestoes = [
@@ -209,7 +209,7 @@ porId("formBusca").addEventListener("submit", (evento) => evento.preventDefault(
 
 // Botão final de checkout ainda é demonstrativo e mostra uma orientação na tela.
 porId("botaoFinalizar").addEventListener("click", () => {
-  porId("mensagemCheckout").textContent = "Demonstração: conecte este botão ao fluxo de pagamento da sua loja.";
+  porId("mensagemCheckout").textContent = "Demonstração apenas";
 });
 
 // Primeiro desenho da tela ao carregar o documento.
