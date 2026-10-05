@@ -1,21 +1,23 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#087d74" />
-    <meta name="description" content="Revise os produtos do seu carrinho SuperMais." />
-    <title>Meu carrinho | SuperMais</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/app.js" defer></script>
-    <link rel="stylesheet" href="../../../higiene/TelaLoginPop/Pop.css">
-  </head>
-  <body>
-    <!--
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#087d74" />
+  <meta name="description" content="Revise os produtos do seu carrinho SuperMais." />
+  <title>Meu carrinho | SuperMais</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="../../../higiene/TelaLoginPop/Pop.css">
+</head>
+
+<body>
+  <!--
       .site-content mantém todo o conteúdo acima do fundo decorativo definido no CSS.
       Esta camada é apenas visual: não altera a navegação, formulários ou lógica do carrinho.
     -->
-    <div class="site-content">
+  <div class="site-content">
     <!-- Barra superior com avisos rápidos e links institucionais. -->
     <header class="topo-aviso">
       <div class="informacao-frete">
@@ -23,8 +25,10 @@
         <span>Frete <strong>grátis</strong> nas compras acima de <strong>R$ 150,00</strong></span>
       </div>
       <nav class="links-topo" aria-label="Links rápidos">
-        <a href="#contato"><img src="../../../higiene/icone/atendimento-ao-cliente_icone.png" alt="" aria-hidden="true" />Central de Atendimento</a>
-        <a href="#lojas"><img src="../../../higiene/icone/local_icone.png" alt="" aria-hidden="true" />Encontre uma loja</a>
+        <a href="#contato"><img src="../../../higiene/icone/atendimento-ao-cliente_icone.png" alt=""
+            aria-hidden="true" />Central de Atendimento</a>
+        <a href="#lojas"><img src="../../../higiene/icone/local_icone.png" alt="" aria-hidden="true" />Encontre uma
+          loja</a>
       </nav>
     </header>
 
@@ -49,9 +53,11 @@
       </form>
 
       <div class="area-cliente">
-        <a class="cliente" href="#login" id="login-trigger"><img src="../../../higiene/icone/perfil_icone.png" alt="" aria-hidden="true" /><span><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></span></a>
+        <a class="cliente" href="#login" id="login-trigger"><img src="../../../higiene/icone/perfil_icone.png" alt=""
+            aria-hidden="true" /><span><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></span></a>
         <div class="mini-carrinho">
-          <span class="icone"><img src="../../../higiene/icone/carrinho_icone.png" alt="" aria-hidden="true" /><span class="bolinha" id="contadorTopo">0</span></span>
+          <span class="icone"><img src="../../../higiene/icone/carrinho_icone.png" alt="" aria-hidden="true" /><span
+              class="bolinha" id="contadorTopo">0</span></span>
           <span><b>Meu carrinho</b><small id="totalTopo">R$ 0,00</small></span>
         </div>
       </div>
@@ -60,9 +66,11 @@
     <!-- Menu principal; .main-menu copia o ajuste visual anexado. -->
     <nav class="navegacao main-menu" aria-label="Navegação principal">
       <div class="links-navegacao">
-        <a class="" href="../../../pagina_inicial.html"><img src="../../../higiene/icone/inicio_icone.png" alt="" aria-hidden="true" />Início</a>
+        <a class="" href="../../../pagina_inicial.html"><img src="../../../higiene/icone/inicio_icone.png" alt=""
+            aria-hidden="true" />Início</a>
         <a href="#ofertas"><img src="../../../higiene/icone/oferta_icone.png" alt="" aria-hidden="true" />Ofertas</a>
-        <a href="#categorias"><img src="../../../higiene/icone/categoria_icone.png" alt="" aria-hidden="true" />Categorias</a>
+        <a href="#categorias"><img src="../../../higiene/icone/categoria_icone.png" alt=""
+            aria-hidden="true" />Categorias</a>
         <a href="#cartoes"><img src="../../../higiene/icone/cartao_icone.png" alt="" aria-hidden="true" />Cartões</a>
         <a href="#contato"><img src="../../../higiene/icone/contato_icone.png" alt="" aria-hidden="true" />Contato</a>
       </div>
@@ -70,11 +78,15 @@
 
     <main id="inicio">
       <!-- Caminho de navegação para o usuário saber onde está dentro da loja. -->
-      <nav class="caminho" aria-label="Você está em">Início <span aria-hidden="true">›</span> <strong>Meu carrinho</strong></nav>
+      <nav class="caminho" aria-label="Você está em">Início <span aria-hidden="true">›</span> <strong>Meu
+          carrinho</strong></nav>
 
       <!-- Título e contador textual atualizados pelo JavaScript conforme o carrinho muda. -->
       <section class="titulo" aria-labelledby="tituloPagina">
-        <div><h1 id="tituloPagina">Meu carrinho</h1><p id="textoItens" aria-live="polite">0 itens selecionados</p></div>
+        <div>
+          <h1 id="tituloPagina">Meu carrinho</h1>
+          <p id="textoItens" aria-live="polite">0 itens selecionados</p>
+        </div>
         <p>Revise os produtos antes de finalizar sua compra.</p>
       </section>
 
@@ -91,7 +103,10 @@
         <aside class="card resumo" aria-labelledby="tituloResumo">
           <h2 id="tituloResumo">Resumo do pedido</h2>
           <div class="frete-gratis" id="avisoFrete" aria-live="polite">
-            <span class="frete-icone" aria-hidden="true"><img src="../../../higiene/icone/frete_gratis_icone.png" alt="" /></span><div><strong id="tituloFrete">Calcule seu frete</strong><span id="textoFrete">Adicione produtos ao carrinho.</span></div>
+            <span class="frete-icone" aria-hidden="true"><img src="../../../higiene/icone/frete_gratis_icone.png"
+                alt="" /></span>
+            <div><strong id="tituloFrete">Calcule seu frete</strong><span id="textoFrete">Adicione produtos ao
+                carrinho.</span></div>
           </div>
           <form class="cupom" id="formCupom">
             <label class="visualmente-oculto" for="campoCupom">Código do cupom</label>
@@ -105,7 +120,8 @@
           <div class="total"><strong>Total</strong><strong id="valorTotal">R$ 0,00</strong></div>
           <button class="finalizar" id="botaoFinalizar" type="button">Ir para o pagamento →</button>
           <p class="mensagem-checkout" id="mensagemCheckout" aria-live="polite"></p>
-          <p class="compra-segura"><img src="../../../higiene/icone/pagamento_seguro_icone.png" alt="" aria-hidden="true" />Compra segura e protegida</p>
+          <p class="compra-segura"><img src="../../../higiene/icone/pagamento_seguro_icone.png" alt=""
+              aria-hidden="true" />Compra segura e protegida</p>
         </aside>
       </div>
 
@@ -122,8 +138,11 @@
         <p class="mensagem-sugestao" id="mensagemSugestao" aria-live="polite"></p>
       </section>
     </main>
-    <footer class="rodape"><p>SuperMais · Página demonstrativa de carrinho de compras.</p></footer>
-    </div>
-    <script src="../../../higiene/TelaLoginPop/login-popup-loader.js"></script>
-  </body>
+    <footer class="rodape">
+      <p>SuperMais · Página demonstrativa de carrinho de compras.</p>
+    </footer>
+  </div>
+  <script src="../../../higiene/TelaLoginPop/login-popup-loader.js"></script>
+</body>
+
 </html>
