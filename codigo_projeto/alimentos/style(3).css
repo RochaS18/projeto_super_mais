@@ -1471,3 +1471,16 @@ input{
         flex-wrap: wrap;
     }
 }
+
+.favorito {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    color: #a1abad;
+    cursor: pointer;
+}
+ 
+.favorito:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
