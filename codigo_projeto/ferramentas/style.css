@@ -25,10 +25,11 @@ body {
     color: var(--texto);
 
     background: linear-gradient(180deg,
-            #EAF3F2 0%,
-            #F4F6F6 22%,
-            #F7F7F6 55%,
-            #F2F3F2 100%);
+        #DCEEEA 0%,
+        #E8F3F0 18%,
+        #F2F6F5 40%,
+        #FAFAFA 65%,
+        #FFFFFF 100%);
 
     overflow-x: hidden;
 }
@@ -42,16 +43,16 @@ body::before {
     z-index: -1;
     pointer-events: none;
 
-    background:
-        radial-gradient(circle at 8% 18%,
-            rgba(39, 133, 122, 0.12),
-            transparent 27%),
-        radial-gradient(circle at 92% 12%,
-            rgba(79, 136, 209, 0.10),
-            transparent 28%),
-        radial-gradient(circle at 52% 85%,
-            rgba(240, 127, 87, 0.045),
-            transparent 34%);
+     background:
+        radial-gradient(circle at 10% 10%,
+            rgba(39, 133, 122, .15),
+            transparent 30%),
+        radial-gradient(circle at 90% 15%,
+            rgba(79, 136, 209, .08),
+            transparent 30%),
+        radial-gradient(circle at 50% 80%,
+            rgba(39, 133, 122, .06),
+            transparent 35%);
 }
 
 button,
@@ -74,6 +75,13 @@ footer p {
 }
 
 /* ===== BARRA SUPERIOR ===== */
+
+.site-content {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    min-height: 100vh;
+}
 
 .top-bar {
     min-height: 40px;
@@ -139,10 +147,7 @@ footer p {
     align-items: center;
     gap: 50px;
 
-    background: linear-gradient(105deg,
-            rgba(218, 238, 235, 0.96),
-            rgba(225, 233, 241, 0.96),
-            rgba(239, 238, 238, 0.96));
+    background: transparent;
 }
 
 .logo {
@@ -356,21 +361,16 @@ footer p {
 
 .main-menu {
     min-height: 72px;
-    margin: 0 40px 30px;
-    padding: 8px 14px;
-
+    margin: 0 40px 25px;
+    padding: 8px 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-
     border-radius: 38px;
-
-    background: rgba(255, 255, 255, 0.58);
-    border: 1px solid rgba(255, 255, 255, 0.75);
-
-    box-shadow: 0 10px 30px rgba(26, 43, 55, 0.08);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(255,255,255,.85);
+    box-shadow: 0 10px 30px rgba(32,52,59,.06);
+    backdrop-filter: blur(12px);
 }
 
 .menu-links {
