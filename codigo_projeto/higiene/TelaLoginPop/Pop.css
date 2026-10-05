@@ -1,0 +1,17 @@
+.external-popup-frame {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 999999 !important;
+    background: transparent !important;
+    display: block !important;
+}
+
+body.external-popup-open {
+    overflow: hidden !important;
+}
