@@ -10,6 +10,12 @@
     <script src="js/app.js" defer></script>
   </head>
   <body>
+    <!--
+      .site-content mantém todo o conteúdo acima do fundo decorativo definido no CSS.
+      Esta camada é apenas visual: não altera a navegação, formulários ou lógica do carrinho.
+    -->
+    <div class="site-content">
+    <!-- Barra superior com avisos rápidos e links institucionais. -->
     <header class="topo-aviso">
       <div class="informacao-frete">
         <img src="../../../higiene/icone/frete_gratis_icone.png" alt="" aria-hidden="true" />
@@ -21,11 +27,17 @@
       </nav>
     </header>
 
-    <section class="cabecalho">
+    <!--
+      Cabeçalho principal da loja.
+      A classe .header foi adicionada para receber exatamente o visual do arquivo
+      ajustes_fundo_supermais.css, enquanto .cabecalho preserva os estilos existentes.
+    -->
+    <section class="cabecalho header">
       <a class="logo" href="#inicio" aria-label="SuperMais — início">
         <img src="assets/images/logo.png" alt="SuperMais" />
       </a>
 
+      <!-- Campo de busca demonstrativo; o JavaScript impede o envio real do formulário. -->
       <form class="busca" role="search" id="formBusca">
         <label class="visualmente-oculto" for="campoBusca">O que você procura?</label>
         <input id="campoBusca" type="search" placeholder="O que você procura hoje?" />
@@ -41,7 +53,8 @@
       </div>
     </section>
 
-    <nav class="navegacao" aria-label="Navegação principal">
+    <!-- Menu principal; .main-menu copia o ajuste visual anexado. -->
+    <nav class="navegacao main-menu" aria-label="Navegação principal">
       <div class="links-navegacao">
         <a class="" href="../../../pagina_inicial.html"><img src="../../../higiene/icone/inicio_icone.png" alt="" aria-hidden="true" />Início</a>
         <a href="#ofertas"><img src="../../../higiene/icone/oferta_icone.png" alt="" aria-hidden="true" />Ofertas</a>
@@ -52,7 +65,10 @@
     </nav>
 
     <main id="inicio">
+      <!-- Caminho de navegação para o usuário saber onde está dentro da loja. -->
       <nav class="caminho" aria-label="Você está em">Início <span aria-hidden="true">›</span> <strong>Meu carrinho</strong></nav>
+
+      <!-- Título e contador textual atualizados pelo JavaScript conforme o carrinho muda. -->
       <section class="titulo" aria-labelledby="tituloPagina">
         <div><h1 id="tituloPagina">Meu carrinho</h1><p id="textoItens" aria-live="polite">0 itens selecionados</p></div>
         <p>Revise os produtos antes de finalizar sua compra.</p>
@@ -103,5 +119,6 @@
       </section>
     </main>
     <footer class="rodape"><p>SuperMais · Página demonstrativa de carrinho de compras.</p></footer>
+    </div>
   </body>
 </html>
