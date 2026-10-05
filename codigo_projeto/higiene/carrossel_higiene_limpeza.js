@@ -56,7 +56,7 @@
                 highlight: "praticidade para sua rotina!",
                 description: "Desinfetantes, detergentes e limpadores para sua casa.",
                 action: "Ver produtos",
-                image: "imagem/limpeza_casa.png",
+                image: "imagem/banner_higiene_limpeza.png",
                 alt: "Produtos para limpeza da casa"
             },
             {
