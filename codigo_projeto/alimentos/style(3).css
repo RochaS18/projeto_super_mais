@@ -858,7 +858,7 @@ input{
 
 /* Ajuste da imagem dentro do espaço */
 .imagem_produto img {
-    max-height: 145px;
+    max-height: 45px;
     object-fit: contain;
 
     transform: scale(2.8);
