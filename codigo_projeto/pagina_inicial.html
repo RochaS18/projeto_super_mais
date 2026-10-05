@@ -8,13 +8,15 @@
     <title>Super Mais</title>
 
     <link rel="stylesheet" href="pagina_inicial.css">
-     <link rel="stylesheet" href="ajustes_fundo_supermais.css">
-     <link rel="stylesheet" href="higiene/TelaLoginPop/Pop.css">
+    <link rel="stylesheet" href="ajustes_fundo_supermais.css">
+    <link rel="stylesheet" href="higiene/TelaLoginPop/Pop.css">
+    <link rel="stylesheet" href="pagina_doce/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-       <!-- splash screen verde com a logo da silva!
+    <!-- splash screen verde com a logo da silva!
 
     foi o que consegui fazer, me fala aí oq achou -->
     <!-- <section class="splash-screen">
@@ -22,823 +24,643 @@
     </section> -->
 
 
-<!-- =========================================
+    <!-- =========================================
      BARRA SUPERIOR
 ========================================== -->
-<div class="site-content">
-<header class="top-bar">
+    <div class="site-content">
+        <header class="top-bar">
 
-    <div class="shipping-info">
+            <div class="shipping-info">
 
-        <span class="top-icon">
-            
-                <img src="icone/frete_gratis_icone.png" alt="" aria-hidden="true">
-            
-        </span>
+                <span class="top-icon">
 
-        <span>
-            Frete <strong>grátis</strong> nas compras acima de
-            <strong>R$ 200,00</strong>
-        </span>
+                    <img src="icone/frete_gratis_icone.png" alt="" aria-hidden="true">
 
-    </div>
+                </span>
 
+                <span>
+                    Frete <strong>grátis</strong> nas compras acima de
+                    <strong>R$ 200,00</strong>
+                </span>
 
-    <nav class="top-links">
-
-        <a href="#">
-            <img
-                class="inline-icon"
-                src="icone/atendimento-ao-cliente_icone.png"
-                alt=""
-                aria-hidden="true"
-            >
-            Central de Atendimento
-        </a>
-
-        <a href="#">
-            <img
-                class="inline-icon"
-                src="icone/local_icone.png"
-                alt=""
-                aria-hidden="true"
-            >
-            Encontre uma loja
-        </a>
-
-    </nav>
-
-</header>
+            </div>
 
 
-<!-- =========================================
+            <nav class="top-links">
+
+                <a href="#">
+                    <img class="inline-icon" src="icone/atendimento-ao-cliente_icone.png" alt="" aria-hidden="true">
+                    Central de Atendimento
+                </a>
+
+                <a href="#">
+                    <img class="inline-icon" src="icone/local_icone.png" alt="" aria-hidden="true">
+                    Encontre uma loja
+                </a>
+
+            </nav>
+
+        </header>
+
+
+        <!-- =========================================
      CABEÇALHO PRINCIPAL
 ========================================== -->
-<section class="header">
+        <section class="header">
 
-    <a href="#" class="logo">
-        <img
-            src="imagem/logo.png"
-            alt="Super Mais"
-        >
-    </a>
-
-
-    <div class="search-box">
-
-        <form action="#">
-
-            <input
-                type="search"
-                placeholder="O que você procura hoje?"
-                aria-label="Pesquisar produtos"
-            >
-
-            <button
-                type="submit"
-                aria-label="Pesquisar"
-            >
-                <img
-                    src="icone/pesquisa_icone.png"
-                    alt="Pesquisar"
-                >
-            </button>
-
-        </form>
-
-    </div>
-
-
-    <div class="user-area">
-
-        <a href="#" class="user-card" id="login-trigger">
-
-            <div class="user-icon">
-                <img
-                    src="icone/perfil_icone.png"
-                    alt=""
-                    aria-hidden="true"
-                >
-            </div>
-
-            <div class="user-text">
-                <strong>Olá, Cliente</strong>
-                <span>Entre ou cadastre-se</span>
-            </div>
-
-        </a>
-
-
-        <a href='carrinho/carrinho-supermais/carrinho-supermais/index.html'
-            class="cart-card"
-            aria-label="Ir para o Carrinho de Compra" >
-
-            <div class="cart-icon">
-
-                <img
-                    src="icone/carrinho_icone.png"
-                    alt=""
-                    aria-hidden="true"
-                >
-
-                <span class="cart-count">0</span>
-
-            </div>
-
-            <div class="cart-text">
-                <strong>Meu carrinho</strong>
-                <span>R$ 0,00</span>
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     MENU PRINCIPAL
-========================================== -->
-<nav class="main-menu">
-
-    <ul class="menu-links">
-
-        <li>
-
-            <a href='pagina_inicial.html'
-            aria-label="Ir para Tela Inicial">
-
-                <span class="menu-icon">
-                    <img
-                        src="icone/inicio_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-                </span>
-
-                <span>Início</span>
-
+            <a href="#" class="logo">
+                <img src="imagem/logo.png" alt="Super Mais">
             </a>
 
-        </li>
 
+            <div class="search-box">
 
-        <li >
+                <form action="#">
 
-            <a href="#">
+                    <input type="search" placeholder="O que você procura hoje?" aria-label="Pesquisar produtos">
 
-                <span class="menu-icon">
-                    <img
-                        src="icone/oferta_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-                </span>
+                    <button type="submit" aria-label="Pesquisar">
+                        <img src="icone/pesquisa_icone.png" alt="Pesquisar">
+                    </button>
 
-                <span>Ofertas</span>
-
-            </a>
-
-        </li>
-
-
-        <li>
-
-            <a href="#">
-
-                <span class="menu-icon">
-                    <img
-                        src="icone/categoria_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-                </span>
-
-                <span>Categorias</span>
-
-            </a>
-
-        </li>
-
-
-        <li>
-
-            <a href="#">
-
-                <span class="menu-icon">
-                    <img
-                        src="icone/cartao_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-                </span>
-
-                <span>Cartões</span>
-
-            </a>
-
-        </li>
-
-
-        <li>
-
-            <a href="ferramentas/contato.html">
-
-                <span class="menu-icon">
-                    <img
-                        src="icone/contato_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-                </span>
-
-                <span>Contato</span>
-
-            </a>
-
-        </li>
-
-    </ul>
-
-</nav>
-
-
-<!-- =========================================
-     CONTEÚDO PRINCIPAL
-========================================== -->
-<main class="container">
-
-
-    <!-- =========================================
-         CATEGORIAS
-    ========================================== -->
-    <section class="categories">
-
-
-        <!-- ALIMENTOS -->
-        <a
-            href='alimentos/index(2).html'
-            class="category-card food-card"
-            aria-label="Ir para a categoria Alimentos"
-        >
-
-            <div class="category-text">
-
-                <h2>Alimentos</h2>
-
-                <p>
-                    Tudo para as suas
-                    refeições do dia a dia
-                </p>
+                </form>
 
             </div>
 
-            <img
-                src="imagem/alimentos.png"
-                alt="Produtos alimentícios"
-            >
 
-        </a>
+            <div class="user-area">
+
+                <a href="#" class="user-card" id="login-trigger">
+
+                    <div class="user-icon">
+                        <img src="icone/perfil_icone.png" alt="" aria-hidden="true">
+                    </div>
+
+                    <div class="user-text">
+                        <strong>Olá, Cliente</strong>
+                        <span>Entre ou cadastre-se</span>
+                    </div>
+
+                </a>
 
 
-        <!-- DOCES -->
-        <a
-            href="pagina_doce/doces.html"
-            class="category-card sweets-card"
-            aria-label="Ir para a categoria Doces e Sobremesas"
-        >
+                <a href='carrinho/carrinho-supermais/carrinho-supermais/index.html' class="cart-card"
+                    aria-label="Ir para o Carrinho de Compra">
 
-            <div class="category-text">
+                    <div class="cart-icon">
 
-                <h2>
-                    Doces e
-                    <span>Sobremesas</span>
-                </h2>
+                        <img src="icone/carrinho_icone.png" alt="" aria-hidden="true">
 
-                <p>
-                    Os melhores doces
-                    para todos os momentos
-                </p>
+                        <span class="cart-count">0</span>
 
-                <span class="category-link">
+                    </div>
 
-                    <span class="button-arrow">
-                        <img
-                            src="seta"
-                            alt=""
-                            aria-hidden="true"
-                        >
-                    </span>
+                    <div class="cart-text">
+                        <strong>Meu carrinho</strong>
+                        <span>R$ 0,00</span>
+                    </div>
 
-                </span>
+                </a>
 
             </div>
-
-            <img
-                src="pagina_doce/imgdoces/sacola_papelao_banner_doces_semfundo.png"
-                alt="Doces e sobremesas"
-            >
-
-        </a>
-
-
-        <!-- HIGIENE -->
-        <a
-            href="higiene/higiene_limpeza_final.html"
-            class="category-card hygiene-card"
-            aria-label="Ir para a categoria Higiene e Limpeza"
-        >
-
-            <div class="category-text">
-
-                <h2>Higiene e Limpeza</h2>
-
-                <p>
-                    Cuidados que fazem
-                    a diferença
-                </p>
-
-                <span class="category-link">
-
-                    <span class="button-arrow">
-                        <img
-                            src="seta"
-                            alt=""
-                            aria-hidden="true"
-                        >
-                    </span>
-
-                </span>
-
-            </div>
-
-            <img
-                src="imagem/higiene_limpeza.png"
-                alt="Produtos de higiene"
-            >
-
-        </a>
-
-
-        <!-- FERRAMENTAS -->
-        <a
-            href="ferramentas/index.html"
-            class="category-card tools-card"
-            aria-label="Ir para a categoria Ferramentas e Construção"
-        >
-
-            <div class="category-text">
-
-                <h2>
-                    Ferramentas e
-                    <span>Construção</span>
-                </h2>
-
-                <p>
-                    Do pequeno reparo à
-                    grande obra
-                </p>
-
-                <span class="category-link">
-
-                    
-
-                    <span class="button-arrow">
-
-                        <img
-                            src="seta"
-                            alt=""
-                            aria-hidden="true"
-                        >
-
-                    </span>
-
-                </span>
-
-            </div>
-
-            <img
-                src="imagem/ferramentas.png"
-                alt="Ferramentas e materiais de construção"
-            >
-
-        </a>
-
-    </section>
-
-
-    <!-- =========================================
-         APP + BENEFÍCIOS
-    ========================================== -->
-    <section class="bottom-section">
-
-
-        <!-- APP -->
-        <article class="app-card">
-
-            <div class="app-content">
-
-                <h2>
-                    Ofertas exclusivas
-                    <span>no App SuperMais</span>
-                </h2>
-
-                <p>
-                    Baixe agora e aproveite!
-                </p>
-
-
-                <div class="app-buttons">
-
-                    <a href="#" class="store-button">
-
-                        <span class="store-icon">
-
-                            <img
-                                src="icone/Apple-Logo.png"
-                                alt=""
-                                aria-hidden="true"
-                            >
-
-                        </span>
-
-                        <span>
-
-                            <small>
-                                Disponível na
-                            </small>
-
-                            App Store
-
-                        </span>
-
-                    </a>
-
-
-                    <a href="#" class="store-button">
-
-                        <span class="store-icon">
-
-                            <img
-                                src="icone/Google-Play.png"
-                                alt=""
-                                aria-hidden="true"
-                            >
-
-                        </span>
-
-                        <span>
-
-                            <small>
-                                Disponível no
-                            </small>
-
-                            Google Play
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="app-phone">
-
-                <img
-                    src="imagem/logo_celular.png"
-                    alt="Aplicativo SuperMais"
-                >
-
-            </div>
-
-        </article>
-
-
-        <!-- BENEFÍCIOS -->
-        <section class="benefits">
-
-            <article class="benefit">
-
-                <div class="benefit-icon truck-icon">
-
-                    <img
-                        src="icone/entrega_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Entrega rápida
-                    </h3>
-
-                    <p>
-                        Receba em casa
-                        com agilidade
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="benefit">
-
-                <div class="benefit-icon security-icon">
-
-                    <img
-                        src="icone/pagamento_seguro_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Pagamento seguro
-                    </h3>
-
-                    <p>
-                        Seus dados protegidos
-                        em todas as compras
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="benefit">
-
-                <div class="benefit-icon gift-icon">
-
-                    <img
-                        src="icone/variedade_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Variedade garantida
-                    </h3>
-
-                    <p>
-                        Milhares de produtos
-                        para você
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="benefit">
-
-                <div class="benefit-icon support-icon">
-
-                    <img
-                        src="icone/atendimento_humano_icone.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Atendimento humano
-                    </h3>
-
-                    <p>
-                        Estamos prontos para
-                        te ajudar
-                    </p>
-
-                </div>
-
-            </article>
 
         </section>
 
-    </section>
 
-    
+        <!-- =========================================
+     MENU PRINCIPAL
+========================================== -->
+        <nav class="main-menu">
 
-    <!-- =========================================
+            <ul class="menu-links">
+
+                <li>
+
+                    <a href='pagina_inicial.html' aria-label="Ir para Tela Inicial">
+
+                        <span class="menu-icon">
+                            <img src="icone/inicio_icone.png" alt="" aria-hidden="true">
+                        </span>
+
+                        <span>Início</span>
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#">
+
+                        <span class="menu-icon">
+                            <img src="icone/oferta_icone.png" alt="" aria-hidden="true">
+                        </span>
+
+                        <span>Ofertas</span>
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#">
+
+                        <span class="menu-icon">
+                            <img src="icone/categoria_icone.png" alt="" aria-hidden="true">
+                        </span>
+
+                        <span>Categorias</span>
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#">
+
+                        <span class="menu-icon">
+                            <img src="icone/cartao_icone.png" alt="" aria-hidden="true">
+                        </span>
+
+                        <span>Cartões</span>
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="ferramentas/contato.html">
+
+                        <span class="menu-icon">
+                            <img src="icone/contato_icone.png" alt="" aria-hidden="true">
+                        </span>
+
+                        <span>Contato</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- =========================================
+     CONTEÚDO PRINCIPAL
+========================================== -->
+        <main class="container">
+
+
+            <!-- =========================================
+         CATEGORIAS
+    ========================================== -->
+            <section class="categories">
+
+
+                <!-- ALIMENTOS -->
+                <a href='alimentos/index(2).html' class="category-card food-card"
+                    aria-label="Ir para a categoria Alimentos">
+
+                    <div class="category-text">
+
+                        <h2>Alimentos</h2>
+
+                        <p>
+                            Tudo para as suas
+                            refeições do dia a dia
+                        </p>
+
+                    </div>
+
+                    <img src="imagem/alimentos.png" alt="Produtos alimentícios">
+
+                </a>
+
+
+                <!-- DOCES -->
+                <a href="pagina_doce/doces.html" class="category-card sweets-card"
+                    aria-label="Ir para a categoria Doces e Sobremesas">
+
+                    <div class="category-text">
+
+                        <h2>
+                            Doces e
+                            <span>Sobremesas</span>
+                        </h2>
+
+                        <p>
+                            Os melhores doces
+                            para todos os momentos
+                        </p>
+
+                        <span class="category-link">
+
+                            <span class="button-arrow">
+                                <img src="seta" alt="" aria-hidden="true">
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                    <img src="pagina_doce/imgdoces/sacola_papelao_banner_doces_semfundo.png" alt="Doces e sobremesas">
+
+                </a>
+
+
+                <!-- HIGIENE -->
+                <a href="higiene/higiene_limpeza_final.html" class="category-card hygiene-card"
+                    aria-label="Ir para a categoria Higiene e Limpeza">
+
+                    <div class="category-text">
+
+                        <h2>Higiene e Limpeza</h2>
+
+                        <p>
+                            Cuidados que fazem
+                            a diferença
+                        </p>
+
+                        <span class="category-link">
+
+                            <span class="button-arrow">
+                                <img src="seta" alt="" aria-hidden="true">
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                    <img src="imagem/higiene_limpeza.png" alt="Produtos de higiene">
+
+                </a>
+
+
+                <!-- FERRAMENTAS -->
+                <a href="ferramentas/index.html" class="category-card tools-card"
+                    aria-label="Ir para a categoria Ferramentas e Construção">
+
+                    <div class="category-text">
+
+                        <h2>
+                            Ferramentas e
+                            <span>Construção</span>
+                        </h2>
+
+                        <p>
+                            Do pequeno reparo à
+                            grande obra
+                        </p>
+
+                        <span class="category-link">
+
+
+
+                            <span class="button-arrow">
+
+                                <img src="seta" alt="" aria-hidden="true">
+
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                    <img src="imagem/ferramentas.png" alt="Ferramentas e materiais de construção">
+
+                </a>
+
+            </section>
+
+
+            <!-- =========================================
+         APP + BENEFÍCIOS
+    ========================================== -->
+            <section class="bottom-section">
+
+
+                <!-- APP -->
+                <article class="app-card">
+
+                    <div class="app-content">
+
+                        <h2>
+                            Ofertas exclusivas
+                            <span>no App SuperMais</span>
+                        </h2>
+
+                        <p>
+                            Baixe agora e aproveite!
+                        </p>
+
+
+                        <div class="app-buttons">
+
+                            <a href="#" class="store-button">
+
+                                <span class="store-icon">
+
+                                    <img src="icone/Apple-Logo.png" alt="" aria-hidden="true">
+
+                                </span>
+
+                                <span>
+
+                                    <small>
+                                        Disponível na
+                                    </small>
+
+                                    App Store
+
+                                </span>
+
+                            </a>
+
+
+                            <a href="#" class="store-button">
+
+                                <span class="store-icon">
+
+                                    <img src="icone/Google-Play.png" alt="" aria-hidden="true">
+
+                                </span>
+
+                                <span>
+
+                                    <small>
+                                        Disponível no
+                                    </small>
+
+                                    Google Play
+
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="app-phone">
+
+                        <img src="imagem/logo_celular.png" alt="Aplicativo SuperMais">
+
+                    </div>
+
+                </article>
+
+
+                <!-- BENEFÍCIOS -->
+                <section class="benefits">
+
+                    <article class="benefit">
+
+                        <div class="benefit-icon truck-icon">
+
+                            <img src="icone/entrega_icone.png" alt="" aria-hidden="true">
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Entrega rápida
+                            </h3>
+
+                            <p>
+                                Receba em casa
+                                com agilidade
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="benefit">
+
+                        <div class="benefit-icon security-icon">
+
+                            <img src="icone/pagamento_seguro_icone.png" alt="" aria-hidden="true">
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Pagamento seguro
+                            </h3>
+
+                            <p>
+                                Seus dados protegidos
+                                em todas as compras
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="benefit">
+
+                        <div class="benefit-icon gift-icon">
+
+                            <img src="icone/variedade_icone.png" alt="" aria-hidden="true">
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Variedade garantida
+                            </h3>
+
+                            <p>
+                                Milhares de produtos
+                                para você
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="benefit">
+
+                        <div class="benefit-icon support-icon">
+
+                            <img src="icone/atendimento_humano_icone.png" alt="" aria-hidden="true">
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Atendimento humano
+                            </h3>
+
+                            <p>
+                                Estamos prontos para
+                                te ajudar
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =========================================
          MAIS VENDIDOS
     ========================================== -->
-    <section class="products">
+            <section class="products">
 
-        <div class="products-header">
+                <div class="products-header">
 
-            <h2>
-                Mais vendidos
-            </h2>
-
-        </div>
-
-
-        <div class="product-grid">
-
-
-            <article class="product-card">
-
-                <button
-                    class="favorite"
-                    type="button"
-                    aria-label="Adicionar aos favoritos"
-                >
-
-                    <img
-                        src="icone/favorito.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </button>
-
-                <div class="product-image">
-
-                    <img
-                        src="img/produto1.png"
-                        alt="Produto 1"
-                    >
+                    <h2>
+                        Mais vendidos
+                    </h2>
 
                 </div>
 
-                <h3>
-                    Produto 1
-                </h3>
 
-                <p>
-                    Descrição do produto.
-                </p>
+                <div class="product-grid">
 
-            </article>
+                    <article class="product-card">
 
+                        <span class="favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
 
-            <article class="product-card">
+                        <div class="product-image">
 
-                <button
-                    class="favorite"
-                    type="button"
-                    aria-label="Adicionar aos favoritos"
-                >
+                            <img src="img/produto1.png" alt="Produto 1">
 
-                    <img
-                        src="icone/favorito.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
+                        </div>
 
-                </button>
+                        <h3>
+                            Produto 1
+                        </h3>
 
-                <div class="product-image">
+                        <p>
+                            Descrição do produto.
+                        </p>
 
-                    <img
-                        src="img/produto2.png"
-                        alt="Produto 2"
-                    >
-
-                </div>
-
-                <h3>
-                    Produto 2
-                </h3>
-
-                <p>
-                    Descrição do produto.
-                </p>
-
-            </article>
+                    </article>
 
 
-            <article class="product-card">
+                    <article class="product-card">
 
-                <button
-                    class="favorite"
-                    type="button"
-                    aria-label="Adicionar aos favoritos"
-                >
+                        <span class="favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
 
-                    <img
-                        src="icone/favorito.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
+                        <div class="product-image">
 
-                </button>
+                            <img src="img/produto2.png" alt="Produto 2">
 
-                <div class="product-image">
+                        </div>
 
-                    <img
-                        src="img/produto3.png"
-                        alt="Produto 3"
-                    >
+                        <h3>
+                            Produto 2
+                        </h3>
 
-                </div>
+                        <p>
+                            Descrição do produto.
+                        </p>
 
-                <h3>
-                    Produto 3
-                </h3>
-
-                <p>
-                    Descrição do produto.
-                </p>
-
-            </article>
+                    </article>
 
 
-            <article class="product-card">
+                    <article class="product-card">
 
-                <button
-                    class="favorite"
-                    type="button"
-                    aria-label="Adicionar aos favoritos"
-                >
+                        <span class="favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
 
-                    <img
-                        src="icone/favorito.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
+                        <div class="product-image">
 
-                </button>
+                            <img src="img/produto3.png" alt="Produto 3">
 
-                <div class="product-image">
+                        </div>
 
-                    <img
-                        src="imagem/barra_de_chocolat.png"
-                        alt="Produto 4"
-                    >
+                        <h3>
+                            Produto 3
+                        </h3>
 
-                </div>
+                        <p>
+                            Descrição do produto.
+                        </p>
 
-                <h3>
-                    Sicao Barra 1,01kg
-                </h3>
-
-                <p>
-                    Chocolate Nobre Blend Sicao em barra de 1,01kg.
-                </p>
-
-            </article>
+                    </article>
 
 
-            <article class="product-card">
+                    <article class="product-card">
 
-                <button
-                    class="favorite"
-                    type="button"
-                    aria-label="Adicionar aos favoritos"
-                >
+                        <span class="favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
 
-                    <img
-                        src="icone/favorito.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
+                        <div class="product-image">
 
-                </button>
+                            <img src="imagem/barra_de_chocolat.png" alt="Produto 4">
 
-                <div class="product-image">
+                        </div>
 
-                    <img
-                        src="imagem/arroz_5_kg.png"
-                        alt="Produto 5"
-                    >
+                        <h3>
+                            Sicao Barra 1,01kg
+                        </h3>
+
+                        <p>
+                            Chocolate Nobre Blend Sicao em barra de 1,01kg.
+                        </p>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <span class="favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+
+                        <div class="product-image">
+
+                            <img src="imagem/arroz_5_kg.png" alt="Produto 5">
+
+                        </div>
+
+                        <h3>
+                            Arroz Branco - Camil 1kg
+                        </h3>
+
+                        <p>
+                            Qualidade e tradição na sua mesa. O Arroz Branco Tipo 1 Camil possui grãos selecionados,
+                            soltinhos e branquinhos, perfeito para acompanhar suas refeições diárias.
+                        </p>
+
+                    </article>
 
                 </div>
 
-                <h3>
-                    Arroz Branco - Camil 1kg
-                </h3>
+            </section>
 
-                <p>
-                    Qualidade e tradição na sua mesa. O Arroz Branco Tipo 1 Camil possui grãos selecionados, soltinhos e branquinhos, perfeito para acompanhar suas refeições diárias.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-    
-</main>
-</div>
-   <script src="higiene/TelaLoginPop/login-popup-loader.js"></script>
+        </main>
+    </div>
+    <script src="higiene/TelaLoginPop/login-popup-loader.js"></script>
 </body>
+
 </html>
