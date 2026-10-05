@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área Administrativa | SuperMais</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="adm-shell">
+      <header class="adm-header">
+        <div>
+          <p class="eyebrow">Painel administrativo</p>
+          <h1>Gerenciar produtos</h1>
+        </div>
+        <button id="logout-admin" type="button" class="logout-btn">Sair do painel</button>
+      </header>
+
+      <section class="stats" aria-label="Resumo da administração">
+        <article class="stat-card">
+          <span>Total de produtos</span>
+          <strong id="total-produtos">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Ativos</span>
+          <strong id="produtos-ativos">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Excluídos visuais</span>
+          <strong id="produtos-removidos">0</strong>
+        </article>
+      </section>
+
+      <main class="adm-layout">
+        <section class="panel form-panel">
+          <div class="panel-header">
+            <h2>Cadastro e edição</h2>
+          </div>
+
+          <form id="product-form">
+            <input type="hidden" id="product-id" />
+
+            <label>
+              Nome do produto
+              <input id="product-name" type="text" placeholder="Ex.: Furadeira Elétrica" required />
+            </label>
+
+            <div class="two-columns">
+              <label>
+                Categoria
+                <input id="product-category" type="text" placeholder="Ex.: Ferramentas" required />
+              </label>
+
+              <label>
+                Seção
+                <select id="product-section">
+                  <option value="Ferramentas">Ferramentas</option>
+                  <option value="Alimentos">Alimentos</option>
+                  <option value="Higiene">Higiene</option>
+                  <option value="Doces">Doces</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="two-columns">
+              <label>
+                Preço
+                <input id="product-price" type="text" placeholder="Ex.: 199,90" required />
+              </label>
+
+              <label>
+                Imagem
+                <input id="product-image" type="text" placeholder="Ex.: imagens/furadeira.jpg" />
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">Salvar produto</button>
+              <button type="button" id="cancel-edit" class="secondary-btn">Cancelar edição</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="panel-header with-search">
+            <h2>Consulta de produtos</h2>
+            <input id="product-search" type="search" placeholder="Buscar produto" aria-label="Buscar produto" />
+          </div>
+
+          <div id="product-list" class="product-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

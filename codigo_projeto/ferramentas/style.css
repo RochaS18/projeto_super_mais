@@ -986,6 +986,8 @@ area.produtos {
 
     min-height: 120px;
     padding: 14px 18px;
+    margin-left: 200px;
+    margin-right: -40px;
 
     border-radius: 15px;
     color: #FFFFFF;
@@ -1143,6 +1145,8 @@ area.produtos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    margin-left: 40px;
+    margin-right: 200px;
 
     padding: 18px;
 

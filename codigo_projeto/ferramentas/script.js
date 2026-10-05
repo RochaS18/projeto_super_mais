@@ -1,5 +1,6 @@
 // ===== VARIÁVEIS GLOBAIS =====
-// Busca os elementos do carrinho que aparecem nas páginas da loja.
+const URL_CARRINHO = '../carrinho/carrinho-supermais/carrinho-supermais/index.html';
+
 const carrinhoFundo = document.querySelector('#carrinho-fundo');
 const botoesCarrinho = document.querySelectorAll('.botao-carrinho');
 const botaoFechar = document.querySelector('.fechar-carrinho');
@@ -14,23 +15,18 @@ const botaoCupom = document.querySelector('#aplicar-cupom');
 const mensagemCupom = document.querySelector('#mensagem-cupom');
 const botaoFinalizar = document.querySelector('.finalizar-carrinho');
 
-// Guarda os produtos adicionados e informa se o cupom está ativo.
 const itens = [];
 let cupomAplicado = false;
 
 // ===== FUNÇÕES DO CARRINHO =====
-// Mostra o painel do carrinho.
+// Redireciona para a implementação oficial do carrinho do projeto.
 function abrirCarrinho() {
-    if (carrinhoFundo) {
-        carrinhoFundo.hidden = false;
-    }
+    window.location.href = URL_CARRINHO;
 }
 
-// Esconde o painel do carrinho.
+// Mantém o comportamento consistente ao fechar/voltar para a página do carrinho.
 function fecharCarrinho() {
-    if (carrinhoFundo) {
-        carrinhoFundo.hidden = true;
-    }
+    window.location.href = URL_CARRINHO;
 }
 
 // Atualiza produtos, subtotal, desconto e total na tela.
@@ -114,11 +110,17 @@ function alterarQuantidade(nome, valor) {
 // ===== EVENTOS DO CARRINHO =====
 // Abre o carrinho pelos botões do cabeçalho.
 botoesCarrinho.forEach((botao) => {
-    botao.addEventListener('click', abrirCarrinho);
+    botao.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        abrirCarrinho();
+    });
 });
 
 if (botaoFechar) {
-    botaoFechar.addEventListener('click', fecharCarrinho);
+    botaoFechar.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        fecharCarrinho();
+    });
 }
 
 // Também fecha ao clicar fora do painel ou pressionar Escape.
@@ -131,32 +133,20 @@ if (carrinhoFundo) {
 }
 
 document.addEventListener('keydown', (evento) => {
-// Adiciona um produto novo ou aumenta a quantidade do que já está no carrinho.
     if (evento.key === 'Escape') {
         fecharCarrinho();
     }
 });
 
 botoesAdicionar.forEach((botao) => {
-// Trata os botões de quantidade e remoção dentro do carrinho.
-    botao.addEventListener('click', () => {
+    botao.addEventListener('click', (evento) => {
+        evento.preventDefault();
+
         const nome = botao.dataset.produto;
-        const imagem = botao.closest('.produto').querySelector('img').getAttribute('src');
-        const itemExistente = encontrarItem(nome);
+        const preco = botao.dataset.preco;
+        const destino = `${URL_CARRINHO}?produto=${encodeURIComponent(nome)}&preco=${encodeURIComponent(preco)}`;
 
-        if (itemExistente) {
-            itemExistente.quantidade += 1;
-        } else {
-            itens.push({
-                nome,
-                preco: botao.dataset.preco,
-                imagem,
-                quantidade: 1
-            });
-        }
-
-        atualizarCarrinho();
-        abrirCarrinho();
+        window.location.href = destino;
     });
 });
 
