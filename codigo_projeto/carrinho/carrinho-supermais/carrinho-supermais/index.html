@@ -41,7 +41,10 @@
       <form class="busca" role="search" id="formBusca">
         <label class="visualmente-oculto" for="campoBusca">O que você procura?</label>
         <input id="campoBusca" type="search" placeholder="O que você procura hoje?" />
-        <button type="submit" aria-label="Buscar"><span aria-hidden="true"></span></button>
+        <!-- Ícone de pesquisa fornecido pelo projeto, mantendo o botão acessível pelo aria-label. -->
+        <button type="submit" aria-label="Buscar">
+          <img src="../../../icone/pesquisa_icone.png" alt="" aria-hidden="true" />
+        </button>
       </form>
 
       <div class="area-cliente">
