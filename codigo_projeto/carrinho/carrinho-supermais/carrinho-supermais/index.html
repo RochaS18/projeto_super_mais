@@ -8,6 +8,7 @@
     <title>Meu carrinho | SuperMais</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="../../../higiene/TelaLoginPop/Pop.css">
   </head>
   <body>
     <!--
@@ -48,7 +49,7 @@
       </form>
 
       <div class="area-cliente">
-        <a class="cliente" href="#login"><img src="../../../higiene/icone/perfil_icone.png" alt="" aria-hidden="true" /><span><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></span></a>
+        <a class="cliente" href="#login" id="login-trigger"></a>"><img src="../../../higiene/icone/perfil_icone.png" alt="" aria-hidden="true" /><span><b>Olá, Cliente</b><small>Entre ou cadastre-se</small></span></a>
         <div class="mini-carrinho">
           <span class="icone"><img src="../../../higiene/icone/carrinho_icone.png" alt="" aria-hidden="true" /><span class="bolinha" id="contadorTopo">0</span></span>
           <span><b>Meu carrinho</b><small id="totalTopo">R$ 0,00</small></span>
@@ -123,5 +124,6 @@
     </main>
     <footer class="rodape"><p>SuperMais · Página demonstrativa de carrinho de compras.</p></footer>
     </div>
+    <script src="../../../higiene/TelaLoginPop/login-popup-loader.js"></script>
   </body>
 </html>
