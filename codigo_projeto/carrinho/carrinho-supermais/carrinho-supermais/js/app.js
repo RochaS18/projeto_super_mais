@@ -2,6 +2,7 @@
    Em produção, os produtos e preços devem vir de uma API confiável. */
 
 // Configurações demonstrativas do protótipo.
+// Alterar estes valores muda regras de negócio simples, como frete, cupom e imagem padrão.
 const CONFIG = {
   limiteFreteGratis: 200,
   valorFrete: 12.9,
@@ -27,8 +28,14 @@ const sugestoes = [
   { id: 7, nome: "Feijão Carioca", detalhe: "Pacote 1 kg", preco: 8.99, selo: "Boa escolha" },
 ];
 
+// Estado do cupom. Fica separado dos produtos para o desconto poder ser ligado/desligado.
 let cupomAplicado = false;
+
+// Atalho para buscar elementos pelo id e evitar repetir document.getElementById em todo lugar.
 const porId = (id) => document.getElementById(id);
+
+// Proteção básica antes de montar HTML com dados de produto.
+// Assim, nomes e detalhes viram texto seguro quando entram na tela.
 const escaparHTML = (valor) => String(valor).replace(/[&<>"']/g, (caractere) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 })[caractere]);
@@ -40,8 +47,13 @@ function formatarMoeda(valor) {
 
 /** Soma as unidades, subtotal, desconto e valor de entrega do carrinho. */
 function calcularResumo() {
+  // Quantidade total de itens considerando todas as unidades de cada produto.
   const quantidade = carrinho.reduce((soma, produto) => soma + produto.quantidade, 0);
+
+  // Subtotal bruto: preço unitário multiplicado pela quantidade de cada item.
   const subtotal = carrinho.reduce((soma, produto) => soma + produto.preco * produto.quantidade, 0);
+
+  // Regras de entrega e desconto usadas para atualizar o resumo do pedido.
   const freteGratis = subtotal >= CONFIG.limiteFreteGratis;
   const entrega = subtotal === 0 || freteGratis ? 0 : CONFIG.valorFrete;
   const desconto = cupomAplicado && subtotal >= CONFIG.valorMinimoCupom ? CONFIG.descontoCupom : 0;
@@ -51,11 +63,14 @@ function calcularResumo() {
 /** Desenha a lista de produtos usando dados escapados antes de inserir HTML. */
 function renderizarProdutos() {
   const lista = porId("listaProdutos");
+
+  // Quando não há produtos, troca a lista por uma mensagem simples e acessível.
   if (carrinho.length === 0) {
     lista.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
     return;
   }
 
+  // Cada item vira um <article>. Os data-attributes indicam qual ação o clique deve executar.
   lista.innerHTML = carrinho.map((produto) => `
     <article class="produto">
       <div class="imagem-produto"><img src="${escaparHTML(produto.imagem)}" alt="${escaparHTML(produto.nome)}" loading="lazy" /></div>
@@ -76,6 +91,7 @@ function renderizarProdutos() {
 /** Renderiza cartões recomendados e indica quando o item já está no carrinho. */
 function renderizarSugestoes() {
   porId("listaSugestoes").innerHTML = sugestoes.map((produto) => {
+    // Se a sugestão já estiver no carrinho, o botão passa a adicionar mais uma unidade.
     const noCarrinho = carrinho.some((item) => item.id === produto.id);
     return `
       <article class="sugestao-produto">
@@ -94,6 +110,8 @@ function renderizarCarrinho() {
   renderizarProdutos();
   renderizarSugestoes();
   const resumo = calcularResumo();
+
+  // Valores monetários exibidos no resumo lateral.
   porId("subtotal").textContent = formatarMoeda(resumo.subtotal);
   porId("valorDesconto").textContent = resumo.desconto ? `− ${formatarMoeda(resumo.desconto)}` : formatarMoeda(0);
   porId("valorEntrega").textContent = resumo.entrega ? formatarMoeda(resumo.entrega) : "Grátis";
@@ -101,6 +119,8 @@ function renderizarCarrinho() {
   porId("totalTopo").textContent = formatarMoeda(resumo.total);
   porId("contadorTopo").textContent = resumo.quantidade;
   porId("textoItens").textContent = `${resumo.quantidade} ${resumo.quantidade === 1 ? "item selecionado" : "itens selecionados"}`;
+
+  // Mensagem dinâmica que orienta o usuário sobre o frete grátis.
   porId("tituloFrete").textContent = resumo.freteGratis ? "Frete grátis!" : "Frete calculado";
   porId("textoFrete").textContent = resumo.freteGratis
     ? "Seu pedido atingiu o valor mínimo para entrega grátis."
@@ -108,6 +128,8 @@ function renderizarCarrinho() {
       ? "Adicione produtos ao carrinho."
       : `Faltam ${formatarMoeda(CONFIG.limiteFreteGratis - resumo.subtotal)} para ganhar frete grátis.`;
   porId("botaoFinalizar").disabled = resumo.quantidade === 0;
+
+  // Se o usuário remove itens e fica abaixo do mínimo, o cupom é cancelado automaticamente.
   if (cupomAplicado && resumo.subtotal < CONFIG.valorMinimoCupom) {
     cupomAplicado = false;
     mostrarMensagemCupom(`O subtotal mínimo para o cupom é ${formatarMoeda(CONFIG.valorMinimoCupom)}.`, "erro");
@@ -123,6 +145,7 @@ function mostrarMensagemCupom(texto, tipo = "") {
 
 // Delegação de eventos: os botões continuam funcionando após redesenhar a lista.
 porId("listaProdutos").addEventListener("click", (evento) => {
+  // Busca o botão clicado dentro da lista; cliques fora de botões são ignorados.
   const botao = evento.target.closest("button[data-acao]");
   if (!botao) return;
   const id = Number(botao.dataset.id);
@@ -137,6 +160,7 @@ porId("listaProdutos").addEventListener("click", (evento) => {
 });
 
 porId("listaSugestoes").addEventListener("click", (evento) => {
+  // A lista de sugestões também usa delegação para funcionar após cada renderização.
   const botao = evento.target.closest("button[data-adicionar]");
   if (!botao) return;
   const produto = sugestoes.find((item) => item.id === Number(botao.dataset.adicionar));
@@ -152,6 +176,7 @@ porId("listaSugestoes").addEventListener("click", (evento) => {
 });
 
 porId("botaoLimpar").addEventListener("click", () => {
+  // Esvazia o array original sem trocar sua referência, mantendo o estado previsível.
   carrinho.splice(0, carrinho.length);
   cupomAplicado = false;
   mostrarMensagemCupom("");
@@ -161,6 +186,8 @@ porId("botaoLimpar").addEventListener("click", () => {
 
 porId("formCupom").addEventListener("submit", (evento) => {
   evento.preventDefault();
+
+  // Normaliza o cupom digitado para aceitar letras minúsculas ou maiúsculas.
   const codigo = porId("campoCupom").value.trim().toLocaleUpperCase("pt-BR");
   const subtotal = calcularResumo().subtotal;
   if (codigo !== CONFIG.codigoCupom) {
@@ -177,7 +204,10 @@ porId("formCupom").addEventListener("submit", (evento) => {
   renderizarCarrinho();
 });
 
+// Busca demonstrativa: impede recarregamento enquanto não houver página/API de resultados.
 porId("formBusca").addEventListener("submit", (evento) => evento.preventDefault());
+
+// Botão final de checkout ainda é demonstrativo e mostra uma orientação na tela.
 porId("botaoFinalizar").addEventListener("click", () => {
   porId("mensagemCheckout").textContent = "Demonstração: conecte este botão ao fluxo de pagamento da sua loja.";
 });

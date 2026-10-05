@@ -36,43 +36,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* body {
-    position: relative;
-    min-height: 100vh;
 
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        linear-gradient(180deg,
-            #EAF3F2 0%,
-            #F4F6F6 22%,
-            #F7F7F6 55%,
-            #F2F3F2 100%);
-
-    color: var(--texto);
-    overflow-x: hidden;
-}
-
-body::before {
-    content: "";
-
-    position: fixed;
-    inset: 0;
-
-    z-index: -1;
-    pointer-events: none;
-
-    background:
-        radial-gradient(circle at 8% 18%,
-            rgba(39, 133, 122, 0.12),
-            transparent 27%),
-        radial-gradient(circle at 92% 12%,
-            rgba(79, 136, 209, 0.10),
-            transparent 28%),
-        radial-gradient(circle at 52% 85%,
-            rgba(240, 127, 87, 0.045),
-            transparent 34%);
-} */
 
 a {
     color: inherit;
@@ -111,21 +75,7 @@ css da parte da splash screen */
     top: 0;
     z-index: 0;
 }
-/* 
-isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse modelo de estrutura pra conseguir mexer certinho no z-index */
 
-/* .site-content {
-    position: relative;
-    z-index: 2;
-    background:
-        linear-gradient(180deg,
-            #EAF3F2 0%,
-            #F4F6F6 22%,
-            #F7F7F6 55%,
-            #F2F3F2 100%);
-    min-height: 100vh;
-    box-shadow: 0px -15px 30px rgba(0, 0, 0, 0.2);
-} */
 
 
 /* =========================================
@@ -200,31 +150,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
     color: var(--amarelo);
 }
 
-
-/* =========================================
-   CABEÇALHO
-========================================= */
-/* 
-.header {
-    min-height: 130px;
-
-    padding: 22px 50px;
-
-    display: grid;
-
-    grid-template-columns:
-        230px minmax(300px, 1fr) auto;
-
-    align-items: center;
-
-    gap: 50px;
-
-    background:
-        linear-gradient(105deg,
-            rgba(218, 238, 235, 0.96),
-            rgba(225, 233, 241, 0.96),
-            rgba(239, 238, 238, 0.96));
-} */
 
 
 /* =========================================
@@ -456,35 +381,6 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 }
 
 
-
-/* =========================================
-   MENU PRINCIPAL
-========================================= */
-
-/* .main-menu {
-    min-height: 72px;
-
-    margin: 0 40px 25px;
-
-    padding: 8px 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 38px;
-
-    background:
-        rgba(255, 255, 255, 0.58);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.75);
-
-    box-shadow:
-        var(--sombra);
-
-    backdrop-filter: blur(10px);
-} */
 
 
 /* =========================================
@@ -769,10 +665,16 @@ isso aqui tive que fazer pra conseguir passar todo o conteudo do main pra esse m
 .food-card h2 {
     color: #256B41;
 }
-
+/* 
 .food-card img {
     width: 58%;
     max-height: 200px;
+} */
+
+.food-card img {
+    width: 42%;
+    max-height: 160px;
+    object-fit: contain;
 }
 
 
